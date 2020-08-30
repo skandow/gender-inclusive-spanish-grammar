@@ -2,8 +2,7 @@ import React, { useState } from 'react';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import TextField from '@material-ui/core/TextField';
-import { NavLink } from 'react-router-dom'
-import Grid from '@material-ui/core/Grid';
+import { NavLink } from 'react-router-dom';
 import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
@@ -73,7 +72,6 @@ export default function Login() {
           <TextField
             variant="outlined"
             margin="normal"
-            required
             fullWidth
             id="username"
             label="Username"
@@ -85,7 +83,6 @@ export default function Login() {
           <TextField
             variant="outlined"
             margin="normal"
-            required
             fullWidth
             name="password"
             value={password}
@@ -103,13 +100,9 @@ export default function Login() {
           >
             Sign In
           </Button>
-          <Grid container>
-            <Grid item>
-              <NavLink to="/sign_up" exact>
+              <NavLink style={{margin: "auto"}} to="/sign_up" exact>
                 Don't have an account? Sign Up
               </NavLink>
-            </Grid>
-          </Grid>
         </form>
       </div>
       <Box mt={8}>
