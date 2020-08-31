@@ -7,6 +7,8 @@ import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
+import { useDispatch } from 'react-redux';
+import { loginUser } from '../../actions/user.js'
 
 function Copyright() {
   return (
@@ -38,6 +40,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function Login() {
+  const dispatch = useDispatch();
   const classes = useStyles();
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('')
@@ -58,8 +61,10 @@ export default function Login() {
 
     fetch("http://localhost:3001/api/v1/login", reqObj)
     .then(resp => resp.json())
-    .then(data => console.log(data))
-  }
+    .then(data => {
+      localStorage.setItem("token", data.jwt);
+      dispatch(loginUser(data.user.data.attributes))
+  })}
 
   return (
     <Container component="main" maxWidth="xs">
