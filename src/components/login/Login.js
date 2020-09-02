@@ -43,7 +43,8 @@ export default function Login() {
   const dispatch = useDispatch();
   const classes = useStyles();
   const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('')
+  const [password, setPassword] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
 
   const handleSubmit = event => {
     event.preventDefault();
@@ -60,11 +61,20 @@ export default function Login() {
     }
 
     fetch("http://localhost:3001/api/v1/login", reqObj)
-    .then(resp => resp.json())
+    .then(resp => {
+      if(resp.status === 401) {
+          throw Error("The username or password is incorrect")
+      } else {
+          return resp.json()
+      }
+      })
     .then(data => {
       localStorage.setItem("token", data.jwt);
       dispatch(loginUser(data.user.data.attributes))
-  })}
+  }).catch(error => {
+    setErrorMessage(error.message)
+})}
+
 
   return (
     <Container component="main" maxWidth="xs">
@@ -73,6 +83,9 @@ export default function Login() {
         <Typography component="h1" variant="h5">
           Please Log In
         </Typography>
+        {errorMessage ? <Typography component="h2" variant="h6">
+        <div style={{color: "#b81140", width: "100%"}}>{errorMessage}</div>
+        </Typography> : null}
         <form className={classes.form} onSubmit={handleSubmit} noValidate>
           <TextField
             variant="outlined"

@@ -50,9 +50,11 @@ export default function SignUp() {
   const [email, setEmail] = useState('')
   const [preferredPronouns, setPreferredPronouns] = useState('')
   const [showInput, setShowInput] = useState(false)
+  const [errorMessage, setErrorMessage] = useState('');
 
   const handleSubmit = event => {
     event.preventDefault();
+    if ((username) && (password) && (email) && (preferredPronouns)) {
     const payload = { user: {
         username: username,
         password: password,
@@ -68,12 +70,23 @@ export default function SignUp() {
     }
 
     fetch("http://localhost:3001/api/v1/users", reqObj)
-    .then(resp => resp.json())
+    .then(resp => {
+      if(resp.status === 406) {
+      throw Error("Username must be unique")
+      } else {
+      return resp.json()
+  }
+  })
     .then(data => {
       localStorage.setItem("token", data.jwt);
       dispatch(loginUser(data.user.data.attributes))
-    })
+    }).catch(error => {
+      setErrorMessage(error.message)
+  })}
+  else {
+    setErrorMessage('No fields can be left blank')
   }
+  } 
 
   const handleChange = e => {
       if (e.target.value === "My pronouns aren't listed") {
@@ -92,6 +105,9 @@ export default function SignUp() {
         <Typography component="h1" variant="h5">
           Please Enter Your Information Below to Sign Up
         </Typography>
+        {errorMessage ? <Typography component="h2" variant="h6">
+        <div style={{color: "#b81140", width: "100%"}}>{errorMessage}</div>
+        </Typography> : null}
         <form className={classes.form} onSubmit={handleSubmit} noValidate>
           <TextField
             variant="outlined"
