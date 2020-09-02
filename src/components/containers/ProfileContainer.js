@@ -1,10 +1,12 @@
 import React, { Component } from 'react'
-import { Redirect } from 'react-router-dom'
+import DrawerMenu from '../profile/DrawerMenu'
+
 
 class ProfileContainer extends Component {
     render() {
         return (
-                <Redirect to='/home' />
+                <DrawerMenu />
+
         )
     }
 }
