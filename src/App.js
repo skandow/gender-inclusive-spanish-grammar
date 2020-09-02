@@ -5,22 +5,22 @@ import LoginContainer from './components/containers/LoginContainer';
 import ProfileContainer from './components/containers/ProfileContainer';
 import Login from './components/login/Login';
 import SignUp from './components/login/SignUp';
-import DrawerMenu from './components/profile/DrawerMenu'
 import { useSelector } from 'react-redux'
 
 function App() {
   const user = useSelector(state => state.user)
-
   return (
     <Router>
     <div className="App">
+      {!user ?
       <header className="App-header">
           
       </header>
+      :
+      null}
         {user ? 
         <div>
           <ProfileContainer />
-          <Route exact path="/home" component={DrawerMenu} />
         </div>
         :
         <div>

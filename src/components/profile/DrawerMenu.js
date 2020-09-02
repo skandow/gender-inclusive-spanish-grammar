@@ -1,4 +1,5 @@
 import React from 'react';
+import { Route, Link, Switch } from 'react-router-dom'
 import { makeStyles } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -10,6 +11,7 @@ import Divider from '@material-ui/core/Divider';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import Profile from './Profile'
+import Lesson1 from '../lessons/Lesson1'
 
 const drawerWidth = 240;
 
@@ -20,11 +22,12 @@ const useStyles = makeStyles((theme) => ({
   appBar: {
     width: `calc(100% - ${drawerWidth}px)`,
     marginLeft: drawerWidth,
-    backgroundColor: "#b81140"
+    backgroundColor: "#b81140",
+    color: "white"
   },
   drawer: {
     width: drawerWidth,
-    flexShrink: 0,
+    flexShrink: 0
   },
   drawerPaper: {
     width: drawerWidth,
@@ -40,6 +43,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function DrawerMenu() {
   const classes = useStyles();
+
 
   return (
     <div className={classes.root}>
@@ -59,17 +63,19 @@ export default function DrawerMenu() {
         }}
         anchor="left"
       >
-        <div className={classes.toolbar} />
+        <div className={classes.toolbar} style={{backgroundColor: "#b81140"}} />
         <Divider />
-        <List>
+        <List style={{backgroundColor: "lightskyblue"}}>
           {['Lesson 1', 'Lesson 2', 'Lesson 3', 'Lesson 4', 'Lesson 5'].map((text, index) => (
-            <ListItem button key={text}>
-              <ListItemText primary={text} />
-            </ListItem>
+            <Link key={text} to={"/" + text.toLowerCase().replace(" ", "s/")}>
+              <ListItem button  key={text}>
+                <ListItemText primary={text} />
+              </ListItem>
+            </Link>
           ))}
         </List>
         <Divider />
-        <List>
+        <List style={{backgroundColor: "lightskyblue"}}>
           {['Lesson 6', 'Lesson 7', 'Lesson 8', 'Lesson 9', 'Lesson 10'].map((text, index) => (
             <ListItem button key={text}>
               <ListItemText primary={text} />
@@ -77,15 +83,16 @@ export default function DrawerMenu() {
           ))}
         </List>
       </Drawer>
-      <main className={classes.content}>
+      <main className={classes.content} style={{backgroundColor: "#a9a9a9"}}>
         <div className={classes.toolbar} />
-        <Typography paragraph>
-          Placeholder
-        </Typography>
+        <Switch>
+          <Route exact path="/lessons/1">
+            <Lesson1 />
+          </Route>
+          <Route exact path="/">
             <Profile />
-        <Typography paragraph>
-          Placeholder
-        </Typography>
+          </Route>
+        </Switch>
       </main>
     </div>
   );

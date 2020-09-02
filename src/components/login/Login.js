@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Redirect } from 'react-router-dom';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import TextField from '@material-ui/core/TextField';
@@ -45,6 +46,7 @@ export default function Login() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
+  const [redirect, setRedirect] = useState('')
 
   const handleSubmit = event => {
     event.preventDefault();
@@ -65,6 +67,7 @@ export default function Login() {
       if(resp.status === 401) {
           throw Error("The username or password is incorrect")
       } else {
+          setRedirect("/")
           return resp.json()
       }
       })
@@ -75,6 +78,9 @@ export default function Login() {
     setErrorMessage(error.message)
 })}
 
+  if (redirect) {
+    return <Redirect to={redirect} />
+  }
 
   return (
     <Container component="main" maxWidth="xs">
