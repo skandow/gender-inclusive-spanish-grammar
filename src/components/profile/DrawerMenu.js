@@ -1,6 +1,8 @@
 import React from 'react';
 import { Route, Link, Switch } from 'react-router-dom'
 import { makeStyles } from '@material-ui/core/styles';
+import { useDispatch } from 'react-redux';
+import { logoutUser } from '../../actions/user.js';
 import Button from '@material-ui/core/Button';
 import Drawer from '@material-ui/core/Drawer';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -12,6 +14,7 @@ import Divider from '@material-ui/core/Divider';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import Profile from './Profile'
+import EditProfile from './EditProfile'
 import Lesson1 from '../lessons/Lesson1'
 
 const drawerWidth = 240;
@@ -48,7 +51,12 @@ const useStyles = makeStyles((theme) => ({
 
 export default function DrawerMenu() {
   const classes = useStyles();
+  const dispatch = useDispatch();
 
+  const handleLogOut = () => {
+    localStorage.removeItem('token');
+    dispatch(logoutUser())
+  }
 
   return (
     <div className={classes.root}>
@@ -59,14 +67,14 @@ export default function DrawerMenu() {
             
           </Typography>
           <Typography style={{flex:1}}>
-              <Link className="bar-link" to={"/"}>
+              <Link className="bar-link" to={"/home"}>
                 <Button color="inherit">Home</Button>
               </Link>
-            <Link className="bar-link" to={"/"}>
+            <Link className="bar-link" to={"/edit"}>
               <Button color="inherit">Edit Profile</Button>
             </Link>
             <Link className="bar-link" to={"/"}>
-              <Button color="inherit">Logout</Button>
+              <Button onClick={handleLogOut} color="inherit">Logout</Button>
             </Link>
           </Typography>
         </Toolbar>
@@ -103,12 +111,16 @@ export default function DrawerMenu() {
       </Drawer>
       <main className={classes.content} style={{backgroundColor: "#a9a9a9"}}>
         <div className={classes.toolbar} />
+
         <Switch>
           <Route exact path="/lessons/1">
             <Lesson1 />
           </Route>
-          <Route exact path="/">
+          <Route exact path="/home">
             <Profile />
+          </Route>
+          <Route exact path="/edit">
+            <EditProfile />
           </Route>
         </Switch>
       </main>
