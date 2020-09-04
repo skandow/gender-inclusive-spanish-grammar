@@ -14,7 +14,7 @@ function App() {
     <div className="App">
       {!user ?
       <header className="App-header">
-          
+          Gender Inclusive Spanish Grammar Lessons
       </header>
       :
       null}

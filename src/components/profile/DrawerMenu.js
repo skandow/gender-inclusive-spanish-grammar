@@ -1,6 +1,7 @@
 import React from 'react';
 import { Route, Link, Switch } from 'react-router-dom'
 import { makeStyles } from '@material-ui/core/styles';
+import Button from '@material-ui/core/Button';
 import Drawer from '@material-ui/core/Drawer';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import AppBar from '@material-ui/core/AppBar';
@@ -23,7 +24,11 @@ const useStyles = makeStyles((theme) => ({
     width: `calc(100% - ${drawerWidth}px)`,
     marginLeft: drawerWidth,
     backgroundColor: "#b81140",
-    color: "white"
+    color: "white",
+    flexGrow: 1
+  },
+  toolbarButtons: {
+    marginLeft: 'auto'
   },
   drawer: {
     width: drawerWidth,
@@ -51,7 +56,18 @@ export default function DrawerMenu() {
       <AppBar position="fixed" className={classes.appBar}>
         <Toolbar>
           <Typography variant="h6" noWrap>
-            Gender Inclusive Spanish Grammar
+            
+          </Typography>
+          <Typography style={{flex:1}}>
+              <Link className="bar-link" to={"/"}>
+                <Button color="inherit">Home</Button>
+              </Link>
+            <Link className="bar-link" to={"/"}>
+              <Button color="inherit">Edit Profile</Button>
+            </Link>
+            <Link className="bar-link" to={"/"}>
+              <Button color="inherit">Logout</Button>
+            </Link>
           </Typography>
         </Toolbar>
       </AppBar>
@@ -63,11 +79,13 @@ export default function DrawerMenu() {
         }}
         anchor="left"
       >
-        <div className={classes.toolbar} style={{backgroundColor: "#b81140"}} />
+        <div className={classes.toolbar} style={{color: "white", backgroundColor: "#b81140"}}>
+          <h3>Gender Inclusive Spanish</h3>
+        </div>
         <Divider />
         <List style={{backgroundColor: "lightskyblue"}}>
           {['Lesson 1', 'Lesson 2', 'Lesson 3', 'Lesson 4', 'Lesson 5'].map((text, index) => (
-            <Link key={text} to={"/" + text.toLowerCase().replace(" ", "s/")}>
+            <Link className="menu-link" key={text} to={"/" + text.toLowerCase().replace(" ", "s/")}>
               <ListItem button  key={text}>
                 <ListItemText primary={text} />
               </ListItem>

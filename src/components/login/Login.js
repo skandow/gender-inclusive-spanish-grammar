@@ -36,7 +36,7 @@ const useStyles = makeStyles((theme) => ({
     marginTop: theme.spacing(1)
   },
   submit: {
-    margin: theme.spacing(3, 0, 2),
+    margin: theme.spacing(3, 0, 2)
   },
 }));
 
@@ -119,8 +119,8 @@ export default function Login() {
             type="submit"
             fullWidth
             variant="contained"
-            color="primary"
-            className={classes.submit}
+            color="secondary"
+            className={classes.submit} 
           >
             Sign In
           </Button>

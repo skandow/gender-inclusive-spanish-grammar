@@ -5,6 +5,7 @@ function Lesson1() {
       <div className="lesson">
           <div style={{color: "#006341"}}>
           <h1>Pronouns</h1>
+          <hr style={{border: "2px solid #006341"}}></hr>
           </div>
           <div style={{textAlign: "left"}}>
           <p>Pronouns are extremely important both in the Spanish language and in affirming one’s gender identity.</p>  
