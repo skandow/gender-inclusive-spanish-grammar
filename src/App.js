@@ -5,10 +5,11 @@ import LoginContainer from './components/containers/LoginContainer';
 import ProfileContainer from './components/containers/ProfileContainer';
 import Login from './components/login/Login';
 import SignUp from './components/login/SignUp';
-import { useSelector } from 'react-redux'
+import { useSelector } from 'react-redux';
 
 function App() {
   const user = useSelector(state => state.user)
+
   return (
     <Router>
     <div className="App">
