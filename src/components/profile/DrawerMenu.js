@@ -16,6 +16,7 @@ import ListItemText from '@material-ui/core/ListItemText';
 import Profile from './Profile'
 import EditProfile from './EditProfile'
 import Lesson1 from '../lessons/Lesson1'
+import Lesson2 from '../lessons/Lesson2'
 
 const drawerWidth = 240;
 
@@ -88,7 +89,7 @@ export default function DrawerMenu() {
         anchor="left"
       >
         <div className={classes.toolbar} style={{color: "white", backgroundColor: "#b81140"}}>
-          <h3>Gender Inclusive Spanish</h3>
+          <h5 id="corner-label">Gender Inclusive Spanish</h5>
         </div>
         <Divider />
         <List style={{backgroundColor: "lightskyblue"}}>
@@ -108,6 +109,14 @@ export default function DrawerMenu() {
             </ListItem>
           ))}
         </List>
+        <Divider />
+        <List style={{backgroundColor: "lightskyblue"}}>
+          {['Lesson 11', 'Lesson 12', 'Lesson 13', 'Lesson 14', 'Lesson 15'].map((text, index) => (
+            <ListItem button key={text}>
+              <ListItemText primary={text} />
+            </ListItem>
+          ))}
+        </List>
       </Drawer>
       <main className={classes.content} style={{backgroundColor: "#a9a9a9"}}>
         <div className={classes.toolbar} />
@@ -115,6 +124,9 @@ export default function DrawerMenu() {
         <Switch>
           <Route exact path="/lessons/1">
             <Lesson1 />
+          </Route>
+          <Route exact path="/lessons/2">
+            <Lesson2 />
           </Route>
           <Route exact path="/home">
             <Profile />

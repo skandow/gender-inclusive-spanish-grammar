@@ -14,14 +14,14 @@ function Profile() {
 
   return (
     <div className="profile">
-        <div style={{color: "#006341"}}>
-        <h1 style={{display: "inline-block", margin: "auto"}}>{greeting}!</h1>
-          <img style={{width: "25%", display: "inline-block", float: "left"}} src="https://upload.wikimedia.org/wikipedia/commons/3/3f/Spanish_language_%28main%29.png" alt="Spanish language flag"/>
-          <img style={{width: "25%", display: "inline-block", float: "right"}} src="https://upload.wikimedia.org/wikipedia/commons/4/43/Nonbinary_Pride_Flag.png" alt="Spanish language flag"/>
-          <div className="profile-info">
-            <h2>Username: {user.username}</h2>
-            <h2>Preferred Pronouns: {user.preferred_pronouns}</h2>
-            <h2>Email Address: {user.email}</h2>
+        <div id="profile-info">
+        <h2 style={{display: "inline-block", margin: "auto"}}>{greeting}!</h2>
+          <img style={{width: "28%", display: "inline-block", float: "left"}} src="https://upload.wikimedia.org/wikipedia/commons/3/3f/Spanish_language_%28main%29.png" alt="Spanish language flag"/>
+          <img style={{width: "28%", display: "inline-block", float: "right"}} src="https://upload.wikimedia.org/wikipedia/commons/4/43/Nonbinary_Pride_Flag.png" alt="Spanish language flag"/>
+          <div id="profile-details">
+            <h3>Username: {user.username}</h3>
+            <h3>Preferred Pronouns: {user.preferred_pronouns}</h3>
+            {/* <h3>Email Address: {user.email}</h3> */}
           </div>
         </div>
         <div style={{textAlign: "left"}}>

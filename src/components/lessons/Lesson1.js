@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 function Lesson1() {
     return (
@@ -43,6 +44,7 @@ function Lesson1() {
             are probably the easiest to convert from English to Spanish.
         </p>
           </div>
+          <Link className="next-link" exact to="/lessons/2">Spanish Subject Pronouns →</Link>
       </div>
     );
   }

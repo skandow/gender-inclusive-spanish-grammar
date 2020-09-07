@@ -107,12 +107,12 @@ export default function EditProfile() {
   }
 
   return (
-    <div className="edit=form">
-    <Container component="main" maxWidth="xs">
+    <div>
+    <Container component="main" maxWidth="md" style={{height: '76vh'}}>
       <CssBaseline />
       <div className={classes.paper}>
         <Typography component="h1" variant="h5">
-          Please Enter Your Information Below to Sign Up
+          Please Enter Your Information Below to Edit Your Profile
         </Typography>
         {errorMessage ? <Typography component="h2" variant="h6">
         <div style={{color: "#b81140", width: "100%"}}>{errorMessage}</div>
