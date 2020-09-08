@@ -1,4 +1,6 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
+import { HashLink } from 'react-router-hash-link'
 
 function Lesson2() {
     return (
@@ -67,7 +69,7 @@ function Lesson2() {
                     <td colSpan="2" lang="es">nosotros</td>
                 </tr>
                 <tr><td colSpan="2" lang="es">nosotras</td></tr>
-                <tr><td colSpan="2" lang="es">nosotres<sup><a className="footnote-link" href={"#footnote1"}>*</a></sup></td></tr>
+                <tr><td colSpan="2" lang="es">nosotres<sup><HashLink className="footnote-link" exact="true" to={"/lessons/2#footnote1"}>*</HashLink></sup></td></tr>
                 <tr>
                     <th rowSpan="3" colSpan="2" scope="row">Second Person</th>
                     <td rowSpan="3" lang="es" style={{backgroundColor: "#f1bf00"}}>tú</td>
@@ -78,7 +80,7 @@ function Lesson2() {
                     <td colSpan="2" style={{backgroundColor: "#b81140"}} lang="es">vosotras</td>
                 </tr>
                 <tr>
-                    <td colSpan="2" style={{backgroundColor: "#b81140"}} lang="es">vosotres<sup><a className="footnote-link" href={"#footnote1"}>*</a></sup></td></tr>
+                    <td colSpan="2" style={{backgroundColor: "#b81140"}} lang="es">vosotres<sup><HashLink className="footnote-link" exact="true" to={"/lessons/2#footnote1"}>*</HashLink></sup></td></tr>
                 <tr>
                     <th rowSpan="4" colSpan="2" scope="row">Third Person</th>
                     <td colSpan="2" lang="es">él</td>
@@ -89,8 +91,8 @@ function Lesson2() {
                     <td colSpan="2" lang="es">ellas</td>
                 </tr>
                 <tr>
-                    <td colSpan="2" lang="es">elle<sup><a className="footnote-link" href={"#footnote1"}>*</a></sup></td>
-                    <td colSpan="2" lang="es">elles<sup><a className="footnote-link" href={"#footnote1"}>*</a></sup></td>
+                    <td colSpan="2" lang="es">elle<sup><HashLink className="footnote-link" exact="true" to={"/lessons/2#footnote1"}>*</HashLink></sup></td>
+                    <td colSpan="2" lang="es">elles<sup><HashLink className="footnote-link" exact="true" to={"/lessons/2#footnote1"}>*</HashLink></sup></td>
                 </tr>
                 <tr>
                     <td colSpan="2" lang="es" style={{backgroundColor: "#006341"}}>usted</td>
@@ -237,6 +239,7 @@ function Lesson2() {
             this information to begin conjugating verbs.
         </p>
           </div>
+          <Link className="next-link" exact="true" to="/lessons/3">The Verb <em>Ser</em> →</Link>
       </div>
     );
   }

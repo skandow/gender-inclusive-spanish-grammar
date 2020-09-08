@@ -1,5 +1,6 @@
 import React from 'react';
 import { Route, Link, Switch } from 'react-router-dom'
+import ScrollToTop from '../higher_order/ScrollToTop'
 import { makeStyles } from '@material-ui/core/styles';
 import { useDispatch } from 'react-redux';
 import { logoutUser } from '../../actions/user.js';
@@ -17,6 +18,7 @@ import Profile from './Profile'
 import EditProfile from './EditProfile'
 import Lesson1 from '../lessons/Lesson1'
 import Lesson2 from '../lessons/Lesson2'
+import Lesson3 from '../lessons/Lesson3'
 
 const drawerWidth = 240;
 
@@ -120,13 +122,16 @@ export default function DrawerMenu() {
       </Drawer>
       <main className={classes.content} style={{backgroundColor: "#a9a9a9"}}>
         <div className={classes.toolbar} />
-
+        <ScrollToTop>
         <Switch>
           <Route exact path="/lessons/1">
             <Lesson1 />
           </Route>
           <Route exact path="/lessons/2">
             <Lesson2 />
+          </Route>
+          <Route exact path="/lessons/3">
+            <Lesson3 />
           </Route>
           <Route exact path="/home">
             <Profile />
@@ -135,6 +140,7 @@ export default function DrawerMenu() {
             <EditProfile />
           </Route>
         </Switch>
+        </ScrollToTop>
       </main>
     </div>
   );

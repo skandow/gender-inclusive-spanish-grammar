@@ -206,3 +206,10 @@ td[class^="third"] {
   color: black;
   text-decoration: none
 }
+
+table.conjugation {
+  table-layout: fixed;
+  width: 440px;
+  height: 200px;
+  text-align: center;
+}
