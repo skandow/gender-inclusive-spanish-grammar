@@ -185,6 +185,7 @@ function Lesson3() {
             once the examples shifted to the plural side of things.  This is a good time to discuss next
             how nouns and adjectives work in Spanish.</p>
           </div>
+          <Link className="next-link" exact="true" to="/lessons/4">Adjectives →</Link>
       </div>
     );
   }

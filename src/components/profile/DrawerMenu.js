@@ -19,6 +19,9 @@ import EditProfile from './EditProfile'
 import Lesson1 from '../lessons/Lesson1'
 import Lesson2 from '../lessons/Lesson2'
 import Lesson3 from '../lessons/Lesson3'
+import Lesson4 from '../lessons/Lesson4'
+import Lesson5 from '../lessons/Lesson5'
+import Lesson6 from '../lessons/Lesson6'
 
 const drawerWidth = 240;
 
@@ -95,7 +98,7 @@ export default function DrawerMenu() {
         </div>
         <Divider />
         <List style={{backgroundColor: "lightskyblue"}}>
-          {['Lesson 1', 'Lesson 2', 'Lesson 3', 'Lesson 4', 'Lesson 5'].map((text, index) => (
+          {['Lesson 1', 'Lesson 2', 'Lesson 3', 'Lesson 4'].map((text, index) => (
             <Link className="menu-link" key={text} to={"/" + text.toLowerCase().replace(" ", "s/")}>
               <ListItem button  key={text}>
                 <ListItemText primary={text} />
@@ -105,10 +108,12 @@ export default function DrawerMenu() {
         </List>
         <Divider />
         <List style={{backgroundColor: "lightskyblue"}}>
-          {['Lesson 6', 'Lesson 7', 'Lesson 8', 'Lesson 9', 'Lesson 10'].map((text, index) => (
-            <ListItem button key={text}>
-              <ListItemText primary={text} />
-            </ListItem>
+          {['Lesson 5', 'Lesson 6', 'Lesson 7', 'Lesson 8', 'Lesson 9', 'Lesson 10'].map((text, index) => (
+            <Link className="menu-link" key={text} to={"/" + text.toLowerCase().replace(" ", "s/")}>
+              <ListItem button  key={text}>
+                <ListItemText primary={text} />
+              </ListItem>
+            </Link>
           ))}
         </List>
         <Divider />
@@ -132,6 +137,15 @@ export default function DrawerMenu() {
           </Route>
           <Route exact path="/lessons/3">
             <Lesson3 />
+          </Route>
+          <Route exact path="/lessons/4">
+            <Lesson4 />
+          </Route>
+          <Route exact path="/lessons/5">
+            <Lesson5 />
+          </Route>
+          <Route exact path="/lessons/6">
+            <Lesson6 />
           </Route>
           <Route exact path="/home">
             <Profile />

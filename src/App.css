@@ -213,3 +213,29 @@ table.conjugation {
   height: 200px;
   text-align: center;
 }
+
+.grid {
+  display: grid;
+  grid-template-areas:
+      "one two";
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 10px;
+  grid-auto-columns: 200px; 
+}
+
+.grid-three {
+  display: grid;
+  grid-template-areas:
+      "one two three";
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 5px;
+  grid-auto-columns: 150px;
+}
+
+.one {
+  grid-area: one;
+}
+
+.two {
+  grid-area: two;
+}
