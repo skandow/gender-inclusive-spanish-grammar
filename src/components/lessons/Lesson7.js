@@ -212,6 +212,7 @@ function Lesson7() {
             depending on how it is used, both of which are irregular.  One of the two is actually a verb that creates an entire new category of 
             verb tense through its use, so we'll be looking at both of these irregular verbs in the next lesson.</p>
           </div>
+          <Link className="next-link" exact="true" to="/lessons/8">The Verbs <em lang="es">Tener</em>, <em lang="es">Haber</em>, and the Present Perfect Tense →</Link>
       </div>
     );
   }

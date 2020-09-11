@@ -239,3 +239,8 @@ table.conjugation {
 .two {
   grid-area: two;
 }
+
+.numbered {
+  padding: 10px 15px 10px 25px;
+  font-style: italic;
+}
