@@ -1,21 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-// import { useSelector } from 'react-redux';
 
 function Lesson6() {
-    // const user = useSelector(state => state.user)
-    // let serMessage 
-    // let estarMessage 
-    // if (user.preferred_pronouns.substr(0, 2) === "he") {
-    //     serMessage = 'He is fun. = Él es divertido.'
-    //     estarMessage = 'He is funny. = Él está divertido.'
-    // } else if (user.preferred_pronouns.substr(0, 3) === "she") {
-    //     serMessage = 'She is fun. = Ella es divertida.'
-    //     estarMessage = 'She is funny. = Ella está divertida.'
-    // } else {
-    //     serMessage = 'Ze is fun. = Elle es divertide.'
-    //     estarMessage = 'Ze is funny. = Elle está divertide.'
-    // }
     
     return (
       <div className="lesson">
@@ -329,7 +315,7 @@ function Lesson6() {
                 </table>
             </div>
         </div>
-        <p>Just as we did with <em lang="es">hablar</em>, let's conjugate the regular verbs <em lang="es">comer</em> or <em>to eat</em>
+        <p>Just as we did with <em lang="es">hablar</em>, let's conjugate the regular verbs <em lang="es">comer</em> or <em>to eat </em>
         and <em lang="es">abrir</em> or <em>to open</em>.</p>
         <div className="grid">
             <div>
@@ -401,6 +387,7 @@ function Lesson6() {
         <p>For all this discussion about "regular" verbs in Spanish, just as in English, there are <strong>several</strong> verbs that are irregular.  
             The next lesson will look at how to conjugate the most common of these in the Present Indicative.</p>  
           </div>
+          <Link className="next-link" exact="true" to="/lessons/7">Commonly Used Irregular Verbs →</Link>
       </div>
     );
   }
