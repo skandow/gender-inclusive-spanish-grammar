@@ -17,6 +17,7 @@ import ListItemText from '@material-ui/core/ListItemText';
 import Profile from './Profile'
 import EditProfile from './EditProfile'
 import Lesson1 from '../lessons/Lesson1'
+import Quiz1 from '../quizzes/Quiz1'
 import Lesson2 from '../lessons/Lesson2'
 import Lesson3 from '../lessons/Lesson3'
 import Lesson4 from '../lessons/Lesson4'
@@ -134,6 +135,9 @@ export default function DrawerMenu() {
         <Switch>
           <Route exact path="/lessons/1">
             <Lesson1 />
+          </Route>
+          <Route exact path="/quizzes/1">
+            <Quiz1 />
           </Route>
           <Route exact path="/lessons/2">
             <Lesson2 />
