@@ -26,14 +26,6 @@ function Quiz1() {
     const [score, setScore] = React.useState('')
     const [percentage, setPercentage] = React.useState('')
 
-    // const handleRadioChange1 = event => {
-    //     setValue1(event.target.value)
-    // }
-
-    // const handleRadioChange2 = event => {
-    //     setValue2(event.target.value)
-    // }
-
     const handleSubmit = event => {
         event.preventDefault()
         let score = 0
@@ -96,7 +88,11 @@ function Quiz1() {
           </Button>
         </FormControl>
       </form> 
-        {score ? `You got ${score} out of 4 correct. Percentage: ${percentage}` : null}
+      <div className="score">
+        <h2>{percentage ? `You got ${score} out of 4 correct. Percentage: ${percentage}` : null}</h2>
+      </div>
+      <Link style={{display: "inline-block"}} className="next-link" exact="true" to="/lessons/1">Return to This Lesson</Link>
+      <Link style={{display: "inline-block"}} className="next-link" exact="true" to="/lessons/2">Next Lesson: Spanish Subject Pronouns →</Link>
       </div>
     )
 }

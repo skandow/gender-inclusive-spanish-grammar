@@ -19,7 +19,9 @@ import EditProfile from './EditProfile'
 import Lesson1 from '../lessons/Lesson1'
 import Quiz1 from '../quizzes/Quiz1'
 import Lesson2 from '../lessons/Lesson2'
+import Quiz2 from '../quizzes/Quiz2'
 import Lesson3 from '../lessons/Lesson3'
+import Quiz3 from '../quizzes/Quiz3'
 import Lesson4 from '../lessons/Lesson4'
 import Lesson5 from '../lessons/Lesson5'
 import Lesson6 from '../lessons/Lesson6'
@@ -142,8 +144,14 @@ export default function DrawerMenu() {
           <Route exact path="/lessons/2">
             <Lesson2 />
           </Route>
+          <Route exact path="/quizzes/2">
+            <Quiz2 />
+          </Route>
           <Route exact path="/lessons/3">
             <Lesson3 />
+          </Route>
+          <Route exact path="/quizzes/3">
+            <Quiz3 />
           </Route>
           <Route exact path="/lessons/4">
             <Lesson4 />

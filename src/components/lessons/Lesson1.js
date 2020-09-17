@@ -44,8 +44,8 @@ function Lesson1() {
             are probably the easiest to convert from English to Spanish.
         </p>
           </div>
-          <Link className="next-link" exact="true" to="/quizzes/1">Take Quiz!</Link>
-          <Link className="next-link" exact="true" to="/lessons/2">Next Lesson: Spanish Subject Pronouns →</Link>
+          <Link style={{display: "inline-block"}} className="next-link" exact="true" to="/quizzes/1">Take Quiz!</Link>
+          <Link style={{display: "inline-block"}} className="next-link" exact="true" to="/lessons/2">Next Lesson: Spanish Subject Pronouns →</Link>
       </div>
     );
   }

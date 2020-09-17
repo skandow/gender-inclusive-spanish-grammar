@@ -239,7 +239,8 @@ function Lesson2() {
             this information to begin conjugating verbs.
         </p>
           </div>
-          <Link className="next-link" exact="true" to="/lessons/3">The Verb <em>Ser</em> →</Link>
+          <Link style={{display: "inline-block"}} className="next-link" exact="true" to="/quizzes/2">Take Quiz!</Link>
+          <Link style={{display: "inline-block"}} className="next-link" exact="true" to="/lessons/3">The Verb <em>Ser</em> →</Link>
       </div>
     );
   }
