@@ -186,7 +186,7 @@ function Lesson3() {
             how nouns and adjectives work in Spanish.</p>
           </div>
           <Link style={{display: "inline-block"}} className="next-link" exact="true" to="/quizzes/3">Take Quiz!</Link>
-          <Link style={{display: "inline-block"}} className="next-link" exact="true" to="/lessons/4">Adjectives →</Link>
+          <Link style={{display: "inline-block"}} className="next-link" exact="true" to="/lessons/4">Nouns →</Link>
       </div>
     );
   }

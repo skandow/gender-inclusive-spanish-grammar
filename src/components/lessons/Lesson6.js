@@ -1,393 +1,216 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { useSelector } from 'react-redux';
 
 function Lesson6() {
+    const user = useSelector(state => state.user)
+    let serMessage 
+    let estarMessage 
+    if (user.preferred_pronouns.substr(0, 2) === "he") {
+        serMessage = 'He is fun. = Él es divertido.'
+        estarMessage = 'He is funny. = Él está divertido.'
+    } else if (user.preferred_pronouns.substr(0, 3) === "she") {
+        serMessage = 'She is fun. = Ella es divertida.'
+        estarMessage = 'She is funny. = Ella está divertida.'
+    } else {
+        serMessage = 'Ze is fun. = Elle es divertide.'
+        estarMessage = 'Ze is funny. = Elle está divertide.'
+    }
     
     return (
       <div className="lesson">
           <div style={{color: "#006341"}}>
-          <h1>Regular Verbs in the Present Indicative</h1>
+          <h1>The Verb <em lang="es">Estar</em></h1>
           <hr style={{border: "2px solid #006341"}}></hr>
           </div>
           <div style={{textAlign: "left"}}>
-          <h3>Regular Present Tense Verbs in English:</h3>
-        <p>The verbs <em lang="es">ser</em> and <em lang="es">estar</em> are actually irregular verbs in Spanish, meaning
-            that they don't follow the set conjugation pattern established by most other Spanish verbs in the present tense.  
+          <h3>"To Be" or... "To Be"...?:</h3>
+        <p>In an earlier lesson, we learned about the verb <em lang="es">ser</em>.  To review:
         </p> 
-        <p>The English language also has regular and irregular verbs.  Compare the present simple conjugation of <em>to be</em> with
-        these regular conjugations of <em>to love</em>, <em>to fear</em>, and <em>to live</em>:</p>
-        <div>
-            <table className="conjugation-three">
-            <caption><em>to be</em><br/>
-                Present Simple</caption>
-                <thead>
-                
-                </thead>
-                <tbody>
-                <tr>
-                    <td>I am</td>
-                    <td>we are</td>
-                </tr>
-                <tr>
-                    <td>you are</td>
-                    <td>you (all) are</td>
-                </tr>
-                <tr>
-                    <td>he is</td>
-                    <td rowSpan="3">they are</td>
-                </tr>
-                <tr><td>she is</td></tr>
-                <tr><td>ze is</td></tr>
-                </tbody>
-            </table>
-        </div>
-        <div className="grid-three">
-        <div>
-            <table className="conjugation-three one">
-            <caption><em>to love</em><br/>
-                Present Simple</caption>
-                <thead>
-                
-                </thead>
-                <tbody>
-                <tr>
-                    <td>I love</td>
-                    <td>we love</td>
-                </tr>
-                <tr>
-                    <td>you love</td>
-                    <td>you (all) love</td>
-                </tr>
-                <tr>
-                    <td>he loves</td>
-                    <td rowSpan="3">they love</td>
-                </tr>
-                <tr><td>she loves</td></tr>
-                <tr><td>ze loves</td></tr>
-                </tbody>
-            </table>
-        </div>
-        <div>
-            <table className="conjugation-three two">
-            <caption><em>to fear</em><br/>
-                Present Simple</caption>
-                <thead>
-               
-                </thead>
-                <tbody>
-                <tr>
-                    <td>I fear</td>
-                    <td>we fear</td>
-                </tr>
-                <tr>
-                    <td>you fear</td>
-                    <td>you (all) fear</td>
-                </tr>
-                <tr>
-                    <td>he fears</td>
-                    <td rowSpan="3">they fear</td>
-                </tr>
-                <tr><td>she fears</td></tr>
-                <tr><td>ze fears</td></tr>
-                </tbody>
-            </table>
-        </div>
-        <div>
-            <table className="conjugation-three three">
-            <caption><em>to live</em><br/>
-                Present Simple</caption>
-                <thead>
-                
-                </thead>
-                <tbody>
-                <tr>
-                    <td>I live</td>
-                    <td>we live</td>
-                </tr>
-                <tr>
-                    <td>you live</td>
-                    <td>you (all) live</td>
-                </tr>
-                <tr>
-                    <td>he lives</td>
-                    <td rowSpan="3">they live</td>
-                </tr>
-                <tr><td>she lives</td></tr>
-                <tr><td>ze lives</td></tr>
-                </tbody>
-            </table>
-        </div>
-        </div>
-        <p>Notice that while there are three very different words in the <em>to be</em> chart (<em>am</em>, <em>are</em>, and <em>is</em>)
-            there is only one minor change in the other three charts.  For regular present tense verbs in the English language, an <em>-s</em>
-            is added to the end of the third-person singular form only.  The rest of the verbs are the infinitive minus the preposition <em>to</em>.</p>
-        <h3>Spanish Verb Endings:</h3>
-        <p>Now let's take a look at the conjugations of <em>to love</em>, <em>to fear</em>, and <em>to live</em> in Spanish, which
-        are <em lang="es">amar</em>, <em lang="es">temer</em>, and <em lang="es">vivir</em> respectively.</p>
-            <div>
-                <table className="conjugation">
-                <caption><em>amar</em><br/>
-                        Present Simple - Indicative</caption>
-                    <thead>
-                        
-                        </thead>
-                        <tbody>
-                        <tr>
-                            <td colSpan="2" lang="es">amo</td>
-                            <td colSpan="2" lang="es">amamos</td>
-                        </tr>
-                        <tr>
-                            <td lang="es" style={{backgroundColor: "#f1bf00"}}>amas</td>
-                            <td lang="es-419" style={{backgroundColor: "lightskyblue"}}>amás</td>                    
-                            <td colSpan="2" style={{backgroundColor: "#b81140"}} lang="es">amáis</td>
-                        </tr>
-                        <tr>
-                            <td colSpan="2" lang="es"><span style={{color: "#006341"}}>ama</span></td>
-                            <td colSpan="2" lang="es"><span style={{color: "#006341"}}>aman</span></td>
-                        </tr>
-                        </tbody>
-                </table>
-            </div>
-        <div className="grid">
-            <div>
-                <table className="conjugation one">
-                <caption><em>temer</em><br/>
-                        Present Simple - Indicative</caption>
-                    <thead>
-                        
-                        </thead>
-                        <tbody>
-                        <tr>
-                            <td colSpan="2" lang="es">temo</td>
-                            <td colSpan="2" lang="es">tememos</td>
-                        </tr>
-                        <tr>
-                            <td lang="es" style={{backgroundColor: "#f1bf00"}}>temes</td>
-                            <td lang="es-419" style={{backgroundColor: "lightskyblue"}}>temés</td>                    
-                            <td colSpan="2" style={{backgroundColor: "#b81140"}} lang="es">teméis</td>
-                        </tr>
-                        <tr>
-                            <td colSpan="2" lang="es"><span style={{color: "#006341"}}>teme</span></td>
-                            <td colSpan="2" lang="es"><span style={{color: "#006341"}}>temen</span></td>
-                        </tr>
-                        </tbody>
-                </table>
-            </div>
-            <div>
-                <table className="conjugation two">
-                <caption><em>vivir</em><br/>
-                        Present Simple - Indicative</caption>
-                    <thead>
-                        
-                        </thead>
-                        <tbody>
-                        <tr>
-                            <td colSpan="2" lang="es">vivo</td>
-                            <td colSpan="2" lang="es">vivimos</td>
-                        </tr>
-                        <tr>
-                            <td lang="es" style={{backgroundColor: "#f1bf00"}}>vives</td>
-                            <td lang="es-419" style={{backgroundColor: "lightskyblue"}}>vivís</td>                    
-                            <td colSpan="2" style={{backgroundColor: "#b81140"}} lang="es">vivís</td>
-                        </tr>
-                        <tr>
-                            <td colSpan="2" lang="es"><span style={{color: "#006341"}}>vive</span></td>
-                            <td colSpan="2" lang="es"><span style={{color: "#006341"}}>viven</span></td>
-                        </tr>
-                        </tbody>
-                </table>
-            </div>
-        </div>
-        <p>Recall from our previous discussion that, because of the uniqueness of Spanish verb conjugation, most of the pronouns 
-            are implied by the verbs used.</p>
-        <p>Notice the endings of the infinitives of the three Spanish verbs.  ALL Spanish infinitives end with <em>-ar</em>, <em>-er</em>,
-        or <em>-ir</em>, and the endings of the verbs determine how you conjugate them regularly.</p>
-        <h3>Conjugation of Regular <em>-ar</em> Verbs:</h3>
-        <p>Let's take a look at this practice with verbs that end in <em>-ar</em>.  To conjugate regular Spanish verbs in the
-        Present Indicative, remove the <em>-ar</em> from the given infinite, and add the following endings depending on the subject:</p>
         <div>
             <table className="conjugation">
-            <caption><em>-ar</em> verb endings<br/>
+            <caption><em>ser</em><br/>
                     Present Simple - Indicative</caption>
                 <thead>
                     
-                    </thead>
-                    <tbody>
+                </thead>
+                <tbody>
                     <tr>
-                        <td colSpan="2" lang="es">-o</td>
-                        <td colSpan="2" lang="es">-amos</td>
+                        <td colSpan="2" lang="es">soy</td>
+                        <td colSpan="2" lang="es">somos</td>
                     </tr>
                     <tr>
-                        <td lang="es" style={{backgroundColor: "#f1bf00"}}>-as</td>
-                        <td lang="es-419" style={{backgroundColor: "lightskyblue"}}>-ás</td>                    
-                        <td colSpan="2" style={{backgroundColor: "#b81140"}} lang="es">-áis</td>
+                        <td lang="es" style={{backgroundColor: "#f1bf00"}}>eres</td>
+                        <td lang="es-419" style={{backgroundColor: "lightskyblue"}}>sos</td>                    
+                        <td colSpan="2" style={{backgroundColor: "#b81140"}} lang="es">sois</td>
                     </tr>
                     <tr>
-                        <td colSpan="2" lang="es"><span style={{color: "#006341"}}>-a</span></td>
-                        <td colSpan="2" lang="es"><span style={{color: "#006341"}}>-an</span></td>
+                        <td colSpan="2" lang="es"><span style={{color: "#006341"}}>es</span></td>
+                        <td colSpan="2" lang="es"><span style={{color: "#006341"}}>son</span></td>
                     </tr>
                     </tbody>
             </table>
         </div>
-        <p>Let's use this pattern to practice conjugating another regular Spanish verb: <em lang="es">hablar</em> which means <em>to speak</em>.</p>
-        <p>To conjugate <em lang="es">hablar</em> in the Present Indicative:</p>
-        <ol>
-            <li>Remove the <em>-ar</em> ending to give the root stem <em>habl-</em>.</li>
-            <li>Add the appropriate endings from the chart above.</li>
-        </ol>
-        <p>That should give us the following conjugation:</p> 
-        <div>
-            <table className="conjugation">
-            <caption><em>hablar</em><br/>
-                    Present Simple - Indicative</caption>
-                <thead>
-                    
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <td colSpan="2" lang="es">hablo</td>
-                        <td colSpan="2" lang="es">hablamos</td>
-                    </tr>
-                    <tr>
-                        <td lang="es" style={{backgroundColor: "#f1bf00"}}>hablas</td>
-                        <td lang="es-419" style={{backgroundColor: "lightskyblue"}}>hablás</td>                    
-                        <td colSpan="2" style={{backgroundColor: "#b81140"}} lang="es">habláis</td>
-                    </tr>
-                    <tr>
-                        <td colSpan="2" lang="es"><span style={{color: "#006341"}}>habla</span></td>
-                        <td colSpan="2" lang="es"><span style={{color: "#006341"}}>hablan</span></td>
-                    </tr>
-                    </tbody>
-            </table>
-        </div>
-        <p>Using this, you can now express the fact that you speak English</p>
-        <p className="example" lang="es">Hablo inglés.</p>
-        <p>or you can reference the fact that others might speak English, Spanish, or another language altogether!</p>
-        <h3>Conjugation of Regular <em>-er</em> and <em>-ir</em> Verbs:</h3>
-        <p>Now that you have seen the process for conjugating regular Spanish verbs that end in <em>-ar</em>, let's look at
-        the process for conjugating verbs that end in <em>-er</em> or <em>-ir</em>.  Just like <em>-ar</em> verbs, you'll start
-        by removing the <em>-er</em> or <em>-ir</em> to get the stem of the verb.  Then, add these endings:</p>
+        <p>In the Spanish language, however, there are actually two verbs that translate to the English verb <em>to be</em>.  The
+            first is the above verb <em lang="es">ser</em>.  The second is <em lang="es">estar</em>.  Let's take a look at a few
+            different contexts in which these verbs are used:</p>
+            <div className="grid">
+                <p className="example one">
+                    She is tall. =<br/> <em lang="es">Ella es alta.</em><br/><br/>
+                    I am from the United States. =<br/> <em lang="es">Soy de los Estados Unidos.</em><br/><br/>
+                    It's 6:45. =<br/> <em lang="es">Son las siete menos cuarto.</em></p>
+                <p className="example two">
+                    Eric is happy. =<br/> <em lang="es">Eric está feliz.</em><br/><br/>
+                    We are at home. =<br/> <em lang="es">Nosotres estamos en casa.</em><br/><br/>
+                    They are cleaning the bathroom. =<br/> <em lang="es">Ellos están limpiando el baño.</em></p>
+                </div>
+            <p>The above examples represent the broadest use of <em lang="es">ser</em> and <em lang="es">estar</em> in comparison
+            with the English verb <em>to be</em>.</p>
         <div className="grid">
-            <div>
-                <table className="conjugation one">
-                <caption><em>-er</em> verb endings<br/>
-                        Present Simple - Indicative</caption>
-                    <thead>
-                        </thead>
-                        <tbody>
-                        <tr>
-                            <td colSpan="2" lang="es">-o</td>
-                            <td colSpan="2" lang="es">-emos</td>
-                        </tr>
-                        <tr>
-                            <td lang="es" style={{backgroundColor: "#f1bf00"}}>-es</td>
-                            <td lang="es-419" style={{backgroundColor: "lightskyblue"}}>-és</td>                    
-                            <td colSpan="2" style={{backgroundColor: "#b81140"}} lang="es">-éis</td>
-                        </tr>
-                        <tr>
-                            <td colSpan="2" lang="es"><span style={{color: "#006341"}}>-e</span></td>
-                            <td colSpan="2" lang="es"><span style={{color: "#006341"}}>-en</span></td>
-                        </tr>
-                        </tbody>
-                </table>
+            <div className="one box">
+            <p>Use <em lang="es">ser</em> as the Spanish verb for the English equivalent <em>to be</em> 
+            in the following cases:</p>
+            <ol>
+                <li>To discuss physical characteristics (tall, short, thin, fat, red-headed, blonde, etc.) or characteristics that
+                    are of a long-term or permanent nature (occupation, role in family, etc.)</li>
+                <li>To discuss nationality, place of origin, or any other demographic fact about yourself</li>
+                <li>To reference time</li>
+            </ol>
             </div>
-            <div>
-                <table className="conjugation two">
-                <caption><em>-ir</em> verb endings<br/>
-                        Present Simple - Indicative</caption>
-                    <thead>
-                        </thead>
-                        <tbody>
-                        <tr>
-                            <td colSpan="2" lang="es">-o</td>
-                            <td colSpan="2" lang="es">-imos</td>
-                        </tr>
-                        <tr>
-                            <td lang="es" style={{backgroundColor: "#f1bf00"}}>-es</td>
-                            <td lang="es-419" style={{backgroundColor: "lightskyblue"}}>-ís</td>                    
-                            <td colSpan="2" style={{backgroundColor: "#b81140"}} lang="es">-ís</td>
-                        </tr>
-                        <tr>
-                            <td colSpan="2" lang="es"><span style={{color: "#006341"}}>-e</span></td>
-                            <td colSpan="2" lang="es"><span style={{color: "#006341"}}>-en</span></td>
-                        </tr>
-                        </tbody>
-                </table>
+            <div className="two box">
+            <p>Use <em lang="es">estar</em> as the Spanish verb for the English equivalent <em>to be</em> in the following cases:</p>
+            <ol>
+                <li>To discuss emotions or other temporary characteristics (sick, confused, etc.)</li>
+                <li>To discuss a person's geographic location</li>
+                <li>To use the present progressive tense (which will be discussed in a later section)</li>
+            </ol>
             </div>
         </div>
-        <p>Just as we did with <em lang="es">hablar</em>, let's conjugate the regular verbs <em lang="es">comer</em> or <em>to eat </em>
-        and <em lang="es">abrir</em> or <em>to open</em>.</p>
+        <h3>The Conjugation of <em lang="es">Estar</em>:</h3>
+        <p>Here are the conjugations of the two verbs in Spanish that signify <em>to be</em> in English:</p>
         <div className="grid">
-            <div>
-                <table className="conjugation one">
-                <caption><em>comer</em><br/>
+            <table className="conjugation one">
+                    <caption><em>ser</em><br/>
                         Present Simple - Indicative</caption>
                     <thead>
                         
-                        </thead>
-                        <tbody>
+                    </thead>
+                    <tbody>
                         <tr>
-                            <td colSpan="2" lang="es">como</td>
-                            <td colSpan="2" lang="es">comemos</td>
+                            <td colSpan="2" lang="es">soy</td>
+                            <td colSpan="2" lang="es">somos</td>
                         </tr>
                         <tr>
-                            <td lang="es" style={{backgroundColor: "#f1bf00"}}>comes</td>
-                            <td lang="es-419" style={{backgroundColor: "lightskyblue"}}>comés</td>                    
-                            <td colSpan="2" style={{backgroundColor: "#b81140"}} lang="es">coméis</td>
+                            <td lang="es" style={{backgroundColor: "#f1bf00"}}>eres</td>
+                            <td lang="es-419" style={{backgroundColor: "lightskyblue"}}>sos</td>                    
+                            <td colSpan="2" style={{backgroundColor: "#b81140"}} lang="es">sois</td>
                         </tr>
                         <tr>
-                            <td colSpan="2" lang="es"><span style={{color: "#006341"}}>come</span></td>
-                            <td colSpan="2" lang="es"><span style={{color: "#006341"}}>comen</span></td>
+                            <td colSpan="2" lang="es"><span style={{color: "#006341"}}>es</span></td>
+                            <td colSpan="2" lang="es"><span style={{color: "#006341"}}>son</span></td>
                         </tr>
                         </tbody>
-                </table>
-            </div>
-            <div>
-                <table className="conjugation two">
-                <caption><em>abrir</em><br/>
+            </table>
+            <table className="conjugation two">
+                        <caption><em>estar</em><br/>
                         Present Simple - Indicative</caption>
                     <thead>
-                        </thead>
-                        <tbody>
+                        
+                    </thead>
+                    <tbody>
                         <tr>
-                            <td colSpan="2" lang="es">abro</td>
-                            <td colSpan="2" lang="es">abrimos</td>
+                            <td colSpan="2" lang="es">estoy</td>
+                            <td colSpan="2" lang="es">estamos</td>
                         </tr>
                         <tr>
-                            <td lang="es" style={{backgroundColor: "#f1bf00"}}>abres</td>
-                            <td lang="es-419" style={{backgroundColor: "lightskyblue"}}>abrís</td>                    
-                            <td colSpan="2" style={{backgroundColor: "#b81140"}} lang="es">abrís</td>
+                            <td lang="es" style={{backgroundColor: "#f1bf00"}}>estás</td>
+                            <td lang="es-419" style={{backgroundColor: "lightskyblue"}}>estás</td>                    
+                            <td colSpan="2" style={{backgroundColor: "#b81140"}} lang="es">estáis</td>
                         </tr>
                         <tr>
-                            <td colSpan="2" lang="es"><span style={{color: "#006341"}}>abre</span></td>
-                            <td colSpan="2" lang="es"><span style={{color: "#006341"}}>abren</span></td>
+                            <td colSpan="2" lang="es"><span style={{color: "#006341"}}>está</span></td>
+                            <td colSpan="2" lang="es"><span style={{color: "#006341"}}>están</span></td>
                         </tr>
                         </tbody>
                 </table>
-            </div>
         </div>
-        <p>Knowing these verb conjugations may seem simple at first, but they actually open up doors to conjugation of several 
-            verbs in the Spanish language.</p>
-        <p>That being said, notice that throughout our lessons so far on verbs, we've been very specific on defining these conjugations
-            as being relevant to the Present tense only, and we've been even more specific than that.  The Spanish language actually has 
-            various moods of verbs, and the conjugations we've been looking at are specific to the Indicative mood.  You don't need to 
-            worry about that for now.  Just know that you can now construct several basic sentences using your name, pronouns, and regular 
-            verbs:</p>
-        <p className="example">
-            <em lang="es">Vivo en Chicago.</em> = I live in Chicago.<br/>
-            <em lang="es" style={{color: "#f1bf00"}}>Los sábados, comes huevos.</em> = On Saturdays, you eat eggs.<br/>
-            <em lang="es-419" style={{color: "lightskyblue"}}>Hablás español.</em> = You speak Spanish.<br/>
-            <em lang="es">Ella abre la puerta.</em> = She opens the door.<br/>
-            <em lang="es">Amamos a nuestros padres.</em> = We love our parents.<br/>
-            <em lang="es" style={{color: "#b81140"}}>Teméis la verdad.</em> = You fear the truth.<br/>
-            <em lang="es">Ellos aprenden bien.</em> = They learn well.<br/> 
+        <p>Notice that most forms of the conjugated verb <em lang="es">estar</em> have accents on the letter <em>á</em>.  These 
+        are NOT optional in writing or in speech.  In fact, not including them with the words above will result in a completely 
+        different word in the Spanish language!</p>
+        <p>Let's take a look at how we can use both verbs to describe someone.  The adjective <em>kind</em> or <em lang="es">amable</em>
+        in Spanish describes a permanent characteristic of one's personality, so it should be used with the verb <em lang="es">ser</em>,
+        while the adjective <em>sad</em> or <em lang="es">triste</em> in Spanish describes a temporary emotion, so it should be used 
+        with the verb <em lang="es">estar</em>.</p>
+        <div className="grid">
+                <p className="example one" lang="es"><em>Soy</em> amable.<br/>
+                    <span style={{color: "#f1bf00"}}><em>Eres</em> amable.</span><br/>
+                    <span style={{color: "lightskyblue"}}><em lang="es-419">Sos</em> amable.</span><br/>
+                    Él <em>es</em> amable.<br/>
+                    Ella <em>es</em> amable.<br/>
+                    Elle <em>es</em> amable.<br/>
+                    <span style={{color: "#006341"}}>Usted <em>es</em> amable.</span><br/>
+                    <em>Somos</em> amables.<br/>
+                    <span style={{color: "#b81140"}}><em>Sois</em> amables.</span><br/>
+                    Ellos <em>son</em> amables.<br/>
+                    Ellas <em>son</em> amables.<br/>
+                    Elles <em>son</em> amables.<br/>
+                    <span style={{color: "#006341"}}>Ustedes <em>son</em> amables.</span></p>
+                <p className="example two" lang="es"><em>Estoy</em> triste.<br/>
+                    <span style={{color: "#f1bf00"}}>Tú <em>estás</em> triste.</span><br/>
+                    <span style={{color: "lightskyblue"}}>Vos <em lang="es-419">estás</em> triste.</span><br/>
+                    Él <em>está</em> triste.<br/>
+                    Ella <em>está</em> triste.<br/>
+                    Elle <em>está</em> triste.<br/>
+                    <span style={{color: "#006341"}}>Usted <em>está</em> triste.</span><br/>
+                    <em>Somos</em> tristes.<br/>
+                    <span style={{color: "#b81140"}}><em>Sois</em> tristes.</span><br/>
+                    Ellos <em>son</em> tristes.<br/>
+                    Ellas <em>son</em> tristes.<br/>
+                    Elles <em>son</em> tristes.<br/>
+                    <span style={{color: "#006341"}}>Ustedes <em>son</em> tristes.</span></p>
+        </div>
+        <h3>Changing the Meaning with <em lang="es">Ser</em> and <em lang="es">Estar</em>:</h3>
+        <p>Some adjectives will actually change in meaning depending on which verb you choose to use with them.  For example, the
+            base adjective associated with both <em>bored</em> and <em>boring</em> is <em lang="es">aburrido</em>.  Depending on
+            which verb we use, we convey the meaning we desire:
         </p>
-        <p>The last example above comes from the verb <em>aprender</em>, which is a regular <em>-er</em> verb.  As you can see above,
-        it follows the standard pattern of conjugation.</p>
-        <p>For all this discussion about "regular" verbs in Spanish, just as in English, there are <strong>several</strong> verbs that are irregular.  
-            The next lesson will look at how to conjugate the most common of these in the Present Indicative.</p>  
+            <div className="grid">
+                <p className="example one">
+                    Ze <em>is</em> boring. =<br/>
+                    <span lang="es">Elle <em>es</em> aburride.</span>
+                </p>
+                <p className="example two">
+                    Ze <em>is</em> bored. =<br/>
+                    <span lang="es">Elle <em>está</em> aburride.</span>
+                </p>
+            </div>
+        <p>Another adjective this occurs with is the base adjective for <em>drunk</em>: <em lang="es">borracho</em>:</p>
+        <div className="grid">
+            <p className="example one">
+                He <em>is</em> a drunk. =<br/>
+                <span lang="es">Él <em>es</em> borracho.</span>
+            </p>
+            <p className="example two">
+                He <em>is</em> drunk (right now). =<br/>
+                <span lang="es">Él <em>está</em> borracho.</span>
+            </p>
+        </div>
+        <h3><em lang="es">Ser</em>, <em lang="es">Estar</em>, and Gendered Adjectives:</h3>
+        <p>Now that you can conjugate <em lang="es">ser</em> and <em lang="es">estar</em>, you can now combine these verbs with 
+        the appropriate adjectives in order to have yourself desribed appropriately according to your gender identity.  In the following 
+        example box, while the pronoun changes, it is always referencing you the user of this web page based on the gender pronoun 
+        you entered on the home page.  We'll use the Spanish base adjective <em lang="es">divertido</em>, which when used with 
+        <em lang="es">ser</em> means <em>fun</em> and when used with <em lang="es">estar</em> means <em lang="es">funny</em>.</p>
+        <div className="grid">
+            <p className="example one" id="ser-gender">{serMessage}</p>
+            <p className="example two" id="estar-gender">{estarMessage}</p>
+        </div>
+        <p>Feel free to play around with the option to change your gender identity using the <u>Edit Profile</u> button at the top of the page if you would like 
+        to see these sentences for people with other gender identities.</p>
+        <p>Now that we've conjugated the two Spanish verbs we use in place of <em>to be</em>, we should look at verb conjugation 
+        in general.  That will be featured in the next lesson.</p>    
           </div>
-          <Link className="next-link" exact="true" to="/lessons/7">Commonly Used Irregular Verbs →</Link>
+          <Link className="next-link" exact="true" to="/lessons/7">Regular Verbs in the Present Indicative →</Link>
       </div>
     );
   }

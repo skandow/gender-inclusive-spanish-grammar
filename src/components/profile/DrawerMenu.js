@@ -28,6 +28,7 @@ import Lesson6 from '../lessons/Lesson6'
 import Lesson7 from '../lessons/Lesson7'
 import Lesson8 from '../lessons/Lesson8'
 import Lesson9 from '../lessons/Lesson9'
+import Lesson10 from '../lessons/Lesson10'
 
 const drawerWidth = 240;
 
@@ -104,7 +105,7 @@ export default function DrawerMenu() {
         </div>
         <Divider />
         <List style={{backgroundColor: "lightskyblue"}}>
-          {['Lesson 1', 'Lesson 2', 'Lesson 3', 'Lesson 4'].map((text, index) => (
+          {['Lesson 1', 'Lesson 2', 'Lesson 3', 'Lesson 4', 'Lesson 5'].map((text, index) => (
             <Link className="menu-link" key={text} to={"/" + text.toLowerCase().replace(" ", "s/")}>
               <ListItem button  key={text}>
                 <ListItemText primary={text} />
@@ -114,7 +115,7 @@ export default function DrawerMenu() {
         </List>
         <Divider />
         <List style={{backgroundColor: "lightskyblue"}}>
-          {['Lesson 5', 'Lesson 6', 'Lesson 7', 'Lesson 8', 'Lesson 9', 'Lesson 10'].map((text, index) => (
+          {['Lesson 6', 'Lesson 7', 'Lesson 8', 'Lesson 9', 'Lesson 10'].map((text, index) => (
             <Link className="menu-link" key={text} to={"/" + text.toLowerCase().replace(" ", "s/")}>
               <ListItem button  key={text}>
                 <ListItemText primary={text} />
@@ -170,6 +171,9 @@ export default function DrawerMenu() {
           </Route>
           <Route exact path="/lessons/9">
             <Lesson9 />
+          </Route>
+          <Route exact path="/lessons/10">
+            <Lesson10 />
           </Route>
           <Route exact path="/home">
             <Profile />

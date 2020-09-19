@@ -1,124 +1,210 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { useSelector } from 'react-redux';
+import { HashLink } from 'react-router-hash-link'
 
 function Lesson4() {
-    const user = useSelector(state => state.user)
-    let subjectPronoun
-    if (user.preferred_pronouns.substr(0, 2) === "he") {
-        subjectPronoun = "él"
-    } else if (user.preferred_pronouns.substr(0, 3) === "she") {
-        subjectPronoun = "ella"
-    } else {
-        subjectPronoun = "elle"
-    }
-
     return (
       <div className="lesson">
           <div style={{color: "#006341"}}>
-          <h1>Adjectives</h1>
+          <h1>Nouns</h1>
           <hr style={{border: "2px solid #006341"}}></hr>
           </div>
           <div style={{textAlign: "left"}}>
-          <h3>Adjectives With Singular Nouns:</h3>
-        <p id="par-1">Adjectives are another component of Spanish grammar that rely on gender and number to determine ending.  Let's take a look 
-            at how adjectives transform depending on the nouns they are connected to.  Let's begin with describing "the tall friend" depending
-            on the friend's gender.
+          <h3>Nouns Have Gender:</h3>
+        <p>As you have seen already, gender greatly influences the choice of pronoun, but gender
+            also plays a major role when looking at common nouns as well.</p>
+        <p> All Spanish nouns have gender, and knowing the gender of a Spanish noun is important to understanding
+            how to use articles and adjectives with it, in addition to understanding what pronouns can be used 
+            to replace it.</p>
+        <p>When learning new nouns, these are often presented with their definite article, the equivalent
+            of the English word "the" when learning the following words in English:
+        </p>
+        <p className="example">the man<br/>
+        the woman<br/>
+        the genderqueer person<br/>
+        the men<br/>
+        the women<br/>
+        the genderqueer people</p>
+        <p> they would appear this way in Spanish:</p>
+        <p className="example">el hombre<br/>
+        la mujer<br/>
+        le genderqueer<br/>
+        los hombres<br/>
+        las mujeres<br/>
+        les genderqueers<br/>
+        </p>
+        <p>In this example, the gender of each noun is obvious based on the label, but when using adjectives
+            and articles, it's important to keep track of whether the noun is singular or plural as well.
+        </p>
+        <table className="gender">
+        <caption>Characteristics of Nouns - Gender and Number</caption>
+            <thead>
+                <tr>
+                    <td>&nbsp;</td>
+                    <th scope="col">Masculine</th>
+                    <th scope="col">Feminine</th>
+                    <th scope="col">Gender Neutral</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">Singular</th>
+                    <td lang="es">el hombre</td>
+                    <td lang="es">la mujer</td>
+                    <td lang="es">le genderqueer</td>
+                </tr>
+                <tr>
+                    <th scope="row">Plural</th>
+                    <td lang="es">los hombres</td>
+                    <td lang="es">las mujeres</td>
+                    <td lang="es">les genderqueers</td>
+                </tr>
+            </tbody>
+        </table>    
+        <h3>The Definite Article:</h3>
+        <p>Notice that while English only has one definite article - <em>the</em> - non-binary Spanish 
+        has six (and actually, there is one more, which will be discussed in a later lesson)!  
+        To determine which definite article to use, you must know the gender of the noun it's 
+        assigned to: </p>
+        <table className="gender">
+        <caption>Spanish Definite Articles</caption>
+            <thead>
+                
+                <tr>
+                    <td>&nbsp;</td>
+                    <th scope="col">Masculine</th>
+                    <th scope="col">Feminine</th>
+                    <th scope="col">Gender Neutral</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">Singular</th>
+                    <td lang="es">el</td>
+                    <td lang="es">la</td>
+                    <td lang="es">le</td>
+                </tr>
+                <tr>
+                    <th scope="row">Plural</th>
+                    <td lang="es">los</td>
+                    <td lang="es">las</td>
+                    <td lang="es">les</td>
+                </tr>
+            </tbody>
+        </table>
+        <p>This is one of the many reasons why knowing the gender of a Spanish noun is essential when 
+            learning it.
+        </p>
+        <h3>Spanish Nouns, Gender, and Roles in Family:</h3>
+        <p>Many Spanish nouns are similar in appearance, but their ending determines the gender of the person 
+            fulfilling the role in a particular situation.  For example, the Spanish word for "cousin" changes
+            depending on the gender of the person:
         </p>
         <p className="example">
-            the (male) tall friend = <em lang="es">el amigo alto</em><br/>
-            the (female) tall friend = <em lang="es">la amiga alta</em><br/>
-            the (non-binary) tall friend = <em lang="es">le amigue alte</em>
+            <em lang="es">primo</em> = the male cousin<br/>
+            <em lang="es">prima</em> = the female cousin<br/> 
+            <em lang="es">prime</em> = the gender neutral cousin
         </p>
-        <p>Let's look at what happened here.  First, you should remember from the last lesson that the word for friend is 
-            <em lang="es">amigo, amiga,</em> or <em lang="es">amigue</em> depending on the gender of the person, and that
-            <em lang="es">el, la, </em> and <em lang="es">le</em> are our definite articles, so if we translate this sentence
-            literally in its word order from Spanish to English, it would read as: <em>the friend tall</em></p>
-        <p>This illustrates the first rule you should remember when using Spanish adjectives: almost all adjectives must appear
-            after the noun they describe instead of before.
+        <p>This is true of many words related to family and friends, such as:</p>
+        <p className="example">grandparent = <em lang="es">abuelo/abuela/abuele</em><br/>
+        child = <em lang="es">hijo/hija/hije</em><br/>
+        sibling = <em lang="es">hermano/hermana/hermane</em><br/>
+        siblings of your parents = <em lang="es">tío/tía/tíe</em><br/>
+        children of your siblings = <em lang="es">sobrino/sobrina/sobrine</em><br/>
+        grandchild = <em lang="es">nieto/nieta/niete</em><br/>
+        sibling-in-law = <em lang="es">cuñado/cuñada/cuñade</em><br/>
+        spouse = <em lang="es">esposo/esposa/espose</em><br/>
+        significant other = <em lang="es">novio/novia/novie</em><br/>
+        friend = <em lang="es">amigo/amiga/amigue</em> <sup><HashLink className="footnote-link" exact="true" to="/lessons/4#footnote-2">*</HashLink></sup></p>
+        <p className="footnote" id="footnote-2"><sup>*</sup> Note the spelling change required for the word <em lang="es">amigue </em> 
+            here.  This is because in order to preserve the <em>/g/</em> sound when it is followed by the letter
+            <em>e</em>, the letter <em>u</em> must be added in between the two.
         </p>
-        <p>The other item of note is the ending.  Like the word <em lang="es">amigo</em>, the adjective <em lang="es">alto</em> 
-        changes depending on the gender of the person to whom you are referring.  This is true for all adjectives ending with the 
-        letter <em>-o</em>.  When referring to a feminine person (or a feminine noun in general), if the adjective ends in <em>-o</em>,
-        that letter must be changed to an <em>-a</em>.  Similarly, when referring to a non-binary person, if the adjective ends in 
-        <em>-o</em>, that letter should be changed to an <em>-e</em>.</p>
-        <p>The above rule <strong>only</strong> applies consistently, however, if the base adjective ends in <em>-o</em>, if the base adjective 
-        ends in any other letter (besides <em>-a</em>), the adjective will likely not change no matter what the gender of the person or noun 
-        is.</p>
-        <p>For example if I were to talk about my intelligent friend:</p>
+        <h3>Other Nouns Based on Gender:</h3>
+        <dl>
+            <dt>Other Words to Describe People:</dt>
+            <dd>Depending on where you are in the Spanish-speaking world, the following words could
+                relate to young people or just people in general:
+                <p className="example">
+                    boy/man = <em lang="es">muchacho/chico</em><br/>
+                    girl/woman = <em lang="es">muchacha/chica</em><br/>
+                    genderqueer child/adult = <em lang="es">muchache/chique</em> <sup><HashLink className="footnote-link" exact="true" to="/lessons/4#footnote-3">*</HashLink></sup>
+                </p>
+                These words are typically reserved for young children:
+                <p className="example">
+                    young boy = <em lang="es">niño</em><br/>
+                    young girl = <em lang="es">niña</em><br/>
+                    young genderqueer person = <em lang="es">niñe</em>
+                </p>
+                <p className="footnote" id="footnote-3"><sup>*</sup> Note once again that there is a spelling 
+                change required for the word <em lan="es">chique</em> here.  This is because in order to 
+                preserve the <em>/k/</em> sound when it is followed by the letter <em>e</em>, the letter <em>u</em>
+                must be added in between the two.</p>
+            </dd>
+            <dt>Professions:</dt>  
+            <dd>A similar rule exists for people of a particular gender that work in certain professions, though 
+                the rules that connect gender and ending here are a bit different.<br/>
+                For example, the word for "engineer" can appear in three different forms depending on the gender of the 
+                person in the occupation:
+                <p className="example">
+                    the male engineer = <em lang="es">el ingeniero</em><br/>
+                    the female engineer = <em lang="es">la ingeniera</em><br/>
+                    the genderqueer engineer = <em lang="es">le ingeniere</em>
+                </p>
+                When learning the vocabulary to describe your occupation, check the definite article and ending used to confirm you are referencing
+                yourself (or someone else) with the correct word.
+            </dd>
+            <dt>Groups of People</dt>
+            <dd><p>As we saw with plural object pronouns, the endings used for the various gendered forms of 
+                <em lang="es"> nosotros</em>, <em lang="es" style={{color: "#b81140"}}>vosotros</em>, and
+                <em lang="es"> ellos</em> depend on the collective genders of the inviduals in these groups,
+                with the masculine form of the pronoun being used if the group is a mixed-gender group according
+                to official Spanish grammar.</p>
+                <p>The same is true for groups of the types of individuals we've discussed,
+                so if you have a mixed-gender group of children, the plural word used would be <em lang="es">chicos </em>
+                or <em lang="es">muchachos</em>.  As with applying this rule to subject pronouns, though, there is
+                precent for using the <em>-es</em> plural endings of these words if you sense the presence of a non-binary 
+                or genderqueer individual or you do not wish to use the masculine pronoun as the default plural for a 
+                mixed-gender group.</p>
+            </dd>
+        </dl>
+        <h3>Other Spanish Nouns:</h3>
+        <p>The above nouns were rather simple in determining their gender.  Men identify with masculine 
+            pronouns, so the gender of the words <em lang="es">hombre</em> and <em lang="es">hombres </em>
+            is masculine, the gender of the words <em lang="es">mujer</em> and <em lang="es">mujeres </em>
+            is feminine, and the gender of the words <em lang="es">genderqueer</em> and <em lang="es">genderqueers </em>
+            is gender neutral.
+        </p>
+        <p>Remember, however, that <strong>all</strong> Spanish nouns have gender so for objects that aren't 
+        alive or don't have an identifiable gender, you will have to memorize their gender when learning the noun.
+        For example:</p>
         <p className="example">
-                the (male) intelligent friend = <em lang="es">el amigo inteligente</em><br/>
-                the (female) intelligent friend = <em lang="es">la amiga inteligente</em><br/>
-                the (non-binary) intelligent friend = <em lang="es">le amigue inteligente</em>
+            the bathroom<br/>
+            the swimming pool
         </p>
-        <p>the final letter would not change.  Similarly, if I were to talk about my young friend:</p>
-        <p className="example">
-                the (male) young friend = <em lang="es">el amigo joven</em><br/>
-                the (female) young friend = <em lang="es">la amiga joven</em><br/>
-                the (non-binary) young friend = <em lang="es">le amigue joven</em>
+        <p>are both nouns that don't have a clear gender, but when we learn their equivalents in Spanish:</p>
+        <p className="example" lang="es">
+            el baño<br/>
+            la piscina
         </p>
-        <p>the final letter would not change here either.</p>
-        <p>There are some base adjectives that <strong>do</strong> end in consonants in which the letter <em>-a</em> must be 
-        added to the feminine form.  If I talk about my Spanish friend:</p>
-        <p className="example">
-                the (male) Spanish friend = <em lang="es">el amigo español</em><br/>
-                the (female) Spanish friend = <em lang="es">la amiga española</em><br/>
-                the (non-binary) Spanish friend = <em lang="es">le amigue españole</em>
+        <p>we see that they do have an assigned gender.  The word <em lang="es">baño</em> is masculine and 
+        the word <em lang="es">piscina</em> is feminine.</p>
+        <p>And if we talk about multiple bathrooms or swimming pools, we need to change the definite 
+            article again:
         </p>
-        <p>I need to add the <em>-a</em> for the feminine form.  There isn't a hard and fast rule for the non-binary singular form of 
-        adjectives such as these, but the above example provides one option for modifying the adjective appropriately.</p>
-        <h3>Adjectives With Plural Nouns:</h3>
-        <p>Unlike English adjectives, Spanish adjectives also change depending on if they describe singular or plural nouns.
-            Let's look at how this affects discussing our friends who are tall, intelligent, young, and Spanish.
+        <p className="example" lang="es">
+            los baños<br/>
+            las piscinas<br/>
         </p>
-        <div className="grid">
-        <p className="example one">
-            the (all-male or mixed group of) tall friends =<br/> <em lang="es">los amigos altos</em><br/>
-            the (all-female) tall friends =<br/> <em lang="es">las amigas altas</em><br/>
-            the (non-binary) tall friends =<br/> <em lang="es">les amigues altes</em></p>
-        <p className="example two">
-            the (all-male or mixed group of) intelligent friends =<br/> <em lang="es">los amigos inteligentes</em><br/>
-            the (all-female) intelligent friends =<br/> <em lang="es">las amigas inteligentes</em><br/>
-            the (non-binary) intelligent friends =<br/> <em lang="es">les amigues inteligentes</em></p>
-        </div>
-        <div className="grid">
-        <p className="example one">
-            the (all-male or mixed group of) young friends =<br/> <em lang="es">los amigos jovenes</em><br/>
-            the (all-female) young friends =<br/> <em lang="es">las amigas jovenes</em><br/>
-            the (non-binary) young friends =<br/> <em lang="es">les amigues jovenes</em></p>
-        <p className="example two">
-            the (all-male or mixed group of) Spanish friends =<br/> <em lang="es">los amigos españoles</em><br/>
-            the (all-female) Spanish friends =<br/> <em lang="es">las amigas españolas</em><br/>
-            the (non-binary) Spanish friends =<br/> <em lang="es">les amigues españoles</em>
-        </p></div>
-        <p>There are two basic rules here:
-            <ol>
-                <li>If the base adjective ends in a vowel (after taking gender into consideration if applicable), add the letter <em>-s</em> 
-                    if the adjective describes a plural noun.</li>
-                <li>If the base adjective ends in a consonant (after taking gender into consideration if applicable), 
-                    add the letters <em>-es</em>.</li> 
-            </ol>
+        <p>There isn't a hard and fast rule for identifying the gender of a Spanish noun by looking at it,
+            but typically, Spanish nouns that end with "o" are masculine, while Spanish nouns that end with 
+            "a" are feminine, but there are even exceptions to this rule.  The best plan when learning a new
+            Spanish noun is to find it with its definite article.  As we will see in the next section, though,
+            the type of adjective used with these nouns can also provide clues to their gender.
         </p>
-        <h3>A Review of Part 1:</h3>
-        <p>At this point, you now have several ways to attach gender to your Spanish speaking skills:
-            <ol>
-                <li className="text-center-parent">You can provide the subject pronoun <span style={{border: "1px solid black", padding: "2px"}}>{subjectPronoun}</span> as the one by which you would like to be referenced:
-                    {/* <p id="subject-pronoun">{subjectPronoun}</p> */}
-                </li>
-                <li>You can use the correct nouns to describe:
-                    <ul>
-                        <li>yourself</li>
-                        <li>your role amongst family and friends</li>
-                        <li>your occupation</li>
-                    </ul>
-                </li>
-                <li>You can use the correct adjectives to describe yourself using the verb <em lang="es">ser</em>.</li>
-            </ol>
-        </p>
-        <p>However, <em lang="es">ser</em> is not the only verb in the Spanish language to connect nouns to adjectives.  We'll
-        begin Part 2 with a look at another verb used with adjectives: the verb <em lang="es">estar</em>.</p>           
           </div>
-          <Link className="next-link" exact="true" to="/lessons/5">The Verb <em>Estar</em> →</Link>
+          {/* <Link style={{display: "inline-block"}} className="next-link" exact="true" to="/quizzes/4">Take Quiz!</Link> */}
+          <Link style={{display: "inline-block"}} className="next-link" exact="true" to="/lessons/5">Adjectives →</Link>
       </div>
     );
   }

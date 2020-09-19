@@ -4,213 +4,121 @@ import { useSelector } from 'react-redux';
 
 function Lesson5() {
     const user = useSelector(state => state.user)
-    let serMessage 
-    let estarMessage 
+    let subjectPronoun
     if (user.preferred_pronouns.substr(0, 2) === "he") {
-        serMessage = 'He is fun. = Él es divertido.'
-        estarMessage = 'He is funny. = Él está divertido.'
+        subjectPronoun = "él"
     } else if (user.preferred_pronouns.substr(0, 3) === "she") {
-        serMessage = 'She is fun. = Ella es divertida.'
-        estarMessage = 'She is funny. = Ella está divertida.'
+        subjectPronoun = "ella"
     } else {
-        serMessage = 'Ze is fun. = Elle es divertide.'
-        estarMessage = 'Ze is funny. = Elle está divertide.'
+        subjectPronoun = "elle"
     }
-    
+
     return (
       <div className="lesson">
           <div style={{color: "#006341"}}>
-          <h1>The Verb <em lang="es">Estar</em></h1>
+          <h1>Adjectives</h1>
           <hr style={{border: "2px solid #006341"}}></hr>
           </div>
           <div style={{textAlign: "left"}}>
-          <h3>"To Be" or... "To Be"...?:</h3>
-        <p>In an earlier lesson, we learned about the verb <em lang="es">ser</em>.  To review:
-        </p> 
-        <div>
-            <table className="conjugation">
-            <caption><em>ser</em><br/>
-                    Present Simple - Indicative</caption>
-                <thead>
-                    
-                </thead>
-                <tbody>
-                    <tr>
-                        <td colSpan="2" lang="es">soy</td>
-                        <td colSpan="2" lang="es">somos</td>
-                    </tr>
-                    <tr>
-                        <td lang="es" style={{backgroundColor: "#f1bf00"}}>eres</td>
-                        <td lang="es-419" style={{backgroundColor: "lightskyblue"}}>sos</td>                    
-                        <td colSpan="2" style={{backgroundColor: "#b81140"}} lang="es">sois</td>
-                    </tr>
-                    <tr>
-                        <td colSpan="2" lang="es"><span style={{color: "#006341"}}>es</span></td>
-                        <td colSpan="2" lang="es"><span style={{color: "#006341"}}>son</span></td>
-                    </tr>
-                    </tbody>
-            </table>
-        </div>
-        <p>In the Spanish language, however, there are actually two verbs that translate to the English verb <em>to be</em>.  The
-            first is the above verb <em lang="es">ser</em>.  The second is <em lang="es">estar</em>.  Let's take a look at a few
-            different contexts in which these verbs are used:</p>
-            <div className="grid">
-                <p className="example one">
-                    She is tall. =<br/> <em lang="es">Ella es alta.</em><br/><br/>
-                    I am from the United States. =<br/> <em lang="es">Soy de los Estados Unidos.</em><br/><br/>
-                    It's 6:45. =<br/> <em lang="es">Son las siete menos cuarto.</em></p>
-                <p className="example two">
-                    Eric is happy. =<br/> <em lang="es">Eric está feliz.</em><br/><br/>
-                    We are at home. =<br/> <em lang="es">Nosotres estamos en casa.</em><br/><br/>
-                    They are cleaning the bathroom. =<br/> <em lang="es">Ellos están limpiando el baño.</em></p>
-                </div>
-            <p>The above examples represent the broadest use of <em lang="es">ser</em> and <em lang="es">estar</em> in comparison
-            with the English verb <em>to be</em>.</p>
-        <div className="grid">
-            <div className="one box">
-            <p>Use <em lang="es">ser</em> as the Spanish verb for the English equivalent <em>to be</em> 
-            in the following cases:</p>
-            <ol>
-                <li>To discuss physical characteristics (tall, short, thin, fat, red-headed, blonde, etc.) or characteristics that
-                    are of a long-term or permanent nature (occupation, role in family, etc.)</li>
-                <li>To discuss nationality, place of origin, or any other demographic fact about yourself</li>
-                <li>To reference time</li>
-            </ol>
-            </div>
-            <div className="two box">
-            <p>Use <em lang="es">estar</em> as the Spanish verb for the English equivalent <em>to be</em> in the following cases:</p>
-            <ol>
-                <li>To discuss emotions or other temporary characteristics (sick, confused, etc.)</li>
-                <li>To discuss a person's geographic location</li>
-                <li>To use the present progressive tense (which will be discussed in a later section)</li>
-            </ol>
-            </div>
-        </div>
-        <h3>The Conjugation of <em lang="es">Estar</em>:</h3>
-        <p>Here are the conjugations of the two verbs in Spanish that signify <em>to be</em> in English:</p>
-        <div className="grid">
-            <table className="conjugation one">
-                    <caption><em>ser</em><br/>
-                        Present Simple - Indicative</caption>
-                    <thead>
-                        
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td colSpan="2" lang="es">soy</td>
-                            <td colSpan="2" lang="es">somos</td>
-                        </tr>
-                        <tr>
-                            <td lang="es" style={{backgroundColor: "#f1bf00"}}>eres</td>
-                            <td lang="es-419" style={{backgroundColor: "lightskyblue"}}>sos</td>                    
-                            <td colSpan="2" style={{backgroundColor: "#b81140"}} lang="es">sois</td>
-                        </tr>
-                        <tr>
-                            <td colSpan="2" lang="es"><span style={{color: "#006341"}}>es</span></td>
-                            <td colSpan="2" lang="es"><span style={{color: "#006341"}}>son</span></td>
-                        </tr>
-                        </tbody>
-            </table>
-            <table className="conjugation two">
-                        <caption><em>estar</em><br/>
-                        Present Simple - Indicative</caption>
-                    <thead>
-                        
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td colSpan="2" lang="es">estoy</td>
-                            <td colSpan="2" lang="es">estamos</td>
-                        </tr>
-                        <tr>
-                            <td lang="es" style={{backgroundColor: "#f1bf00"}}>estás</td>
-                            <td lang="es-419" style={{backgroundColor: "lightskyblue"}}>estás</td>                    
-                            <td colSpan="2" style={{backgroundColor: "#b81140"}} lang="es">estáis</td>
-                        </tr>
-                        <tr>
-                            <td colSpan="2" lang="es"><span style={{color: "#006341"}}>está</span></td>
-                            <td colSpan="2" lang="es"><span style={{color: "#006341"}}>están</span></td>
-                        </tr>
-                        </tbody>
-                </table>
-        </div>
-        <p>Notice that most forms of the conjugated verb <em lang="es">estar</em> have accents on the letter <em>á</em>.  These 
-        are NOT optional in writing or in speech.  In fact, not including them with the words above will result in a completely 
-        different word in the Spanish language!</p>
-        <p>Let's take a look at how we can use both verbs to describe someone.  The adjective <em>kind</em> or <em lang="es">amable</em>
-        in Spanish describes a permanent characteristic of one's personality, so it should be used with the verb <em lang="es">ser</em>,
-        while the adjective <em>sad</em> or <em lang="es">triste</em> in Spanish describes a temporary emotion, so it should be used 
-        with the verb <em lang="es">estar</em>.</p>
-        <div className="grid">
-                <p className="example one" lang="es"><em>Soy</em> amable.<br/>
-                    <span style={{color: "#f1bf00"}}><em>Eres</em> amable.</span><br/>
-                    <span style={{color: "lightskyblue"}}><em lang="es-419">Sos</em> amable.</span><br/>
-                    Él <em>es</em> amable.<br/>
-                    Ella <em>es</em> amable.<br/>
-                    Elle <em>es</em> amable.<br/>
-                    <span style={{color: "#006341"}}>Usted <em>es</em> amable.</span><br/>
-                    <em>Somos</em> amables.<br/>
-                    <span style={{color: "#b81140"}}><em>Sois</em> amables.</span><br/>
-                    Ellos <em>son</em> amables.<br/>
-                    Ellas <em>son</em> amables.<br/>
-                    Elles <em>son</em> amables.<br/>
-                    <span style={{color: "#006341"}}>Ustedes <em>son</em> amables.</span></p>
-                <p className="example two" lang="es"><em>Estoy</em> triste.<br/>
-                    <span style={{color: "#f1bf00"}}>Tú <em>estás</em> triste.</span><br/>
-                    <span style={{color: "lightskyblue"}}>Vos <em lang="es-419">estás</em> triste.</span><br/>
-                    Él <em>está</em> triste.<br/>
-                    Ella <em>está</em> triste.<br/>
-                    Elle <em>está</em> triste.<br/>
-                    <span style={{color: "#006341"}}>Usted <em>está</em> triste.</span><br/>
-                    <em>Somos</em> tristes.<br/>
-                    <span style={{color: "#b81140"}}><em>Sois</em> tristes.</span><br/>
-                    Ellos <em>son</em> tristes.<br/>
-                    Ellas <em>son</em> tristes.<br/>
-                    Elles <em>son</em> tristes.<br/>
-                    <span style={{color: "#006341"}}>Ustedes <em>son</em> tristes.</span></p>
-        </div>
-        <h3>Changing the Meaning with <em lang="es">Ser</em> and <em lang="es">Estar</em>:</h3>
-        <p>Some adjectives will actually change in meaning depending on which verb you choose to use with them.  For example, the
-            base adjective associated with both <em>bored</em> and <em>boring</em> is <em lang="es">aburrido</em>.  Depending on
-            which verb we use, we convey the meaning we desire:
+          <h3>Adjectives With Singular Nouns:</h3>
+        <p id="par-1">Adjectives are another component of Spanish grammar that rely on gender and number to determine ending.  Let's take a look 
+            at how adjectives transform depending on the nouns they are connected to.  Let's begin with describing "the tall friend" depending
+            on the friend's gender.
         </p>
-            <div className="grid">
-                <p className="example one">
-                    Ze <em>is</em> boring. =<br/>
-                    <span lang="es">Elle <em>es</em> aburride.</span>
-                </p>
-                <p className="example two">
-                    Ze <em>is</em> bored. =<br/>
-                    <span lang="es">Elle <em>está</em> aburride.</span>
-                </p>
-            </div>
-        <p>Another adjective this occurs with is the base adjective for <em>drunk</em>: <em lang="es">borracho</em>:</p>
+        <p className="example">
+            the (male) tall friend = <em lang="es">el amigo alto</em><br/>
+            the (female) tall friend = <em lang="es">la amiga alta</em><br/>
+            the (non-binary) tall friend = <em lang="es">le amigue alte</em>
+        </p>
+        <p>Let's look at what happened here.  First, you should remember from the last lesson that the word for friend is 
+            <em lang="es">amigo, amiga,</em> or <em lang="es">amigue</em> depending on the gender of the person, and that
+            <em lang="es">el, la, </em> and <em lang="es">le</em> are our definite articles, so if we translate this sentence
+            literally in its word order from Spanish to English, it would read as: <em>the friend tall</em></p>
+        <p>This illustrates the first rule you should remember when using Spanish adjectives: almost all adjectives must appear
+            after the noun they describe instead of before.
+        </p>
+        <p>The other item of note is the ending.  Like the word <em lang="es">amigo</em>, the adjective <em lang="es">alto</em> 
+        changes depending on the gender of the person to whom you are referring.  This is true for all adjectives ending with the 
+        letter <em>-o</em>.  When referring to a feminine person (or a feminine noun in general), if the adjective ends in <em>-o</em>,
+        that letter must be changed to an <em>-a</em>.  Similarly, when referring to a non-binary person, if the adjective ends in 
+        <em>-o</em>, that letter should be changed to an <em>-e</em>.</p>
+        <p>The above rule <strong>only</strong> applies consistently, however, if the base adjective ends in <em>-o</em>, if the base adjective 
+        ends in any other letter (besides <em>-a</em>), the adjective will likely not change no matter what the gender of the person or noun 
+        is.</p>
+        <p>For example if I were to talk about my intelligent friend:</p>
+        <p className="example">
+                the (male) intelligent friend = <em lang="es">el amigo inteligente</em><br/>
+                the (female) intelligent friend = <em lang="es">la amiga inteligente</em><br/>
+                the (non-binary) intelligent friend = <em lang="es">le amigue inteligente</em>
+        </p>
+        <p>the final letter would not change.  Similarly, if I were to talk about my young friend:</p>
+        <p className="example">
+                the (male) young friend = <em lang="es">el amigo joven</em><br/>
+                the (female) young friend = <em lang="es">la amiga joven</em><br/>
+                the (non-binary) young friend = <em lang="es">le amigue joven</em>
+        </p>
+        <p>the final letter would not change here either.</p>
+        <p>There are some base adjectives that <strong>do</strong> end in consonants in which the letter <em>-a</em> must be 
+        added to the feminine form.  If I talk about my Spanish friend:</p>
+        <p className="example">
+                the (male) Spanish friend = <em lang="es">el amigo español</em><br/>
+                the (female) Spanish friend = <em lang="es">la amiga española</em><br/>
+                the (non-binary) Spanish friend = <em lang="es">le amigue españole</em>
+        </p>
+        <p>I need to add the <em>-a</em> for the feminine form.  There isn't a hard and fast rule for the non-binary singular form of 
+        adjectives such as these, but the above example provides one option for modifying the adjective appropriately.</p>
+        <h3>Adjectives With Plural Nouns:</h3>
+        <p>Unlike English adjectives, Spanish adjectives also change depending on if they describe singular or plural nouns.
+            Let's look at how this affects discussing our friends who are tall, intelligent, young, and Spanish.
+        </p>
         <div className="grid">
-            <p className="example one">
-                He <em>is</em> a drunk. =<br/>
-                <span lang="es">Él <em>es</em> borracho.</span>
-            </p>
-            <p className="example two">
-                He <em>is</em> drunk (right now). =<br/>
-                <span lang="es">Él <em>está</em> borracho.</span>
-            </p>
+        <p className="example one">
+            the (all-male or mixed group of) tall friends =<br/> <em lang="es">los amigos altos</em><br/>
+            the (all-female) tall friends =<br/> <em lang="es">las amigas altas</em><br/>
+            the (non-binary) tall friends =<br/> <em lang="es">les amigues altes</em></p>
+        <p className="example two">
+            the (all-male or mixed group of) intelligent friends =<br/> <em lang="es">los amigos inteligentes</em><br/>
+            the (all-female) intelligent friends =<br/> <em lang="es">las amigas inteligentes</em><br/>
+            the (non-binary) intelligent friends =<br/> <em lang="es">les amigues inteligentes</em></p>
         </div>
-        <h3><em lang="es">Ser</em>, <em lang="es">Estar</em>, and Gendered Adjectives:</h3>
-        <p>Now that you can conjugate <em lang="es">ser</em> and <em lang="es">estar</em>, you can now combine these verbs with 
-        the appropriate adjectives in order to have yourself desribed appropriately according to your gender identity.  In the following 
-        example box, while the pronoun changes, it is always referencing you the user of this web page based on the gender pronoun 
-        you entered on the home page.  We'll use the Spanish base adjective <em lang="es">divertido</em>, which when used with 
-        <em lang="es">ser</em> means <em>fun</em> and when used with <em lang="es">estar</em> means <em lang="es">funny</em>.</p>
         <div className="grid">
-            <p className="example one" id="ser-gender">{serMessage}</p>
-            <p className="example two" id="estar-gender">{estarMessage}</p>
-        </div>
-        <p>Feel free to play around with the option to change your gender identity using the <u>Edit Profile</u> button at the top of the page if you would like 
-        to see these sentences for people with other gender identities.</p>
-        <p>Now that we've conjugated the two Spanish verbs we use in place of <em>to be</em>, we should look at verb conjugation 
-        in general.  That will be featured in the next lesson.</p>    
+        <p className="example one">
+            the (all-male or mixed group of) young friends =<br/> <em lang="es">los amigos jovenes</em><br/>
+            the (all-female) young friends =<br/> <em lang="es">las amigas jovenes</em><br/>
+            the (non-binary) young friends =<br/> <em lang="es">les amigues jovenes</em></p>
+        <p className="example two">
+            the (all-male or mixed group of) Spanish friends =<br/> <em lang="es">los amigos españoles</em><br/>
+            the (all-female) Spanish friends =<br/> <em lang="es">las amigas españolas</em><br/>
+            the (non-binary) Spanish friends =<br/> <em lang="es">les amigues españoles</em>
+        </p></div>
+        <p>There are two basic rules here:
+            <ol>
+                <li>If the base adjective ends in a vowel (after taking gender into consideration if applicable), add the letter <em>-s</em> 
+                    if the adjective describes a plural noun.</li>
+                <li>If the base adjective ends in a consonant (after taking gender into consideration if applicable), 
+                    add the letters <em>-es</em>.</li> 
+            </ol>
+        </p>
+        <h3>A Review of Part 1:</h3>
+        <p>At this point, you now have several ways to attach gender to your Spanish speaking skills:
+            <ol>
+                <li className="text-center-parent">You can provide the subject pronoun <span style={{border: "1px solid black", padding: "2px"}}>{subjectPronoun}</span> as the one by which you would like to be referenced:
+                    {/* <p id="subject-pronoun">{subjectPronoun}</p> */}
+                </li>
+                <li>You can use the correct nouns to describe:
+                    <ul>
+                        <li>yourself</li>
+                        <li>your role amongst family and friends</li>
+                        <li>your occupation</li>
+                    </ul>
+                </li>
+                <li>You can use the correct adjectives to describe yourself using the verb <em lang="es">ser</em>.</li>
+            </ol>
+        </p>
+        <p>However, <em lang="es">ser</em> is not the only verb in the Spanish language to connect nouns to adjectives.  We'll
+        begin Part 2 with a look at another verb used with adjectives: the verb <em lang="es">estar</em>.</p>           
           </div>
-          <Link className="next-link" exact="true" to="/lessons/6">Regular Verbs in the Present Indicative →</Link>
+          <Link className="next-link" exact="true" to="/lessons/6">The Verb <em>Estar</em> →</Link>
       </div>
     );
   }
