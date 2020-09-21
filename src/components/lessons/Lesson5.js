@@ -102,8 +102,7 @@ function Lesson5() {
         <h3>A Review of Part 1:</h3>
         <p>At this point, you now have several ways to attach gender to your Spanish speaking skills:
             <ol>
-                <li className="text-center-parent">You can provide the subject pronoun <span style={{border: "1px solid black", padding: "2px"}}>{subjectPronoun}</span> as the one by which you would like to be referenced:
-                    {/* <p id="subject-pronoun">{subjectPronoun}</p> */}
+                <li className="text-center-parent">You can provide the subject pronoun <span style={{border: "1px solid black", padding: "2px"}}>{subjectPronoun}</span> as the one by which you would like to be referenced.
                 </li>
                 <li>You can use the correct nouns to describe:
                     <ul>
@@ -118,7 +117,8 @@ function Lesson5() {
         <p>However, <em lang="es">ser</em> is not the only verb in the Spanish language to connect nouns to adjectives.  We'll
         begin Part 2 with a look at another verb used with adjectives: the verb <em lang="es">estar</em>.</p>           
           </div>
-          <Link className="next-link" exact="true" to="/lessons/6">The Verb <em>Estar</em> →</Link>
+          <Link style={{display: "inline-block"}} className="next-link" exact="true" to="/quizzes/5">Take Quiz!</Link>
+          <Link style={{display: "inline-block"}} className="next-link" exact="true" to="/lessons/6">The Verb <em>Estar</em> →</Link>
       </div>
     );
   }

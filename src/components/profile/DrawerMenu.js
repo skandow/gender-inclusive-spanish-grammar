@@ -23,7 +23,9 @@ import Quiz2 from '../quizzes/Quiz2'
 import Lesson3 from '../lessons/Lesson3'
 import Quiz3 from '../quizzes/Quiz3'
 import Lesson4 from '../lessons/Lesson4'
+import Quiz4 from '../quizzes/Quiz4'
 import Lesson5 from '../lessons/Lesson5'
+import Quiz5 from '../quizzes/Quiz5'
 import Lesson6 from '../lessons/Lesson6'
 import Lesson7 from '../lessons/Lesson7'
 import Lesson8 from '../lessons/Lesson8'
@@ -157,8 +159,14 @@ export default function DrawerMenu() {
           <Route exact path="/lessons/4">
             <Lesson4 />
           </Route>
+          <Route exact path="/quizzes/4">
+            <Quiz4 />
+          </Route>
           <Route exact path="/lessons/5">
             <Lesson5 />
+          </Route>
+          <Route exact path="/quizzes/5">
+            <Quiz5 />
           </Route>
           <Route exact path="/lessons/6">
             <Lesson6 />

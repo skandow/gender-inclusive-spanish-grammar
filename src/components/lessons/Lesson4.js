@@ -203,7 +203,7 @@ function Lesson4() {
             the type of adjective used with these nouns can also provide clues to their gender.
         </p>
           </div>
-          {/* <Link style={{display: "inline-block"}} className="next-link" exact="true" to="/quizzes/4">Take Quiz!</Link> */}
+          <Link style={{display: "inline-block"}} className="next-link" exact="true" to="/quizzes/4">Take Quiz!</Link>
           <Link style={{display: "inline-block"}} className="next-link" exact="true" to="/lessons/5">Adjectives →</Link>
       </div>
     );
