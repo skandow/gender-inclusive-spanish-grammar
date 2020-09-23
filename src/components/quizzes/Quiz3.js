@@ -69,7 +69,7 @@ function Quiz3() {
                 <form onSubmit={handleSubmit}>
                 <h3>For each sentence, select the appropriate verb to fill in the blank.</h3>
                 <FormControl component="fieldset" className={classes.formControl}>
-                    <FormLabel component="legend" color="secondary" focused={focused}>1. Tú _____ bonita.</FormLabel>
+                    <FormLabel component="legend" color="secondary" focused={focused}>1. You are beautiful. - Tú _____ bonita.</FormLabel>
                     <RadioGroup aria-label="quiz" name="quiz" value={value1} onChange={e=>setValue1(e.target.value)}>
                         <FormControlLabel value="soy" control={<Radio />} label="soy" />
                         <FormControlLabel value="eres" control={<Radio />} label="eres" />
@@ -77,7 +77,7 @@ function Quiz3() {
                         <FormControlLabel value="es" control={<Radio />} label="es" />
                     </RadioGroup>
                     <hr />
-                    <FormLabel component="legend" color="secondary" focused={focused}>2. ¿Quién _____ usted?</FormLabel>
+                    <FormLabel component="legend" color="secondary" focused={focused}>2. Who are you? - ¿Quién _____ usted?</FormLabel>
                     <RadioGroup aria-label="quiz" name="quiz" value={value2} onChange={e=>setValue2(e.target.value)}>
                         <FormControlLabel value="somos" control={<Radio />} label="somos" />
                         <FormControlLabel value="sois" control={<Radio />} label="sois" />
@@ -85,7 +85,7 @@ function Quiz3() {
                         <FormControlLabel value="sos" control={<Radio />} label="sos" />
                     </RadioGroup>
                     <hr />
-                    <FormLabel component="legend" color="secondary" focused={focused}>3. Vosotres _____ muy divertides.</FormLabel>
+                    <FormLabel component="legend" color="secondary" focused={focused}>3. You're all fun. - Vosotres _____ muy divertides.</FormLabel>
                     <RadioGroup aria-label="quiz" name="quiz" value={value3} onChange={e=>setValue3(e.target.value)}>
                         <FormControlLabel value="sois" control={<Radio />} label="sois" />
                         <FormControlLabel value="son" control={<Radio />} label="son" />
@@ -93,7 +93,7 @@ function Quiz3() {
                         <FormControlLabel value="soy" control={<Radio />} label="soy" />
                     </RadioGroup>
                     <hr />
-                    <FormLabel component="legend" color="secondary" focused={focused}>4. Ellos _____ aburridos.</FormLabel>
+                    <FormLabel component="legend" color="secondary" focused={focused}>4. They're boring. - Ellos _____ aburridos.</FormLabel>
                     <RadioGroup aria-label="quiz" name="quiz" value={value4} onChange={e=>setValue4(e.target.value)}>
                         <FormControlLabel value="es" control={<Radio />} label="es" />
                         <FormControlLabel value="son" control={<Radio />} label="son" />
@@ -101,7 +101,7 @@ function Quiz3() {
                         <FormControlLabel value="somos" control={<Radio />} label="somos" />
                     </RadioGroup>
                     <hr />
-                    <FormLabel component="legend" color="secondary" focused={focused}>5. Yo _____ estadiounidense.</FormLabel>
+                    <FormLabel component="legend" color="secondary" focused={focused}>5. I am from the United States. - Yo _____ estadiounidense.</FormLabel>
                     <RadioGroup aria-label="quiz" name="quiz" value={value5} onChange={e=>setValue5(e.target.value)}>
                         <FormControlLabel value="soy" control={<Radio />} label="soy" />
                         <FormControlLabel value="eres" control={<Radio />} label="eres" />
@@ -109,7 +109,7 @@ function Quiz3() {
                         <FormControlLabel value="sois" control={<Radio />} label="sois" />
                     </RadioGroup>
                     <hr />
-                    <FormLabel component="legend" color="secondary" focused={focused}>6. Vos _____ alta. </FormLabel>
+                    <FormLabel component="legend" color="secondary" focused={focused}>6. You are tall. - Vos _____ alta. </FormLabel>
                     <RadioGroup aria-label="quiz" name="quiz" value={value6} onChange={e=>setValue6(e.target.value)}>
                         <FormControlLabel value="somos" control={<Radio />} label="somos" />
                         <FormControlLabel value="sos" control={<Radio />} label="sos" />
@@ -117,7 +117,7 @@ function Quiz3() {
                         <FormControlLabel value="soy" control={<Radio />} label="soy" />
                     </RadioGroup>
                     <hr />
-                    <FormLabel component="legend" color="secondary" focused={focused}>7. ¿De dónde _____ ustedes? </FormLabel>
+                    <FormLabel component="legend" color="secondary" focused={focused}>7. Where are you from? - ¿De dónde _____ ustedes? </FormLabel>
                     <RadioGroup aria-label="quiz" name="quiz" value={value7} onChange={e=>setValue7(e.target.value)}>
                         <FormControlLabel value="son" control={<Radio />} label="son" />
                         <FormControlLabel value="sos" control={<Radio />} label="sos" />
@@ -125,7 +125,7 @@ function Quiz3() {
                         <FormControlLabel value="eres" control={<Radio />} label="eres" />
                     </RadioGroup>
                     <hr />
-                    <FormLabel component="legend" color="secondary" focused={focused}>8. Eric _____ interesante, ¿no? </FormLabel>
+                    <FormLabel component="legend" color="secondary" focused={focused}>8. Eric is interesting, don't you think? - Eric _____ interesante, ¿no? </FormLabel>
                     <RadioGroup aria-label="quiz" name="quiz" value={value8} onChange={e=>setValue8(e.target.value)}>
                         <FormControlLabel value="sois" control={<Radio />} label="sois" />
                         <FormControlLabel value="eres" control={<Radio />} label="eres" />
@@ -141,7 +141,7 @@ function Quiz3() {
         <h2>{percentage ? `You got ${score} out of 8 correct. Percentage: ${percentage}` : null}</h2>
       </div>
       <Link style={{display: "inline-block"}} className="next-link" exact="true" to="/lessons/3">Return to This Lesson</Link>
-      <Link style={{display: "inline-block"}} className="next-link" exact="true" to="/lessons/4">Next Lesson: Spanish Subject Pronouns →</Link>
+      <Link style={{display: "inline-block"}} className="next-link" exact="true" to="/lessons/4">Next Lesson: Nouns →</Link>
       </div>
     )
 }

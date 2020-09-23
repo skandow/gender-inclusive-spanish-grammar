@@ -117,7 +117,7 @@ function Quiz4() {
         <h2>{percentage ? `You got ${score} out of 6 correct. Percentage: ${percentage}` : null}</h2>
       </div>
       <Link style={{display: "inline-block"}} className="next-link" exact="true" to="/lessons/4">Return to This Lesson</Link>
-      <Link style={{display: "inline-block"}} className="next-link" exact="true" to="/lessons/5">Next Lesson: Spanish Subject Pronouns →</Link>
+      <Link style={{display: "inline-block"}} className="next-link" exact="true" to="/lessons/5">Next Lesson: Adjectives →</Link>
       </div>
     )
 }

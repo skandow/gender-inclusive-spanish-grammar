@@ -137,7 +137,7 @@ function Lesson6() {
         <p>Notice that most forms of the conjugated verb <em lang="es">estar</em> have accents on the letter <em>á</em>.  These 
         are NOT optional in writing or in speech.  In fact, not including them with the words above will result in a completely 
         different word in the Spanish language!</p>
-        <p>Let's take a look at how we can use both verbs to describe someone.  The adjective <em>kind</em> or <em lang="es">amable</em>
+        <p>Let's take a look at how we can use both verbs to describe someone.  The adjective <em>kind</em> or <em lang="es">amable </em>
         in Spanish describes a permanent characteristic of one's personality, so it should be used with the verb <em lang="es">ser</em>,
         while the adjective <em>sad</em> or <em lang="es">triste</em> in Spanish describes a temporary emotion, so it should be used 
         with the verb <em lang="es">estar</em>.</p>
@@ -210,7 +210,8 @@ function Lesson6() {
         <p>Now that we've conjugated the two Spanish verbs we use in place of <em>to be</em>, we should look at verb conjugation 
         in general.  That will be featured in the next lesson.</p>    
           </div>
-          <Link className="next-link" exact="true" to="/lessons/7">Regular Verbs in the Present Indicative →</Link>
+          <Link style={{display: "inline-block"}} className="next-link" exact="true" to="/quizzes/6">Take Quiz!</Link>
+          <Link style={{display: "inline-block"}} className="next-link" exact="true" to="/lessons/7">Regular Verbs in the Present Indicative →</Link>
       </div>
     );
   }

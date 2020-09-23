@@ -45,7 +45,7 @@ function Lesson1() {
         </p>
           </div>
           <Link style={{display: "inline-block"}} className="next-link" exact="true" to="/quizzes/1">Take Quiz!</Link>
-          <Link style={{display: "inline-block"}} className="next-link" exact="true" to="/lessons/2">Next Lesson: Spanish Subject Pronouns →</Link>
+          <Link style={{display: "inline-block"}} className="next-link" exact="true" to="/lessons/2">Next Lesson: Subject Pronouns →</Link>
       </div>
     );
   }
