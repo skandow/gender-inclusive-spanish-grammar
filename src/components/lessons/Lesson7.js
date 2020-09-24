@@ -119,7 +119,7 @@ function Lesson7() {
         </div>
         </div>
         <p>Notice that while there are three very different words in the <em>to be</em> chart (<em>am</em>, <em>are</em>, and <em>is</em>)
-            there is only one minor change in the other three charts.  For regular present tense verbs in the English language, an <em>-s</em>
+            there is only one minor change in the other three charts.  For regular present tense verbs in the English language, an <em>-s </em>
             is added to the end of the third-person singular form only.  The rest of the verbs are the infinitive minus the preposition <em>to</em>.</p>
         <h3>Spanish Verb Endings:</h3>
         <p>Now let's take a look at the conjugations of <em>to love</em>, <em>to fear</em>, and <em>to live</em> in Spanish, which
@@ -387,7 +387,8 @@ function Lesson7() {
         <p>For all this discussion about "regular" verbs in Spanish, just as in English, there are <strong>several</strong> verbs that are irregular.  
             The next lesson will look at how to conjugate the most common of these in the Present Indicative.</p>  
           </div>
-          <Link className="next-link" exact="true" to="/lessons/8">Commonly Used Irregular Verbs →</Link>
+          <Link style={{display: "inline-block"}} className="next-link" exact="true" to="/quizzes/7">Take Quiz!</Link>
+          <Link style={{display: "inline-block"}} className="next-link" exact="true" to="/lessons/8">Commonly Used Irregular Verbs →</Link>
       </div>
     );
   }
