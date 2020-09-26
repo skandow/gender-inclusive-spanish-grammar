@@ -179,7 +179,7 @@ function Lesson9() {
                     <td>to die</td>
                     <td lang="es">morir</td>
                     <td lang="es">muerto</td>
-                    <td>dead</td>
+                    <td>died</td>
                 </tr>
                 <tr>
                     <td>to put</td>
@@ -263,7 +263,8 @@ function Lesson9() {
             of stem-changing verbs.
         </p>
           </div>
-          <Link className="next-link" exact="true" to="/lessons/10">Stem-Changing Verbs →</Link>
+          <Link style={{display: "inline-block"}} className="next-link" exact="true" to="/quizzes/9">Take Quiz!</Link>
+          <Link style={{display: "inline-block"}} className="next-link" exact="true" to="/lessons/10">Stem-Changing Verbs →</Link>
       </div>
     );
   }
