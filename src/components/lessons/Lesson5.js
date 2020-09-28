@@ -91,16 +91,15 @@ function Lesson5() {
             the (all-female) Spanish friends =<br/> <em lang="es">las amigas españolas</em><br/>
             the (non-binary) Spanish friends =<br/> <em lang="es">les amigues españoles</em>
         </p></div>
-        <p>There are two basic rules here:
+        <p>There are two basic rules here:</p>
             <ol>
                 <li>If the base adjective ends in a vowel (after taking gender into consideration if applicable), add the letter <em>-s</em> 
                     if the adjective describes a plural noun.</li>
                 <li>If the base adjective ends in a consonant (after taking gender into consideration if applicable), 
                     add the letters <em>-es</em>.</li> 
             </ol>
-        </p>
         <h3>A Review of Part 1:</h3>
-        <p>At this point, you now have several ways to attach gender to your Spanish speaking skills:
+        <p>At this point, you now have several ways to attach gender to your Spanish speaking skills:</p>
             <ol>
                 <li className="text-center-parent">You can provide the subject pronoun <span style={{border: "1px solid black", padding: "2px"}}>{subjectPronoun}</span> as the one by which you would like to be referenced.
                 </li>
@@ -113,7 +112,6 @@ function Lesson5() {
                 </li>
                 <li>You can use the correct adjectives to describe yourself using the verb <em lang="es">ser</em>.</li>
             </ol>
-        </p>
         <p>However, <em lang="es">ser</em> is not the only verb in the Spanish language to connect nouns to adjectives.  We'll
         begin Part 2 with a look at another verb used with adjectives: the verb <em lang="es">estar</em>.</p>           
           </div>

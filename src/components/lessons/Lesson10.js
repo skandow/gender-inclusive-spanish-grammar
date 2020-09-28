@@ -259,6 +259,8 @@ function Lesson10() {
             a solid basis to explore these other forms.  Part 3 will explore the concept of pronouns further in depth.
         </p>
           </div>
+          <Link style={{display: "inline-block"}} className="next-link" exact="true" to="/quizzes/10">Take Quiz!</Link>
+          <Link style={{display: "inline-block"}} className="next-link" exact="true" to="/lessons/11">Next Lesson →</Link>
       </div>
     );
   }

@@ -184,15 +184,15 @@ function Quiz9() {
                     />
                     <hr />
           <Button type="submit" variant="outlined" color="primary" className={classes.button}>
-            Check Answer
+            Check Answers
           </Button>
         </FormControl>
       </form> 
       <div className="score">
         <h2>{percentage ? `You got ${score} out of 12 correct. Percentage: ${percentage}` : null}</h2>
       </div>
-      <Link style={{display: "inline-block"}} className="next-link" exact="true" to="/lessons/8">Return to This Lesson</Link>
-      <Link style={{display: "inline-block"}} className="next-link" exact="true" to="/lessons/9">Next Lesson: Stem-Changing Verbs →</Link>
+      <Link style={{display: "inline-block"}} className="next-link" exact="true" to="/lessons/9">Return to This Lesson</Link>
+      <Link style={{display: "inline-block"}} className="next-link" exact="true" to="/lessons/10">Next Lesson: Stem-Changing Verbs →</Link>
       </div>
     )
 }

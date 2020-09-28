@@ -84,7 +84,7 @@ function Quiz1() {
                         <FormControlLabel value="Possessive pronoun" control={<Radio />} label="Possessive pronoun" />
                     </RadioGroup>
           <Button type="submit" variant="outlined" color="primary" className={classes.button}>
-            Check Answer
+            Check Answers
           </Button>
         </FormControl>
       </form> 

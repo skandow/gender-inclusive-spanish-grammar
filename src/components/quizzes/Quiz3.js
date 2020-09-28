@@ -133,7 +133,7 @@ function Quiz3() {
                         <FormControlLabel value="es" control={<Radio />} label="es" />
                     </RadioGroup>
           <Button type="submit" variant="outlined" color="primary" className={classes.button}>
-            Check Answer
+            Check Answers
           </Button>
         </FormControl>
       </form> 

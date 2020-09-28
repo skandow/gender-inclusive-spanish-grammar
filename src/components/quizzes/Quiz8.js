@@ -151,7 +151,7 @@ function Quiz8() {
                     </RadioGroup>
                     <hr />
           <Button type="submit" variant="outlined" color="primary" className={classes.button}>
-            Check Answer
+            Check Answers
           </Button>
         </FormControl>
       </form> 
