@@ -5,6 +5,9 @@ import TextField from '@material-ui/core/TextField';
 import FormControl from '@material-ui/core/FormControl';
 import FormLabel from '@material-ui/core/FormLabel';
 import Button from '@material-ui/core/Button';
+import { useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
+import { loginUser } from '../../actions/user.js'
 
 const useStyles = makeStyles((theme) => ({
   formControl: {
@@ -17,6 +20,8 @@ const useStyles = makeStyles((theme) => ({
 
 function Quiz10() {
     const classes = useStyles()
+    const dispatch = useDispatch()
+    const user = useSelector(state => state.user)
     const [value1, setValue1] = React.useState('')
     const [value2, setValue2] = React.useState('')
     const [value3, setValue3] = React.useState('')
@@ -72,8 +77,39 @@ function Quiz10() {
             score += 1
         }
         setScore(score)
-        setPercentage(Math.round(score / 12 * 100) + "%")
-    }
+        const percentage = Math.round(score / 12 * 100) + "%"
+        setPercentage(percentage)
+        const token = localStorage.getItem("token")
+        const payload = { quiz_score: {
+          quiz: 10,
+          score: score,
+          percentage: percentage,
+          user_id: user.id
+        }
+        }
+        const thisQuiz = user.quiz_scores.find(score => score.quiz === 10)
+        let method 
+        let endURL 
+        if (!thisQuiz) {
+          method = "POST"
+          endURL = "" 
+        } else {
+          method = "PATCH"
+          endURL = `/${thisQuiz.id}`
+        }
+        const reqObj = {
+        method: method,
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${token}`
+        },
+        body: JSON.stringify(payload)
+      }
+        fetch(`http://localhost:3001/quiz_scores${endURL}`, reqObj)
+        .then(resp => resp.json())
+        .then(data => {
+          dispatch(loginUser(data.user.data.attributes))
+    })}
 
     const focused = true
 

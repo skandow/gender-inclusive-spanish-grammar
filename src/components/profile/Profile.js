@@ -12,6 +12,8 @@ function Profile() {
       greeting = "¡Bienvenide"
   }
 
+  console.log(user)
+
   return (
     <div className="profile">
         <div id="profile-info">
