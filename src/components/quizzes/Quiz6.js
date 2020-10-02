@@ -9,7 +9,7 @@ import FormLabel from '@material-ui/core/FormLabel';
 import Button from '@material-ui/core/Button';
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
-import { loginUser } from '../../actions/user.js'
+import { saveQuizScores } from '../../actions/quizScores.js'
 
 const useStyles = makeStyles((theme) => ({
   formControl: {
@@ -24,6 +24,7 @@ function Quiz6() {
     const classes = useStyles()
     const dispatch = useDispatch()
     const user = useSelector(state => state.user)
+    const quizScores = useSelector(state => state.quizScores)
     const [value1, setValue1] = React.useState('')
     const [value2, setValue2] = React.useState('')
     const [value3, setValue3] = React.useState('')
@@ -55,7 +56,7 @@ function Quiz6() {
         if (value5 === "estoy") {
             score += 1
         }
-        if (value6 === "estáis") {
+        if (value6 === "Estáis") {
             score += 1
         }
         if (value7 === "soy") {
@@ -64,7 +65,7 @@ function Quiz6() {
         if (value8 === "está") {
             score += 1
         }
-        if (value9 === "estás") {
+        if (value9 === "Estás") {
             score += 1
         }
         if (value10 === "somos") {
@@ -81,7 +82,7 @@ function Quiz6() {
           user_id: user.id
         }
         }
-        const thisQuiz = user.quiz_scores.find(score => score.quiz === 6)
+        const thisQuiz = quizScores.find(score => score.quiz === 6)
         let method 
         let endURL 
         if (!thisQuiz) {
@@ -102,7 +103,7 @@ function Quiz6() {
         fetch(`http://localhost:3001/quiz_scores${endURL}`, reqObj)
         .then(resp => resp.json())
         .then(data => {
-          dispatch(loginUser(data.user.data.attributes))
+          dispatch(saveQuizScores(data.user.data.attributes.quiz_scores))
     })}
 
     const focused = true
@@ -155,10 +156,10 @@ function Quiz6() {
                     <hr />
                     <FormLabel component="legend" color="secondary" focused={focused}>6. Are you in Spain? - ¿_____ en España vosotres? </FormLabel>
                     <RadioGroup aria-label="quiz" name="quiz" value={value6} onChange={e=>setValue6(e.target.value)}>
-                        <FormControlLabel value="estáis" control={<Radio />} label="estáis" />
-                        <FormControlLabel value="están" control={<Radio />} label="están" />
-                        <FormControlLabel value="estoy" control={<Radio />} label="estoy" />
-                        <FormControlLabel value="está" control={<Radio />} label="está" />
+                        <FormControlLabel value="Estáis" control={<Radio />} label="Estáis" />
+                        <FormControlLabel value="Están" control={<Radio />} label="Están" />
+                        <FormControlLabel value="Estoy" control={<Radio />} label="Estoy" />
+                        <FormControlLabel value="Está" control={<Radio />} label="Está" />
                     </RadioGroup>
                     <hr />
                     <h3>For each sentence, choose the correct form of the verb <em>ser</em> or <em>estar</em></h3>
@@ -176,8 +177,8 @@ function Quiz6() {
                     <hr />
                     <FormLabel component="legend" color="secondary" focused={focused}>9. Are you here? - ¿_____ aquí tú?</FormLabel>
                     <RadioGroup aria-label="quiz" name="quiz" value={value9} onChange={e=>setValue9(e.target.value)}>
-                        <FormControlLabel value="eres" control={<Radio />} label="eres" />
-                        <FormControlLabel value="estás" control={<Radio />} label="estás" />
+                        <FormControlLabel value="Eres" control={<Radio />} label="Eres" />
+                        <FormControlLabel value="Estás" control={<Radio />} label="Estás" />
                     </RadioGroup>
                     <hr />
                     <FormLabel component="legend" color="secondary" focused={focused}>10. We are children. - Nosotres _____ niñes.</FormLabel>

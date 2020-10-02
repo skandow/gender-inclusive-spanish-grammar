@@ -10,7 +10,7 @@ import FormLabel from '@material-ui/core/FormLabel';
 import Button from '@material-ui/core/Button';
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
-import { loginUser } from '../../actions/user.js'
+import { saveQuizScores } from '../../actions/quizScores.js'
 
 const useStyles = makeStyles((theme) => ({
   formControl: {
@@ -25,6 +25,7 @@ function Quiz9() {
     const classes = useStyles()
     const dispatch = useDispatch()
     const user = useSelector(state => state.user)
+    const quizScores = useSelector(state => state.quizScores)
     const [value1, setValue1] = React.useState('')
     const [value2, setValue2] = React.useState('')
     const [value3, setValue3] = React.useState('')
@@ -90,7 +91,7 @@ function Quiz9() {
           user_id: user.id
         }
         }
-        const thisQuiz = user.quiz_scores.find(score => score.quiz === 9)
+        const thisQuiz = quizScores.find(score => score.quiz === 9)
         let method 
         let endURL 
         if (!thisQuiz) {
@@ -111,7 +112,7 @@ function Quiz9() {
         fetch(`http://localhost:3001/quiz_scores${endURL}`, reqObj)
         .then(resp => resp.json())
         .then(data => {
-          dispatch(loginUser(data.user.data.attributes))
+          dispatch(saveQuizScores(data.user.data.attributes.quiz_scores))
     })}
 
     const focused = true
