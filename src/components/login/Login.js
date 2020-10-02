@@ -11,6 +11,7 @@ import Container from '@material-ui/core/Container';
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
 import { loginUser } from '../../actions/user.js'
+import { saveQuizScores } from '../../actions/quizScores.js';
 
 function Copyright() {
   return (
@@ -66,6 +67,7 @@ export default function Login() {
         .then(data => {
           console.log("Hello user", user)
           dispatch(loginUser(data.user.data.attributes))
+          dispatch(saveQuizScores(data.user.data.attributes.quiz_scores))
           console.log("Goodbye!", user)
     })
   }

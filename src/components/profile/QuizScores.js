@@ -1,6 +1,7 @@
 import React from 'react';
 import Container from '@material-ui/core/Container';
 import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { withStyles, makeStyles } from '@material-ui/core/styles';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
@@ -9,8 +10,6 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
-
-
 
 const StyledTableCell = withStyles((theme) => ({
     head: {
@@ -39,7 +38,7 @@ const StyledTableCell = withStyles((theme) => ({
   
 
 function QuizScores() {
-    const user = useSelector(state => state.user);
+    const quizScores = useSelector(state => state.quizScores);
     const classes = useStyles();
     
     function createData(quizNumber, score, percentage) {
@@ -49,7 +48,7 @@ function QuizScores() {
     function makeRows() {
         let quizArray = []
         for (let quizCounter = 1; quizCounter < 11; quizCounter++) {
-            const thisQuiz = user.quiz_scores.find(score => score.quiz === quizCounter)
+            const thisQuiz = quizScores.find(score => score.quiz === quizCounter)
             if (thisQuiz) {
                 let thisRow = createData(quizCounter, thisQuiz.score, thisQuiz.percentage)
                 quizArray.push(thisRow)
@@ -76,9 +75,9 @@ function QuizScores() {
                         </TableRow>
                     </TableHead>
                     <TableBody>
-                        {rows.map((row) => (
+                        {rows.map((row) => ( 
                         <StyledTableRow key={row.quizNumber}>
-                            <StyledTableCell component="th" scope="row">{row.quizNumber}</StyledTableCell>
+                            <StyledTableCell component="th" scope="row"><button style={{backgroundColor: "#006341", width: "10%"}}><Link style={{textDecoration: "none"}} to={`/quizzes/${row.quizNumber}`}>{row.quizNumber}</Link></button></StyledTableCell>
                             <StyledTableCell>{row.score}</StyledTableCell>
                             <StyledTableCell>{row.percentage}</StyledTableCell>
                         </StyledTableRow>
