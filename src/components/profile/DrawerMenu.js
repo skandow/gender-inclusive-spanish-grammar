@@ -37,6 +37,7 @@ import Lesson9 from '../lessons/Lesson9'
 import Quiz9 from '../quizzes/Quiz9'
 import Lesson10 from '../lessons/Lesson10'
 import Quiz10 from '../quizzes/Quiz10'
+import Lesson11 from '../lessons/Lesson11'
 
 const drawerWidth = 240;
 
@@ -137,9 +138,11 @@ export default function DrawerMenu() {
         <Divider />
         <List style={{backgroundColor: "lightskyblue"}}>
           {['Lesson 11', 'Lesson 12', 'Lesson 13', 'Lesson 14', 'Lesson 15'].map((text, index) => (
-            <ListItem button key={text}>
-              <ListItemText primary={text} />
-            </ListItem>
+             <Link className="menu-link" key={text} to={"/" + text.toLowerCase().replace(" ", "s/")}>
+              <ListItem button key={text}>
+                <ListItemText primary={text} />
+              </ListItem>
+            </Link>
           ))}
         </List>
       </Drawer>
@@ -206,6 +209,9 @@ export default function DrawerMenu() {
           </Route>
           <Route exact path="/quizzes/10">
             <Quiz10 />
+          </Route>
+          <Route exact path="/lessons/11">
+            <Lesson11 />
           </Route>
           <Route exact path="/home">
             <Profile />
