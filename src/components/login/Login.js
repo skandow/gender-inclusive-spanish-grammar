@@ -99,6 +99,7 @@ export default function Login() {
     .then(data => {
       localStorage.setItem("token", data.jwt);
       dispatch(loginUser(data.user.data.attributes))
+      dispatch(saveQuizScores(data.user.data.attributes.quiz_scores))
   }).catch(error => {
     setErrorMessage(error.message)
 })}

@@ -4,6 +4,7 @@ import ScrollToTop from '../higher_order/ScrollToTop'
 import { makeStyles } from '@material-ui/core/styles';
 import { useDispatch } from 'react-redux';
 import { logoutUser } from '../../actions/user.js';
+import { deleteQuizScores } from '../../actions/quizScores.js'
 import Button from '@material-ui/core/Button';
 import Drawer from '@material-ui/core/Drawer';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -38,6 +39,7 @@ import Quiz9 from '../quizzes/Quiz9'
 import Lesson10 from '../lessons/Lesson10'
 import Quiz10 from '../quizzes/Quiz10'
 import Lesson11 from '../lessons/Lesson11'
+import Lesson12 from '../lessons/Lesson12'
 
 const drawerWidth = 240;
 
@@ -77,7 +79,8 @@ export default function DrawerMenu() {
 
   const handleLogOut = () => {
     localStorage.removeItem('token');
-    dispatch(logoutUser())
+    dispatch(logoutUser());
+    dispatch(deleteQuizScores());
   }
 
   return (
@@ -212,6 +215,9 @@ export default function DrawerMenu() {
           </Route>
           <Route exact path="/lessons/11">
             <Lesson11 />
+          </Route>
+          <Route exact path="/lessons/12">
+            <Lesson12 />
           </Route>
           <Route exact path="/home">
             <Profile />
