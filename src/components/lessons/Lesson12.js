@@ -79,7 +79,7 @@ function Lesson12() {
              <p>Notice in the third sentence that there is another object pronoun - <em>me</em>. This is an <strong>indirect object pronoun</strong>,
              which we will cover in a later lesson.</p>
              <h3>Spanish Direct Object Pronouns</h3>
-             <p>Here is the chart of object pronouns in English. Compare this chart to the reflexive pronoun chart from the previous lesson.</p>
+             <p>Here is the chart of Spanish direct object pronouns. Compare this chart to the reflexive pronoun chart from the previous lesson.</p>
             <div>
                 <table>
                 <caption>Spanish Direct Object Pronouns</caption>
