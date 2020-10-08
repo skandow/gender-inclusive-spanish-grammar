@@ -5,6 +5,7 @@ import TextField from '@material-ui/core/TextField';
 import FormControl from '@material-ui/core/FormControl';
 import FormLabel from '@material-ui/core/FormLabel';
 import Button from '@material-ui/core/Button';
+import SpecialCharacters from './SpecialCharacters'
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
 import { saveQuizScores } from '../../actions/quizScores.js'
@@ -18,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function Quiz10() {
+function Quiz11() {
     const classes = useStyles()
     const dispatch = useDispatch()
     const user = useSelector(state => state.user)
@@ -31,64 +32,48 @@ function Quiz10() {
     const [value6, setValue6] = React.useState('')
     const [value7, setValue7] = React.useState('')
     const [value8, setValue8] = React.useState('')
-    const [value9, setValue9] = React.useState('')
-    const [value10, setValue10] = React.useState('')
-    const [value11, setValue11] = React.useState('')
-    const [value12, setValue12] = React.useState('')
     const [score, setScore] = React.useState('')
     const [percentage, setPercentage] = React.useState('')
 
     const handleSubmit = event => {
         event.preventDefault()
         let score = 0
-        if (value1 === "sirvo") {
+        if (value1.toLowerCase() === "te duchas") {
             score += 1
         }
-        if (value2 === "duermo") {
+        if (value2.toLowerCase() === "se preocupa") {
             score += 1
         }
-        if (value3 === "traigo") {
+        if (value3.toLowerCase() === "os acercáis") {
             score += 1 
         }
-        if (value4 === "persigo") {
+        if (value4.toLowerCase() === "me pongo") {
             score += 1
         }
-        if (value5 === "pierdo") {
+        if (value5.toLowerCase() === "se viste") {
             score += 1
         }
-        if (value6 === "empiezo") {
+        if (value6.toLowerCase() === "se levantan") {
             score += 1
         }
-        if (value7 === "almuerzo") {
+        if (value7.toLowerCase() === "nos besamos") {
             score += 1
         }
-        if (value8 === "supongo") {
-            score += 1
-        }
-        if (value9 === "exijo") {
-            score += 1
-        }
-        if (value10 === "protejo") {
-            score += 1
-        }
-        if (value11 === "hago") {
-            score += 1
-        }
-        if (value12 === "elijo") {
+        if (value8.toLowerCase() === "te atrevés") {
             score += 1
         }
         setScore(score)
-        const percentage = Math.round(score / 12 * 100) + "%"
+        const percentage = Math.round(score / 8 * 100) + "%"
         setPercentage(percentage)
         const token = localStorage.getItem("token")
         const payload = { quiz_score: {
-          quiz: 10,
+          quiz: 11,
           score: score,
           percentage: percentage,
           user_id: user.id
         }
         }
-        const thisQuiz = quizScores.find(score => score.quiz === 10)
+        const thisQuiz = quizScores.find(score => score.quiz === 11)
         let method 
         let endURL 
         if (!thisQuiz) {
@@ -116,11 +101,15 @@ function Quiz10() {
 
     return (
         <div>
-            <h1>Quiz 10: Stem-Changing Verbs</h1>
+            <h1>Quiz 11: Reflexive and Reciprocal Pronouns</h1>
                 <form onSubmit={handleSubmit}>
-                <h3>Given the infinitive (and the stem change if applicable), write the <em lang="es">yo</em> form of the verb</h3>
+                <h3>Given the verb infinitive and corresponding subject pronoun, write the correct reflexive/reciprocal verb and pronoun.<br/><br/> Use 
+                    the tool below to copy and paste special characters if you need them.
+                </h3>
+                <SpecialCharacters />
+                <hr />
                 <FormControl component="fieldset" className={classes.formControl}>
-                <FormLabel component="legend" color="secondary" focused={focused}>1. servir (e --{'>'} i) - to serve </FormLabel>
+                <FormLabel component="legend" color="secondary" focused={focused}>1. ducharse - tú</FormLabel>
                     <TextField
                         variant="outlined"
                         value={value1}
@@ -128,7 +117,7 @@ function Quiz10() {
                         style={{width: "100%", margin: "auto", marginTop: "2px"}}
                     />
                     <hr />
-                    <FormLabel component="legend" color="secondary" focused={focused}>2. dormir (o --{'>'} ue) - to sleep</FormLabel>
+                    <FormLabel component="legend" color="secondary" focused={focused}>2. preocuparse - ella</FormLabel>
                     <TextField
                         variant="outlined"
                         value={value2}
@@ -136,7 +125,7 @@ function Quiz10() {
                         style={{width: "100%", margin: "auto", marginTop: "2px"}}
                     />
                     <hr />
-                    <FormLabel component="legend" color="secondary" focused={focused}>3. traer - to bring</FormLabel>
+                    <FormLabel component="legend" color="secondary" focused={focused}>3. acercarse - vosotres</FormLabel>
                     <TextField
                         variant="outlined"
                         value={value3}
@@ -144,7 +133,7 @@ function Quiz10() {
                         style={{width: "100%", margin: "auto", marginTop: "2px"}}
                     />
                     <hr />
-                    <FormLabel component="legend" color="secondary" focused={focused}>4. perseguir (e --{'>'} i) - to pursue</FormLabel>
+                    <FormLabel component="legend" color="secondary" focused={focused}>4. ponerse - yo</FormLabel>
                     <TextField
                         variant="outlined"
                         value={value4}
@@ -152,7 +141,7 @@ function Quiz10() {
                         style={{width: "100%", margin: "auto", marginTop: "2px"}}
                     />
                     <hr />
-                    <FormLabel component="legend" color="secondary" focused={focused}>5. perder (e --{'>'} ie) - to lose, to miss</FormLabel>
+                    <FormLabel component="legend" color="secondary" focused={focused}>5. vestirse - elle</FormLabel>
                     <TextField
                         variant="outlined"
                         value={value5}
@@ -160,7 +149,7 @@ function Quiz10() {
                         style={{width: "100%", margin: "auto", marginTop: "2px"}}
                     />
                     <hr />
-                    <FormLabel component="legend" color="secondary" focused={focused}>6. empezar (e --{'>'} ie) - to begin</FormLabel>
+                    <FormLabel component="legend" color="secondary" focused={focused}>6. levantarse - ellas</FormLabel>
                     <TextField
                         variant="outlined"
                         value={value6}
@@ -168,7 +157,7 @@ function Quiz10() {
                         style={{width: "100%", margin: "auto", marginTop: "2px"}}
                     />
                     <hr />
-                    <FormLabel component="legend" color="secondary" focused={focused}>7. almorzar (o --{'>'} ue) - to eat breakfast</FormLabel>
+                    <FormLabel component="legend" color="secondary" focused={focused}>7. besarse - nosotros</FormLabel>
                     <TextField
                         variant="outlined"
                         value={value7}
@@ -176,43 +165,11 @@ function Quiz10() {
                         style={{width: "100%", margin: "auto", marginTop: "2px"}}
                     />
                     <hr />
-                    <FormLabel component="legend" color="secondary" focused={focused}>8. suponer - to suppose</FormLabel>
+                    <FormLabel component="legend" color="secondary" focused={focused}>8. atreverse - vos</FormLabel>
                     <TextField
                         variant="outlined"
                         value={value8}
                         onInput={e=>setValue8(e.target.value)}
-                        style={{width: "100%", margin: "auto", marginTop: "2px"}}
-                    />
-                    <hr />
-                    <FormLabel component="legend" color="secondary" focused={focused}>9. exigir - to demand</FormLabel>
-                    <TextField
-                        variant="outlined"
-                        value={value9}
-                        onInput={e=>setValue9(e.target.value)}
-                        style={{width: "100%", margin: "auto", marginTop: "2px"}}
-                    />
-                    <hr />
-                    <FormLabel component="legend" color="secondary" focused={focused}>10. proteger - to protect</FormLabel>
-                    <TextField
-                        variant="outlined"
-                        value={value10}
-                        onInput={e=>setValue10(e.target.value)}
-                        style={{width: "100%", margin: "auto", marginTop: "2px"}}
-                    />
-                    <hr />
-                    <FormLabel component="legend" color="secondary" focused={focused}>11. hacer - to do</FormLabel>
-                    <TextField
-                        variant="outlined"
-                        value={value11}
-                        onInput={e=>setValue11(e.target.value)}
-                        style={{width: "100%", margin: "auto", marginTop: "2px"}}
-                    />
-                    <hr />
-                    <FormLabel component="legend" color="secondary" focused={focused}>12. elegir (e --{'>'} i) - to choose</FormLabel>
-                    <TextField
-                        variant="outlined"
-                        value={value12}
-                        onInput={e=>setValue12(e.target.value)}
                         style={{width: "100%", margin: "auto", marginTop: "2px"}}
                     />
                     <hr />
@@ -222,12 +179,12 @@ function Quiz10() {
         </FormControl>
       </form> 
       <div className="score">
-        <h2>{percentage ? `You got ${score} out of 12 correct. Percentage: ${percentage}` : null}</h2>
+        <h2>{percentage ? `You got ${score} out of 8 correct. Percentage: ${percentage}` : null}</h2>
       </div>
-      <Link style={{display: "inline-block"}} className="next-link" exact="true" to="/lessons/10">Return to This Lesson</Link>
-      <Link style={{display: "inline-block"}} className="next-link" exact="true" to="/lessons/11">Next Lesson: Reflexive and Reciprocal Pronouns →</Link>
+      <Link style={{display: "inline-block"}} className="next-link" exact="true" to="/lessons/11">Return to This Lesson</Link>
+      <Link style={{display: "inline-block"}} className="next-link" exact="true" to="/lessons/12">Next Lesson: Direct Object Pronouns →</Link>
       </div>
     )
 }
 
-export default Quiz10
+export default Quiz11

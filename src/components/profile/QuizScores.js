@@ -47,7 +47,7 @@ function QuizScores() {
       
     function makeRows() {
         let quizArray = []
-        for (let quizCounter = 1; quizCounter < 11; quizCounter++) {
+        for (let quizCounter = 1; quizCounter < 12; quizCounter++) {
             const thisQuiz = quizScores.find(score => score.quiz === quizCounter)
             console.log(thisQuiz)
             if (thisQuiz) {
@@ -78,7 +78,7 @@ function QuizScores() {
                     <TableBody>
                         {rows.map((row) => ( 
                         <StyledTableRow key={row.quizNumber}>
-                            <StyledTableCell component="th" scope="row"><button style={{backgroundColor: "#006341", width: "10%"}}><Link style={{textDecoration: "none"}} to={`/quizzes/${row.quizNumber}`}>{row.quizNumber}</Link></button></StyledTableCell>
+                            <StyledTableCell component="th" scope="row"><button style={{backgroundColor: "#006341", width: "35px"}}><Link style={{textDecoration: "none"}} to={`/quizzes/${row.quizNumber}`}>{row.quizNumber}</Link></button></StyledTableCell>
                             <StyledTableCell>{row.score}</StyledTableCell>
                             <StyledTableCell>{row.percentage}</StyledTableCell>
                         </StyledTableRow>

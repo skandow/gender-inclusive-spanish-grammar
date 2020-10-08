@@ -102,7 +102,7 @@ function Quiz3() {
 
     return (
         <div>
-            <h1>Quiz 3: Subject Pronouns</h1>
+            <h1>Quiz 3: The Verb <em>Ser</em></h1>
                 <form onSubmit={handleSubmit}>
                 <h3>For each sentence, select the appropriate verb to fill in the blank.</h3>
                 <FormControl component="fieldset" className={classes.formControl}>
