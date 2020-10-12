@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function Quiz12() {
+function Quiz13() {
     const classes = useStyles()
     const dispatch = useDispatch()
     const user = useSelector(state => state.user)
@@ -32,48 +32,56 @@ function Quiz12() {
     const [value6, setValue6] = React.useState('')
     const [value7, setValue7] = React.useState('')
     const [value8, setValue8] = React.useState('')
+    const [value9, setValue9] = React.useState('')
+    const [value10, setValue10] = React.useState('')
     const [score, setScore] = React.useState('')
     const [percentage, setPercentage] = React.useState('')
 
     const handleSubmit = event => {
         event.preventDefault()
         let score = 0
-        if (value1.toLowerCase() === "te veo") {
+        if (value1.toLowerCase() === "le canta") {
             score += 1
         }
-        if (value2.toLowerCase() === "lo lee") {
+        if (value2.toLowerCase() === "os hablamos") {
             score += 1
         }
-        if (value3.toLowerCase() === "las cocinamos") {
+        if (value3.toLowerCase() === "nos escribe") {
             score += 1 
         }
-        if (value4.toLowerCase() === "la comés") {
+        if (value4.toLowerCase() === "les grito") {
             score += 1
         }
-        if (value5.toLowerCase() === "le aman") {
+        if (value5.toLowerCase() === "me leen") {
             score += 1
         }
-        if (value6.toLowerCase() === "os oye") {
+        if (value6.toLowerCase() === "me lo") {
             score += 1
         }
-        if (value7.toLowerCase() === "los abrazo") {
+        if (value7.toLowerCase() === "te las") {
             score += 1
         }
-        if (value8.toLowerCase() === "nos miráis") {
+        if (value8.toLowerCase() === "nos la") {
+            score += 1
+        }
+        if (value9.toLowerCase() === "se los") {
+            score += 1
+        }
+        if (value10.toLowerCase() === "se lo") {
             score += 1
         }
         setScore(score)
-        const percentage = Math.round(score / 8 * 100) + "%"
+        const percentage = Math.round(score / 10 * 100) + "%"
         setPercentage(percentage)
         const token = localStorage.getItem("token")
         const payload = { quiz_score: {
-          quiz: 12,
+          quiz: 13,
           score: score,
           percentage: percentage,
           user_id: user.id
         }
         }
-        const thisQuiz = quizScores.find(score => score.quiz === 12)
+        const thisQuiz = quizScores.find(score => score.quiz === 13)
         let method 
         let endURL 
         if (!thisQuiz) {
@@ -101,16 +109,16 @@ function Quiz12() {
 
     return (
         <div>
-            <h1>Quiz 12: Direct Object Pronouns</h1>
+            <h1>Quiz 13: Indirect Object Pronouns</h1>
                 
-                <h3>Given the English sentence, Spanish object gender, if applicable, and Spanish verb infinitive, write the direct object pronoun and conjugated verb in Spanish.<br/><br/> Use 
+                <h3>Given the English sentence, Spanish object gender, if applicable, and Spanish verb infinitive, write the indirect object pronoun and conjugated verb in Spanish.<br/><br/> Use 
                     the tool below to copy and paste special characters if you need them.
                 </h3>
                 <SpecialCharacters />
                 <hr />
                 <form onSubmit={handleSubmit}>
                 <FormControl component="fieldset" className={classes.formControl}>
-                <FormLabel component="legend" color="secondary" focused={focused}>1. I <u>see you (familiar, singular)</u> in this painting. - ver</FormLabel>
+                <FormLabel component="legend" color="secondary" focused={focused}>1. He <u>sings to her</u> on their anniversary. - cantar</FormLabel>
                     <TextField
                         variant="outlined"
                         value={value1}
@@ -118,7 +126,7 @@ function Quiz12() {
                         style={{width: "30%", margin: "auto", marginTop: "2px"}}
                     />
                     <hr />
-                    <FormLabel component="legend" color="secondary" focused={focused}>2. He <u>reads it (masculine noun)</u> in the evenings. - leer</FormLabel>
+                    <FormLabel component="legend" color="secondary" focused={focused}>2. We <u>speak to you (plural, informal, Spain)</u> from the heart. - hablar</FormLabel>
                     <TextField
                         variant="outlined"
                         value={value2}
@@ -126,7 +134,7 @@ function Quiz12() {
                         style={{width: "30%", margin: "auto", marginTop: "2px"}}
                     />
                     <hr />
-                    <FormLabel component="legend" color="secondary" focused={focused}>3. We <u>cook them (feminine noun)</u> in the kitchen. - cocinar</FormLabel>
+                    <FormLabel component="legend" color="secondary" focused={focused}>3. You (singular, formal) <u>write to us</u> often. - escribir</FormLabel>
                     <TextField
                         variant="outlined"
                         value={value3}
@@ -134,7 +142,7 @@ function Quiz12() {
                         style={{width: "30%", margin: "auto", marginTop: "2px"}}
                     />
                     <hr />
-                    <FormLabel component="legend" color="secondary" focused={focused}>4. You (familiar, singular, Argentina) <u>eat it (feminine noun)</u> often, don't you? - comer</FormLabel>
+                    <FormLabel component="legend" color="secondary" focused={focused}>4. I <u>shout to them</u> when there is a lot of noise. - gritar</FormLabel>
                     <TextField
                         variant="outlined"
                         value={value4}
@@ -142,7 +150,7 @@ function Quiz12() {
                         style={{width: "30%", margin: "auto", marginTop: "2px"}}
                     />
                     <hr />
-                    <FormLabel component="legend" color="secondary" focused={focused}>5. They <u>love hir</u>. - amar</FormLabel>
+                    <FormLabel component="legend" color="secondary" focused={focused}>5. They <u>read to me</u> when I ask them to. - leer</FormLabel>
                     <TextField
                         variant="outlined"
                         value={value5}
@@ -150,7 +158,8 @@ function Quiz12() {
                         style={{width: "30%", margin: "auto", marginTop: "2px"}}
                     />
                     <hr />
-                    <FormLabel component="legend" color="secondary" focused={focused}>6. She <u>hears you (plural, familar, Spain)</u> clearly. - oír</FormLabel>
+                    <h3>Given the direct object and indirect object in English, write the two pronouns as they would appear in Spanish before a verb.</h3>
+                    <FormLabel component="legend" color="secondary" focused={focused}>6. direct object: it (masculine noun), indirect object: me</FormLabel>
                     <TextField
                         variant="outlined"
                         value={value6}
@@ -158,7 +167,7 @@ function Quiz12() {
                         style={{width: "30%", margin: "auto", marginTop: "2px"}}
                     />
                     <hr />
-                    <FormLabel component="legend" color="secondary" focused={focused}>7. I <u>hug them (two boys)</u> before bed every night. - abrazar</FormLabel>
+                    <FormLabel component="legend" color="secondary" focused={focused}>7. direct object: them (feminine noun), indirect object: you (singular, familiar)</FormLabel>
                     <TextField
                         variant="outlined"
                         value={value7}
@@ -166,11 +175,27 @@ function Quiz12() {
                         style={{width: "30%", margin: "auto", marginTop: "2px"}}
                     />
                     <hr />
-                    <FormLabel component="legend" color="secondary" focused={focused}>8. You (familiar, plural, Spain) <u>look at us</u> strangely. - mirar</FormLabel>
+                    <FormLabel component="legend" color="secondary" focused={focused}>8. direct object: it (feminine noun), indirect object: us</FormLabel>
                     <TextField
                         variant="outlined"
                         value={value8}
                         onInput={e=>setValue8(e.target.value)}
+                        style={{width: "30%", margin: "auto", marginTop: "2px"}}
+                    />
+                    <hr />
+                    <FormLabel component="legend" color="secondary" focused={focused}>9. direct object: them (masculine noun), indirect object: them</FormLabel>
+                    <TextField
+                        variant="outlined"
+                        value={value9}
+                        onInput={e=>setValue9(e.target.value)}
+                        style={{width: "30%", margin: "auto", marginTop: "2px"}}
+                    />
+                    <hr />
+                    <FormLabel component="legend" color="secondary" focused={focused}>10. direct object: it (masculine noun), indirect object: him</FormLabel>
+                    <TextField
+                        variant="outlined"
+                        value={value10}
+                        onInput={e=>setValue10(e.target.value)}
                         style={{width: "30%", margin: "auto", marginTop: "2px"}}
                     />
                     <hr />
@@ -180,12 +205,12 @@ function Quiz12() {
         </FormControl>
       </form> 
       <div className="score">
-        <h2>{percentage ? `You got ${score} out of 8 correct. Percentage: ${percentage}` : null}</h2>
+        <h2>{percentage ? `You got ${score} out of 10 correct. Percentage: ${percentage}` : null}</h2>
       </div>
-      <Link style={{display: "inline-block"}} className="next-link" exact="true" to="/lessons/12">Return to This Lesson</Link>
-      <Link style={{display: "inline-block"}} className="next-link" exact="true" to="/lessons/13">Next Lesson: Indirect Object Pronouns →</Link>
+      <Link style={{display: "inline-block"}} className="next-link" exact="true" to="/lessons/13">Return to This Lesson</Link>
+      <Link style={{display: "inline-block"}} className="next-link" exact="true" to="/lessons/14">Next Lesson: Prepositional Pronouns →</Link>
       </div>
     )
 }
 
-export default Quiz12
+export default Quiz13

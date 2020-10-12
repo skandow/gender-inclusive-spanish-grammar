@@ -35,7 +35,6 @@ const StyledTableCell = withStyles((theme) => ({
     },
   });
 
-  
 
 function QuizScores() {
     const quizScores = useSelector(state => state.quizScores);
@@ -47,7 +46,7 @@ function QuizScores() {
       
     function makeRows() {
         let quizArray = []
-        for (let quizCounter = 1; quizCounter < 13; quizCounter++) {
+        for (let quizCounter = 1; quizCounter < 14; quizCounter++) {
             const thisQuiz = quizScores.find(score => score.quiz === quizCounter)
             console.log(thisQuiz)
             if (thisQuiz) {

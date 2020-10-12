@@ -86,11 +86,36 @@ function Lesson13() {
         <p className="example">I write to them every week.<br/>
         <em lang="es">Yo les escribo todas las semanas.</em></p>
         <p>Notice the structure in the above sentence, the subject pronoun, which in this case is optional because of the verb, comes first. The indirect object pronoun is next, followed by the verb.</p>
-        <p>In the next lesson, we'll take a look at how to utilize direct and indirect object pronouns together.
-        </p>
+        <h3>Rules Regarding Using Direct and Indirect Objects:</h3>
+             <p>Now that we have taken a look at both direct and indirect objects in action separately, let's take a look at how they work together, utilizing the sentence that began this and the last lessons:</p>
+            <p className="example">When does Sarah read the book to her daughter?<br/>
+            <em>She</em> reads <em>it</em> to <em>her</em> every night.</p>
+            <p>We know from these two lessons that <em>she</em> is a subject pronoun, <em>it</em> is a direct object pronoun, and <em>her</em> is an indirect object pronoun.</p>
+            <p>Let's try to convert this second sentence now into Spanish. Let's break down the steps:</p>
+            <ol>
+                <li>The subject pronoun will be <em lang="es">Ella</em></li>
+                <li>The verb will be <em lang="es">lee</em> from the verb <em lang="es">leer</em></li>
+                <li>The direct object will be <em lang="es">lo</em> because <em lang="es">el libro</em>, which is <em lang="es">the book</em> is a masculine noun</li>
+                <li>The indirect object will be <em lang="es">le</em> because <em>her</em> is a third-person singular object pronoun</li>
+                <li>Lastly, we'll use the phrase <em lang="es">todas las noches</em> - literally <em>all the nights</em> - for <em>everynight</em></li>
+            </ol>
+            <p>There's one other matter we should consider before we attempt to piece this sentence together. We know that both direct and indirect objects are placed before 
+                the verb they correspond to, but in what order?
+            </p>
+            <p>In Spanish, the indirect object goes first.</p>
+            <p>With these ingredients, let's compare the English statement, a sentence using Spanish words from the sentence above, and the actual Spanish translation.</p>
+            <p className="example">
+                English: She reads it to her every night.<br/>
+                Put-Together Sentence in Spanish: Ella le la lee todas las noches.<br/>
+                Actual Spanish: Ella se la lee todas las noches.
+            </p>
+            <p>Notice how close the put-together sentence was to the actual Spanish sentence. But the use of <em lang="es">se</em> here bears mentioning.</p>
+            <p>When there is both a direct and an indirect object pronoun attached to a verb, and both start with "l", the indirect object is replaced with <em lang="es">se</em> to
+            clearly deliniate between the two pronouns.</p>
+            <p>There are other ways we can express the connection that an indirect object has to a verb. These pronouns, used after prepositions, will be explored in the next lesson.</p>
           </div>
           <Link style={{display: "inline-block"}} className="next-link" exact="true" to="/quizzes/13">Take Quiz!</Link>
-          <Link style={{display: "inline-block"}} className="next-link" exact="true" to="/lessons/14">Combining Direct and Indirect Object Pronouns →</Link>
+          <Link style={{display: "inline-block"}} className="next-link" exact="true" to="/lessons/14">Combining Prepositional Pronouns →</Link>
       </div>
     );
   }
