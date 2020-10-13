@@ -6,94 +6,110 @@ function Lesson14() {
     return (
       <div className="lesson">
           <div style={{color: "#006341"}}>
-          <h1>Combining Direct and Indirect Object Pronouns</h1>
+          <h1>Prepositional Pronouns</h1>
           <hr style={{border: "2px solid #006341"}}></hr>
           </div>
           <div style={{textAlign: "left"}}>
-            <h3>Rules Regarding Using Direct and Indirect Objects</h3>
-             <p>Now that we have taken a look at both direct and indirect objects in action separately, let's take a look at how they work together, utilizing the sentence that began our previous two lessons:</p>
-            <p className="example">When does Sarah read the book to her daughter?<br/>
-            <em>She</em> reads <em>it</em> to <em>her</em> every night.</p>
-            <p>We know from the previous two lessons that <em>she</em> is a subject pronoun, <em>it</em> is a direct object pronoun, and <em>her</em> is an indirect object pronoun.</p>
-            <p>Let's try to convert this second sentence now into Spanish. Let's break down the steps:</p>
-            <ol>
-                <li>The subject pronoun will be <em lang="es">Ella</em></li>
-                <li>The verb will be <em lang="es">lee</em> from the verb <em lang="es">leer</em></li>
-                <li>The direct object will be <em lang="es">lo</em> because <em lang="es">el libro</em>, which is <em lang="es">the book</em> is a masculine noun</li>
-                <li>The indirect object will be <em lang="es">le</em> because <em>her</em> is a third-person singular object pronoun</li>
-                <li>Lastly, we'll use the phrase <em lang="es">todas las noches</em> - literally <em>all the nights</em> - for <em>everynight</em></li>
-            </ol>
-            <p>There's one other matter we should consider before we attempt to piece this sentence together. We know that both direct and indirect objects are placed before 
-                the verb they correspond to, but in what order?
-            </p>
-            <p>In Spanish, the indirect object goes first.</p>
-            <p>With these ingredients, let's compare the English statement, a sentence using Spanish words from the sentence above, and the actual Spanish translation.</p>
-            <p className="example">
-                English: She reads it to her every night.<br/>
-                Put-Together Sentence in Spanish: Ella le la lee todas las noches.<br/>
-                Actual Spanish: Ella se la lee todas las noches.
-            </p>
-            <p>Notice how close the put-together sentence was to the actual Spanish sentence. But the use of <em lang="es">se</em> here bears mentioning.</p>
-            <p>When there is both a direct and an indirect object pronoun attached to a verb, and both start with "l", the indirect object is replaced with <em lang="es">se</em> to
-            clearly deliniate between the two pronouns.</p>
-            <ol>
-                <li><p className="example">He loves <em>him</em>.</p>
-                In English, we would never say <em>He loves to him</em>. The last word in this sentence, therefore, is a direct object pronoun.</li>
-                <li><p className="example">I give the newspaper to <em>her</em> every night.</p>
-                We clearly see <em>to her</em> in this sentence, so this pronoun is an indirect object pronoun.</li>
-                <li><p className="example">We see <em>hir</em> every Saturday at lunch.</p>
-                Similar to the first sentence, we wouldn't say <em>We see to hir</em>, so <em>hir</em> is a direct object pronoun.</li>
-                <li><p className="example">You speak very clearly to <em>them</em>.</p>
-                Like the second sentence, <em>to them</em> is very clearly stated here, so this is an indirect object pronoun.</li>
-                <li><p className="example">I feed <em>it</em> plant food if it looks unhealthy.</p>
-                As this sentence is structured now, <em>it</em> appears to be a direct object pronoun due to the absences of <em>to</em> connecting it to the verb. However, we
-                could also word this sentence another way:
-                <p className="example">I feed plant food to <em>it</em> if it looks unhealthy.</p>
-                It's less likely we would word the sentence this way as native English speakers, but because we CAN and the sentence retains its original meaning, <em>it</em> in this case is an
-                indirect object pronoun.</li>
-            </ol>
-             <h3>Spanish Indirect Object Pronouns</h3>
-             <p>Here is the chart of Spanish indirect object pronouns. Again, you should compare this chart to the reflexive pronoun and direct object pronoun charts.</p>
-            <div>
-                <table>
-                <caption>Spanish Indirect Object Pronouns</caption>
-                    <thead>
-                    
-                    <tr>
-                        <td>&nbsp;</td>
-                        <th scope="col">Singular</th>
-                        <th scope="col">Plural</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <th scope="row">First Person</th>
-                        <td>me</td>
-                        <td>nos</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Second Person</th>
-                        <td>te</td>
-                        <td style={{backgroundColor: "#b81140"}}>os</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Third Person</th>
-                        <td>le</td>
-                        <td>les</td>
-                    </tr>
-                    </tbody>
-                </table>
+            <h3>Common Prepositions in Spanish:</h3>
+             <p>The pronouns in this category are utilized when prepositions connect verbs to object pronouns. In English, there are several different contexts in which this could occur:</p>
+            <p className="example">I am telling this <u>to</u> <em>you</em>.<br/>
+            She cooks <u>for</u> <em>him</em>.<br/>
+            The book was written <u>by</u> <em>them</em>.</p>
+            <p>In general, the above underlined prepositions will translate to Spanish in the following ways:</p>
+            <p className="example">to - a<br/>
+            for - para<br/>
+            by - por</p>
+            <p>However, the English preposition <em>for</em> can be translated to <em>para</em> or <em>por</em> depending on context:</p>
+            <div className="grid">
+                <div className="one box">
+                <p>Use <em lang="es">por</em> as the Spanish preposition for the English equivalent <em>for</em> 
+                in the following cases:</p>
+                <ol>
+                    <li>To discuss an exchange of something</li>
+                    <li>To discuss the length of time of an activity</li>
+                    <li>To discuss a reason for doing something</li>
+                </ol>
+            </div>
+            <div className="two box">
+                <p>Use <em lang="es">para</em> as the Spanish preposition for the English equivalent <em>for</em> in the following cases:</p>
+                <ol>
+                    <li>To discuss the intended recipient of an action</li>
+                    <li>To discuss deadlines</li>
+                    <li>To discuss destinations</li>
+                </ol>
+            </div>
+            </div>
+            <p>Let's see these realized with examples:</p>
+            <div className="grid">
+                <p className="example one">
+                    I pay $10 for lessons. =<br/> <em lang="es">Pago diez dolores por lecciones.</em><br/><br/>
+                    You read for two hours. =<br/> <em lang="es">Lees por dos horas.</em><br/><br/>
+                    He swims for fun. =<br/> <em lang="es">Él nada por diversión.</em></p>
+                <p className="example two">
+                    The gift is for you. =<br/> <em lang="es">El regalo es para tí.</em><br/><br/>
+                    I must finish this report for Friday. =<br/> <em lang="es">Debo terminar este informe para viernes.</em><br/><br/>
+                    I leave for Spain tomorrow. =<br/> <em lang="es">Salgo para España mañana.</em></p>
+            </div>
+             <h3>Spanish Prepositional Pronouns:</h3>
+             <p>Notice the final word in the first <em lang="es">para</em> example. This is a type of pronoun in Spanish used after the prepositions discussed above. Let's look at the entire list of Spanish prepositional pronouns, many of which should look familiar</p>
+             <div>
+        <table id="subject-pronoun-chart">
+        <caption>Spanish Prepositional Pronouns <em lang="es">(para +)</em></caption>
+                <thead>
+                
+                <tr>
+                    <td colSpan="2">&nbsp;</td>
+                    <th colSpan="2" scope="col">Singular</th>
+                    <th colSpan="2" scope="col">Plural</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <th rowSpan="3" colSpan="2" scope="row">First Person</th>
+                    <td rowSpan="3" colSpan="2" lang="es">para mí</td>
+                    <td colSpan="2" lang="es">para nosotros</td>
+                </tr>
+                <tr><td colSpan="2" lang="es">para nosotras</td></tr>
+                <tr><td colSpan="2" lang="es">para nosotres</td></tr>
+                <tr>
+                    <th rowSpan="3" colSpan="2" scope="row">Second Person</th>
+                    <td rowSpan="3" lang="es" style={{backgroundColor: "#f1bf00"}}>para tí</td>
+                    <td rowSpan="3" lang="es-419" style={{backgroundColor: "lightskyblue"}}>para vos</td>                    
+                    <td colSpan="2" style={{backgroundColor: "#b81140"}} lang="es">para vosotros</td>
+                </tr>
+                <tr>
+                    <td colSpan="2" style={{backgroundColor: "#b81140"}} lang="es">para vosotras</td>
+                </tr>
+                <tr>
+                    <td colSpan="2" style={{backgroundColor: "#b81140"}} lang="es">para vosotres</td></tr>
+                <tr>
+                    <th rowSpan="4" colSpan="2" scope="row">Third Person</th>
+                    <td colSpan="2" lang="es">para él</td>
+                    <td colSpan="2" lang="es">para ellos</td>
+                </tr>
+                <tr>
+                    <td colSpan="2" lang="es">para ella</td>
+                    <td colSpan="2" lang="es">para ellas</td>
+                </tr>
+                <tr>
+                    <td colSpan="2" lang="es">para elle</td>
+                    <td colSpan="2" lang="es">para elles</td>
+                </tr>
+                <tr>
+                    <td colSpan="2" lang="es" style={{backgroundColor: "#006341"}}>para usted</td>
+                    <td colSpan="2" lang="es" style={{backgroundColor: "#006341"}}>para ustedes</td>
+                </tr>
+                </tbody>
+        </table>
         </div>
-        <p>Again, the first and second person forms are identical here to their counterparts in the previous two lessons.</p>
-        <p>Regarding third-person usage, <em lang="es">le</em> would be used for any indirect object pronoun that corresponds to <em>él</em>,
-        <em> ella</em>, <em>elle</em>, or <em>usted</em>, while <em lang="es">les</em> would be used for any indirect object pronoun that corresponds to 
-        <em> ellos</em>, <em>ellas</em>, <em>elles</em>, or <em>ustedes</em>.</p>
-        <p>It should also be noted that, like reflexive/reciprocal and direct object pronouns, indirect object pronouns are typically placed before the verb they connect to.</p>
-        <p>Let's look at a brief example:</p>
-        <p className="example">I write to them every week.<br/>
-        <em lang="es">Yo les escribo todas las semanas.</em></p>
-        <p>Notice the structure in the above sentence, the subject pronoun, which in this case is optional because of the verb, comes first. The indirect object pronoun is next, followed by the verb.</p>
-        <p>In the next lesson, we'll take a look at how to utilize direct and indirect object pronouns together.
+        <p>Notice that this is basically the same chart as that for subject pronouns, with the exception of <em>yo</em> and <em>tú</em> being replaced by <em>mí</em> and <em>tí</em> respectively.</p>
+        <p>It should also be noted that with the Spanish preposition <em lang="es">a</em>, it's common to see these prepositions utilized
+        with indirect objects to clarify what the indirect object is replacing.</p>
+        <p className="example">She reads the book to her every night.<br/>
+        Ella <em>le</em> lee el libro <em>a ella</em> todas las noches.</p>
+        <p>In the above example, even though <em>le</em> and <em>a ella</em> refer to the same person/concept, it's not uncommon to see both 
+        in Spanish to more clearly clarify the context of the indirect object.</p>
+        <p>In the last lesson of this section, we'll look at possessive pronouns.
         </p>
           </div>
           <Link style={{display: "inline-block"}} className="next-link" exact="true" to="/quizzes/13">Take Quiz!</Link>
