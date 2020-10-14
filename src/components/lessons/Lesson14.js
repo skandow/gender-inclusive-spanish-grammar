@@ -109,11 +109,11 @@ function Lesson14() {
         Ella <em>le</em> lee el libro <em>a ella</em> todas las noches.</p>
         <p>In the above example, even though <em>le</em> and <em>a ella</em> refer to the same person/concept, it's not uncommon to see both 
         in Spanish to more clearly clarify the context of the indirect object.</p>
-        <p>In the last lesson of this section, we'll look at possessive pronouns.
+        <p>In the last lesson of this section, we'll look at another type of verb referenced in a previous lesson and see how the pronouns we've explored are placed when they're used.
         </p>
           </div>
-          <Link style={{display: "inline-block"}} className="next-link" exact="true" to="/quizzes/13">Take Quiz!</Link>
-          <Link style={{display: "inline-block"}} className="next-link" exact="true" to="/lessons/14">Combining Direct and Indirect Object Pronouns →</Link>
+          <Link style={{display: "inline-block"}} className="next-link" exact="true" to="/quizzes/14">Take Quiz!</Link>
+          <Link style={{display: "inline-block"}} className="next-link" exact="true" to="/lessons/15">The Present Progressive and Unique Pronoun Placement →</Link>
       </div>
     );
   }
