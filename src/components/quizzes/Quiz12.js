@@ -5,7 +5,7 @@ import TextField from '@material-ui/core/TextField';
 import FormControl from '@material-ui/core/FormControl';
 import FormLabel from '@material-ui/core/FormLabel';
 import Button from '@material-ui/core/Button';
-import SpecialCharacters from './SpecialCharacters'
+import SpecialCharacters from './SpecialCharacters';
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
 import { saveQuizScores } from '../../actions/quizScores.js'

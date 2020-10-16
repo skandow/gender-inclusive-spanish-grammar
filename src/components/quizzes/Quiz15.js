@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function Quiz11() {
+function Quiz15() {
     const classes = useStyles()
     const dispatch = useDispatch()
     const user = useSelector(state => state.user)
@@ -32,48 +32,56 @@ function Quiz11() {
     const [value6, setValue6] = React.useState('')
     const [value7, setValue7] = React.useState('')
     const [value8, setValue8] = React.useState('')
+    const [value9, setValue9] = React.useState('')
+    const [value10, setValue10] = React.useState('')
     const [score, setScore] = React.useState('')
     const [percentage, setPercentage] = React.useState('')
 
     const handleSubmit = event => {
         event.preventDefault()
         let score = 0
-        if (value1.toLowerCase() === "te duchas") {
+        if (value1.toLowerCase() === "estás hablando") {
             score += 1
         }
-        if (value2.toLowerCase() === "se preocupa") {
+        if (value2.toLowerCase() === "está comiendo") {
             score += 1
         }
-        if (value3.toLowerCase() === "os acercáis") {
+        if (value3.toLowerCase() === "estamos viniendo") {
             score += 1 
         }
-        if (value4.toLowerCase() === "me pongo") {
+        if (value4.toLowerCase() === "estoy muñendo") {
             score += 1
         }
-        if (value5.toLowerCase() === "se viste") {
+        if (value5.toLowerCase() === "estáis oyendo") {
             score += 1
         }
-        if (value6.toLowerCase() === "se levantan") {
+        if (value6.toLowerCase() === "están escuchando") {
             score += 1
         }
-        if (value7.toLowerCase() === "nos besamos") {
+        if ((value7.toLowerCase() === "me están diciendo") || (value7.toLowerCase() === "están diciéndome")) {
             score += 1
         }
-        if (value8.toLowerCase() === "te atrevés") {
+        if ((value8.toLowerCase() === "lo estás haciendo") || (value8.toLowerCase() === "estás haciéndolo")) {
+            score += 1
+        }
+        if ((value9.toLowerCase() === "os estáis mirando") || (value9.toLowerCase() === "estáis mirándoos")) {
+            score += 1
+        }
+        if ((value10.toLowerCase() === "se las estoy dando") || (value10.toLowerCase() === "estoy dándoselas")) {
             score += 1
         }
         setScore(score)
-        const percentage = Math.round(score / 8 * 100) + "%"
+        const percentage = Math.round(score / 10 * 100) + "%"
         setPercentage(percentage)
         const token = localStorage.getItem("token")
         const payload = { quiz_score: {
-          quiz: 11,
+          quiz: 14,
           score: score,
           percentage: percentage,
           user_id: user.id
         }
         }
-        const thisQuiz = quizScores.find(score => score.quiz === 11)
+        const thisQuiz = quizScores.find(score => score.quiz === 15)
         let method 
         let endURL 
         if (!thisQuiz) {
@@ -101,77 +109,94 @@ function Quiz11() {
 
     return (
         <div>
-            <h1>Quiz 11: Reflexive and Reciprocal Pronouns</h1>
-               
-                <h3>Given the verb infinitive and corresponding subject pronoun, write the correct reflexive/reciprocal verb and pronoun.<br/><br/> Use 
-                    the tool below to copy and paste special characters if you need them.
+            <h1>Quiz 15: The Present Progressive and Unique Pronoun Placement</h1>
+                
+                <h3>Given the Spanish subject pronoun and verb infinitive, give the conjugated present progressive form of the verb.<br/><br/>
+                Use the tool below to copy and paste special characters if you need them.
                 </h3>
                 <SpecialCharacters />
                 <hr />
                 <form onSubmit={handleSubmit}>
                 <FormControl component="fieldset" className={classes.formControl}>
-                <FormLabel component="legend" color="secondary" focused={focused}>1. ducharse - tú</FormLabel>
+                <FormLabel component="legend" color="secondary" focused={focused}>1. tú - hablar</FormLabel>
                     <TextField
                         variant="outlined"
                         value={value1}
                         onInput={e=>setValue1(e.target.value)}
-                        style={{width: "100%", margin: "auto", marginTop: "2px"}}
+                        style={{width: "30%", margin: "auto", marginTop: "2px"}}
                     />
                     <hr />
-                    <FormLabel component="legend" color="secondary" focused={focused}>2. preocuparse - ella</FormLabel>
+                    <FormLabel component="legend" color="secondary" focused={focused}>2. elle - comer</FormLabel>
                     <TextField
                         variant="outlined"
                         value={value2}
                         onInput={e=>setValue2(e.target.value)}
-                        style={{width: "100%", margin: "auto", marginTop: "2px"}}
+                        style={{width: "30%", margin: "auto", marginTop: "2px"}}
                     />
                     <hr />
-                    <FormLabel component="legend" color="secondary" focused={focused}>3. acercarse - vosotres</FormLabel>
+                    <FormLabel component="legend" color="secondary" focused={focused}>3. nosotros - venir (e --{'>'} i)</FormLabel>
                     <TextField
                         variant="outlined"
                         value={value3}
                         onInput={e=>setValue3(e.target.value)}
-                        style={{width: "100%", margin: "auto", marginTop: "2px"}}
+                        style={{width: "30%", margin: "auto", marginTop: "2px"}}
                     />
                     <hr />
-                    <FormLabel component="legend" color="secondary" focused={focused}>4. ponerse - yo</FormLabel>
+                    <FormLabel component="legend" color="secondary" focused={focused}>4. yo - muñir</FormLabel>
                     <TextField
                         variant="outlined"
                         value={value4}
                         onInput={e=>setValue4(e.target.value)}
-                        style={{width: "100%", margin: "auto", marginTop: "2px"}}
+                        style={{width: "30%", margin: "auto", marginTop: "2px"}}
                     />
                     <hr />
-                    <FormLabel component="legend" color="secondary" focused={focused}>5. vestirse - elle</FormLabel>
+                    <FormLabel component="legend" color="secondary" focused={focused}>5. vosotras - oír</FormLabel>
                     <TextField
                         variant="outlined"
                         value={value5}
                         onInput={e=>setValue5(e.target.value)}
-                        style={{width: "100%", margin: "auto", marginTop: "2px"}}
+                        style={{width: "30%", margin: "auto", marginTop: "2px"}}
                     />
                     <hr />
-                    <FormLabel component="legend" color="secondary" focused={focused}>6. levantarse - ellas</FormLabel>
+                    <FormLabel component="legend" color="secondary" focused={focused}>6. ellos - escuchar</FormLabel>
                     <TextField
                         variant="outlined"
                         value={value6}
                         onInput={e=>setValue6(e.target.value)}
-                        style={{width: "100%", margin: "auto", marginTop: "2px"}}
+                        style={{width: "30%", margin: "auto", marginTop: "2px"}}
                     />
                     <hr />
-                    <FormLabel component="legend" color="secondary" focused={focused}>7. besarse - nosotros</FormLabel>
+                    <h3>Given the pronouns and Spanish verb infinitive, give the conjugated present progressive form of the verb. You may use either form regarding the object pronoun(s).</h3>
+                    <FormLabel component="legend" color="secondary" focused={focused}>7. subject: ellas, indirect object: me, verb: decir (e --{'>'} i)</FormLabel>
                     <TextField
                         variant="outlined"
                         value={value7}
                         onInput={e=>setValue7(e.target.value)}
-                        style={{width: "100%", margin: "auto", marginTop: "2px"}}
+                        style={{width: "30%", margin: "auto", marginTop: "2px"}}
                     />
                     <hr />
-                    <FormLabel component="legend" color="secondary" focused={focused}>8. atreverse - vos</FormLabel>
+                    <FormLabel component="legend" color="secondary" focused={focused}>8. subject: vos, direct object: lo, verb: hacer</FormLabel>
                     <TextField
                         variant="outlined"
                         value={value8}
                         onInput={e=>setValue8(e.target.value)}
-                        style={{width: "100%", margin: "auto", marginTop: "2px"}}
+                        style={{width: "30%", margin: "auto", marginTop: "2px"}}
+                    />
+                    <hr />
+                    <FormLabel component="legend" color="secondary" focused={focused}>9. subject: vosotres, reflexive pronoun: os, verb: mirar</FormLabel>
+                    <TextField
+                        variant="outlined"
+                        value={value9}
+                        onInput={e=>setValue9(e.target.value)}
+                        style={{width: "30%", margin: "auto", marginTop: "2px"}}
+                    />
+                    <hr />
+                    <FormLabel component="legend" color="secondary" focused={focused}>10. subject: yo, direct object: las, indirect object: le, verb: dar</FormLabel>
+                    <TextField
+                        variant="outlined"
+                        value={value10}
+                        onInput={e=>setValue10(e.target.value)}
+                        style={{width: "30%", margin: "auto", marginTop: "2px"}}
                     />
                     <hr />
           <Button type="submit" variant="outlined" color="primary" className={classes.button}>
@@ -180,12 +205,12 @@ function Quiz11() {
         </FormControl>
       </form> 
       <div className="score">
-        <h2>{percentage ? `You got ${score} out of 8 correct. Percentage: ${percentage}` : null}</h2>
+        <h2>{percentage ? `You got ${score} out of 10 correct. Percentage: ${percentage}` : null}</h2>
       </div>
-      <Link style={{display: "inline-block"}} className="next-link" exact="true" to="/lessons/11">Return to This Lesson</Link>
-      <Link style={{display: "inline-block"}} className="next-link" exact="true" to="/lessons/12">Next Lesson: Direct Object Pronouns →</Link>
+      <Link style={{display: "inline-block"}} className="next-link" exact="true" to="/lessons/15">Return to This Lesson</Link>
+      <Link style={{display: "inline-block"}} className="next-link" exact="true" to="/lessons/16">Next Lesson: The Present Progressive and Unique Pronoun Placement →</Link>
       </div>
     )
 }
 
-export default Quiz11
+export default Quiz15
