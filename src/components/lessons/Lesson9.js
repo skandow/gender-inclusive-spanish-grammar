@@ -170,7 +170,7 @@ function Lesson9() {
                     <td>written</td>
                 </tr>
                 <tr>
-                    <td>to do</td>
+                    <td>to do/make</td>
                     <td lang="es">hacer</td>
                     <td lang="es">hecho</td>
                     <td>made</td>

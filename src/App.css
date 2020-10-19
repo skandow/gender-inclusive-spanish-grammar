@@ -220,6 +220,12 @@ table.gender {
   height: 150px;
 }
 
+table.you-chart {
+  table-layout: fixed;
+  width: 800px;
+  height: 200px;
+}
+
 .grid {
   display: grid;
   grid-template-areas:
