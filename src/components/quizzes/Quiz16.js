@@ -34,54 +34,62 @@ function Quiz15() {
     const [value8, setValue8] = React.useState('')
     const [value9, setValue9] = React.useState('')
     const [value10, setValue10] = React.useState('')
+    const [value11, setValue11] = React.useState('')
+    const [value12, setValue12] = React.useState('')
     const [score, setScore] = React.useState('')
     const [percentage, setPercentage] = React.useState('')
 
     const handleSubmit = event => {
         event.preventDefault()
         let score = 0
-        if (value1.toLowerCase() === "estás hablando") {
+        if (value1.toLowerCase() === "mirad") {
             score += 1
         }
-        if (value2.toLowerCase() === "está comiendo") {
+        if (value2.toLowerCase() === "bebe") {
             score += 1
         }
-        if (value3.toLowerCase() === "estamos viniendo") {
+        if (value3.toLowerCase() === "hablá") {
             score += 1 
         }
-        if (value4.toLowerCase() === "estoy muñendo") {
+        if (value4.toLowerCase() === "aguanta") {
             score += 1
         }
-        if (value5.toLowerCase() === "estáis oyendo") {
+        if (value5.toLowerCase() === "escuchad") {
             score += 1
         }
-        if (value6.toLowerCase() === "están escuchando") {
+        if (value6.toLowerCase() === "ven") {
             score += 1
         }
-        if ((value7.toLowerCase() === "me están diciendo") || (value7.toLowerCase() === "están diciéndome")) {
+        if (value7.toLowerCase() === "escribí") {
             score += 1
         }
-        if ((value8.toLowerCase() === "lo estás haciendo") || (value8.toLowerCase() === "estás haciéndolo")) {
+        if (value8.toLowerCase() === "sé") {
             score += 1
         }
-        if ((value9.toLowerCase() === "os estáis mirando") || (value9.toLowerCase() === "estáis mirándoos")) {
+        if (value9.toLowerCase() === "dímelo") {
             score += 1
         }
-        if ((value10.toLowerCase() === "se las estoy dando") || (value10.toLowerCase() === "estoy dándoselas")) {
+        if (value10.toLowerCase() === "hacedla") {
+            score += 1
+        }
+        if (value11.toLowerCase() === "vete") {
+            score += 1
+        }
+        if (value12.toLowerCase() === "decidíos") {
             score += 1
         }
         setScore(score)
-        const percentage = Math.round(score / 10 * 100) + "%"
+        const percentage = Math.round(score / 12 * 100) + "%"
         setPercentage(percentage)
         const token = localStorage.getItem("token")
         const payload = { quiz_score: {
-          quiz: 15,
+          quiz: 16,
           score: score,
           percentage: percentage,
           user_id: user.id
         }
         }
-        const thisQuiz = quizScores.find(score => score.quiz === 15)
+        const thisQuiz = quizScores.find(score => score.quiz === 16)
         let method 
         let endURL 
         if (!thisQuiz) {
@@ -109,16 +117,16 @@ function Quiz15() {
 
     return (
         <div>
-            <h1>Quiz 15: The Present Progressive and Unique Pronoun Placement</h1>
+            <h1>Quiz 16: The Positive Imperative Mood with Familiar People</h1>
                 
-                <h3>Given the Spanish subject pronoun and verb infinitive, give the conjugated present progressive form of the verb.<br/><br/>
+                <h3>Given the Spanish subject pronoun and verb infinitive, give the conjugated positive imperative form of the verb.<br/><br/>
                 Use the tool below to copy and paste special characters if you need them.
                 </h3>
                 <SpecialCharacters />
                 <hr />
                 <form onSubmit={handleSubmit}>
                 <FormControl component="fieldset" className={classes.formControl}>
-                <FormLabel component="legend" color="secondary" focused={focused}>1. tú - hablar</FormLabel>
+                <FormLabel component="legend" color="secondary" focused={focused}>1. vosotres - mirar</FormLabel>
                     <TextField
                         variant="outlined"
                         value={value1}
@@ -126,7 +134,7 @@ function Quiz15() {
                         style={{width: "30%", margin: "auto", marginTop: "2px"}}
                     />
                     <hr />
-                    <FormLabel component="legend" color="secondary" focused={focused}>2. elle - comer</FormLabel>
+                    <FormLabel component="legend" color="secondary" focused={focused}>2. tú - beber</FormLabel>
                     <TextField
                         variant="outlined"
                         value={value2}
@@ -134,7 +142,7 @@ function Quiz15() {
                         style={{width: "30%", margin: "auto", marginTop: "2px"}}
                     />
                     <hr />
-                    <FormLabel component="legend" color="secondary" focused={focused}>3. nosotros - venir (e --{'>'} i)</FormLabel>
+                    <FormLabel component="legend" color="secondary" focused={focused}>3. vos - hablar</FormLabel>
                     <TextField
                         variant="outlined"
                         value={value3}
@@ -142,7 +150,7 @@ function Quiz15() {
                         style={{width: "30%", margin: "auto", marginTop: "2px"}}
                     />
                     <hr />
-                    <FormLabel component="legend" color="secondary" focused={focused}>4. yo - muñir</FormLabel>
+                    <FormLabel component="legend" color="secondary" focused={focused}>4. tú - aguantar</FormLabel>
                     <TextField
                         variant="outlined"
                         value={value4}
@@ -150,7 +158,7 @@ function Quiz15() {
                         style={{width: "30%", margin: "auto", marginTop: "2px"}}
                     />
                     <hr />
-                    <FormLabel component="legend" color="secondary" focused={focused}>5. vosotras - oír</FormLabel>
+                    <FormLabel component="legend" color="secondary" focused={focused}>5. vosotras - escuchar</FormLabel>
                     <TextField
                         variant="outlined"
                         value={value5}
@@ -158,7 +166,7 @@ function Quiz15() {
                         style={{width: "30%", margin: "auto", marginTop: "2px"}}
                     />
                     <hr />
-                    <FormLabel component="legend" color="secondary" focused={focused}>6. ellos - escuchar</FormLabel>
+                    <FormLabel component="legend" color="secondary" focused={focused}>6. tú - venir</FormLabel>
                     <TextField
                         variant="outlined"
                         value={value6}
@@ -166,8 +174,7 @@ function Quiz15() {
                         style={{width: "30%", margin: "auto", marginTop: "2px"}}
                     />
                     <hr />
-                    <h3>Given the pronouns and Spanish verb infinitive, give the conjugated present progressive form of the verb. You may use either form regarding the object pronoun(s).</h3>
-                    <FormLabel component="legend" color="secondary" focused={focused}>7. subject: ellas, indirect object: me, verb: decir (e --{'>'} i)</FormLabel>
+                    <FormLabel component="legend" color="secondary" focused={focused}>7. vos - escribir</FormLabel>
                     <TextField
                         variant="outlined"
                         value={value7}
@@ -175,7 +182,7 @@ function Quiz15() {
                         style={{width: "30%", margin: "auto", marginTop: "2px"}}
                     />
                     <hr />
-                    <FormLabel component="legend" color="secondary" focused={focused}>8. subject: vos, direct object: lo, verb: hacer</FormLabel>
+                    <FormLabel component="legend" color="secondary" focused={focused}>8. tú - ser</FormLabel>
                     <TextField
                         variant="outlined"
                         value={value8}
@@ -183,7 +190,8 @@ function Quiz15() {
                         style={{width: "30%", margin: "auto", marginTop: "2px"}}
                     />
                     <hr />
-                    <FormLabel component="legend" color="secondary" focused={focused}>9. subject: vosotres, reflexive pronoun: os, verb: mirar</FormLabel>
+                    <h3>Given the pronouns and Spanish verb infinitive, give the conjugated positive imperative form of the verb.</h3>
+                    <FormLabel component="legend" color="secondary" focused={focused}>9. subject: tú, direct object: lo, indirect object: me, verb: decir</FormLabel>
                     <TextField
                         variant="outlined"
                         value={value9}
@@ -191,11 +199,27 @@ function Quiz15() {
                         style={{width: "30%", margin: "auto", marginTop: "2px"}}
                     />
                     <hr />
-                    <FormLabel component="legend" color="secondary" focused={focused}>10. subject: yo, direct object: las, indirect object: le, verb: dar</FormLabel>
+                    <FormLabel component="legend" color="secondary" focused={focused}>10. subject: vosotros, direct object: la, verb: hacer</FormLabel>
                     <TextField
                         variant="outlined"
                         value={value10}
                         onInput={e=>setValue10(e.target.value)}
+                        style={{width: "30%", margin: "auto", marginTop: "2px"}}
+                    />
+                    <hr />
+                    <FormLabel component="legend" color="secondary" focused={focused}>11. subject: tú, reflexive pronoun: te, verb: ir</FormLabel>
+                    <TextField
+                        variant="outlined"
+                        value={value11}
+                        onInput={e=>setValue11(e.target.value)}
+                        style={{width: "30%", margin: "auto", marginTop: "2px"}}
+                    />
+                    <hr />
+                    <FormLabel component="legend" color="secondary" focused={focused}>12. subject: vosotres, reflexive pronoun: os, verb: decidir</FormLabel>
+                    <TextField
+                        variant="outlined"
+                        value={value12}
+                        onInput={e=>setValue12(e.target.value)}
                         style={{width: "30%", margin: "auto", marginTop: "2px"}}
                     />
                     <hr />
@@ -205,10 +229,10 @@ function Quiz15() {
         </FormControl>
       </form> 
       <div className="score">
-        <h2>{percentage ? `You got ${score} out of 10 correct. Percentage: ${percentage}` : null}</h2>
+        <h2>{percentage ? `You got ${score} out of 12 correct. Percentage: ${percentage}` : null}</h2>
       </div>
-      <Link style={{display: "inline-block"}} className="next-link" exact="true" to="/lessons/15">Return to This Lesson</Link>
-      <Link style={{display: "inline-block"}} className="next-link" exact="true" to="/lessons/16">Next Lesson: The Present Progressive and Unique Pronoun Placement →</Link>
+      <Link style={{display: "inline-block"}} className="next-link" exact="true" to="/lessons/16">Return to This Lesson</Link>
+      <Link style={{display: "inline-block"}} className="next-link" exact="true" to="/lessons/17">Next Lesson: The Present Progressive and Unique Pronoun Placement →</Link>
       </div>
     )
 }

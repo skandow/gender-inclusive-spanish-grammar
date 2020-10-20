@@ -207,15 +207,26 @@ function Lesson16() {
                 Give it to me.<br/>
                 <em lang="es">Dámelo.</em>
             </p>
-            <p>Notice in the second example that an accent was needed. For the <em lang="es" style={{color: "#f1bf00"}}>tú</em> and <em lang="es" style={{color: "#b81140"}}>vosotros/-as/-es </em>
-            forms of the positive imperative, if more than one pronoun is added OR the imperative is more than one syllable and any pronouns are added, an accent will have to be added 
+            <p>Notice in the second example that an accent was needed. For the <em lang="es" style={{color: "#f1bf00"}}>tú</em>
+            form of the positive imperative, if more than one pronoun is added OR the imperative is more than one syllable and any pronouns are added, an accent will have to be added 
             to maintain proper syllable stree.</p>
+            <p>One final rule regarding the <em lang="es" style={{color: "#b81140"}}>vosotros/-as/-es</em> form of imperative commands. If the pronoun attached to the command is the reflexive pronoun
+            <em lang="es"> os</em>, the added <em>d</em> at the end of the word is dropped. If the verb is an <em>-ir</em> verb, an accent will need to be added to the <em>i</em> at the end of the 
+            verb stem. The only exception to this rule is for the verb <em lang="es">ir</em>, which keeps the <em>d</em>.</p>
+            <p className="example">
+                Stay here.<br/>
+                <em lang="es">Quedaos.</em><br/><br/>
+                Talk to each other.<br/>
+                <em lang="es">Decïos.</em><br/><br/>
+                Get out.<br/>
+                <em lang="es">Idos.</em>
+            </p>
             
         <p>We'll take a look at how to say "no" in Spanish in the next lesson.
         </p>
           </div>
-          <Link style={{display: "inline-block"}} className="next-link" exact="true" to="/quizzes/15">Take Quiz!</Link>
-          <Link style={{display: "inline-block"}} className="next-link" exact="true" to="/lessons/16">The Present Progressive and Unique Pronoun Placement →</Link>
+          <Link style={{display: "inline-block"}} className="next-link" exact="true" to="/quizzes/16">Take Quiz!</Link>
+          <Link style={{display: "inline-block"}} className="next-link" exact="true" to="/lessons/17">The Present Progressive and Unique Pronoun Placement →</Link>
       </div>
     );
   }
