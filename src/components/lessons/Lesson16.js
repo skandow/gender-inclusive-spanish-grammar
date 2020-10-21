@@ -80,20 +80,20 @@ function Lesson16() {
                 </thead>
                 <tbody>
                 <tr>
-                    <th colSpan="2" scope="row">Second Person</th>
+                    <th colSpan="2" scope="row">Familiar</th>
                     <td colSpan="1" lang="es" style={{backgroundColor: "#f1bf00"}}>come</td>
                     <td colSpan="1" lang="es-419" style={{backgroundColor: "lightskyblue"}}>comé</td>                    
                     <td colSpan="2" style={{backgroundColor: "#b81140"}} lang="es">comed</td>
                 </tr>
                 <tr>
-                    <th colSpan="2" scope="row">Third Person</th>
+                    <th colSpan="2" scope="row">Polite</th>
                     <td colSpan="2" lang="es" style={{backgroundColor: "#006341"}}>coma</td>
                     <td colSpan="2" lang="es" style={{backgroundColor: "#006341"}}>coman</td>
                 </tr>
                 </tbody>
         </table>
         </div>
-        <h3>Informal Commands in Spanish</h3>
+        <h3>Informal Commands in Spanish:</h3>
         <p>If you look at the first of the two charts in the previous section, notice that the forms of "you" are labeled 
             as formal and informal. We've been using this distinction as it relates to the relationship the speaker has with the person(s)
             to whom they are referring.
@@ -101,11 +101,11 @@ function Lesson16() {
         <p>Similarly, when we've been conjugating verbs in the Indicative mood, we've made this distinction the same when referring to verbs that 
             correspond to the familiar forms of you versus the formal.
         </p>
-        <p>This correspondence will typically hold with the imperative mood. You'll most often use the commands in the second-person row 
-            with individuals with whom you are familiar, while you'll use the commands in the third-person row with individuals you wish to address in a 
+        <p>This correspondence will typically hold with the imperative mood. You'll most often use the commands in the <em>familiar</em> row 
+            with individuals with whom you are familiar, while you'll use the commands in the <em>polite</em> row with individuals you wish to address in a 
             more formal way.
         </p>
-        <p>The labelings typically given, however, for these distinctions are <em>informal</em> commands for the <em>familiar</em> and <em>polite</em> or commands for the <em>formal</em>.</p>
+        <p>As you can see above, the labelings typically given for these distinctions are <em>informal</em> commands for the <em>familiar</em> and <em>polite</em> or commands for the <em>formal</em>.</p>
         <p>Let's look at the ways to build the commands associated with <em lang="es">tú</em>, <em lang="es-419">vos</em>, and <em lang="es">vosotros/-as/-es</em>.</p>
         <ol>
             <li style={{color: "#b81140"}}><em lang="es">vosotros/-as/-es</em><br/>
@@ -116,7 +116,9 @@ function Lesson16() {
             comer - to eat<br/><br/>
             comed - eat (informal command to group of people)<br/><br/>
             abrir - to open<br/>
-            abrid - open (informal command to group of people)</p></li>
+            abrid - open (informal command to group of people)</p>
+            Remember: this form of the verb is ONLY used in Spain. If you want to issue a command to a group of people anywhere else in the Spanish-speaking world, you'll need 
+            to use the <em lang="es" style={{color: "#006341"}}>ustedes</em> form of the command, which will be explored in the next lesson.</li>
             <li style={{color: "#f1bf00"}}><em lang="es">tú</em><br/>
             The general rule when making the <em lang="es">tú</em> form of the imperative is to simply use the third-person singular form of the present simple indicative mood.
             <p className="example">caminar - to walk<br/>
@@ -140,7 +142,7 @@ function Lesson16() {
             </p> There is only one exception to this that comes with the verb <em lang="es">ir</em>, which is typically replaced with the verb <em lang="es-419">andá</em></li>
 
         </ol>
-        <h3>Irregular Informal Commands</h3>
+        <h3>Irregular Informal Commands:</h3>
         <p>The following table shows the irregular informal commands. These only correspond when the subject is <em lang="es">tú</em>.</p>
         <div>
                 <table>
@@ -197,7 +199,7 @@ function Lesson16() {
                     </tbody>
                 </table>
         </div>
-            <h3>Positive Commands with Reflexive, Direct Object, and Indirect Object Pronouns</h3>
+            <h3>Positive Commands with Reflexive, Direct Object, and Indirect Object Pronouns:</h3>
             <p>When a positive command is given, and a reflexive, direct object, or indirect object pronoun can be attached 
                 to the verb. In this case, remember that if there is an indirect object present, it will always appear first.
             </p>
@@ -222,11 +224,11 @@ function Lesson16() {
                 <em lang="es">Idos.</em>
             </p>
             
-        <p>We'll take a look at how to say "no" in Spanish in the next lesson.
+        <p>We'll take a look at how to give polite commands in the next lesson.
         </p>
           </div>
           <Link style={{display: "inline-block"}} className="next-link" exact="true" to="/quizzes/16">Take Quiz!</Link>
-          <Link style={{display: "inline-block"}} className="next-link" exact="true" to="/lessons/17">The Present Progressive and Unique Pronoun Placement →</Link>
+          <Link style={{display: "inline-block"}} className="next-link" exact="true" to="/lessons/17">Polite Commands →</Link>
       </div>
     );
   }
