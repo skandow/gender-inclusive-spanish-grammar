@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function Quiz16() {
+function Quiz17() {
     const classes = useStyles()
     const dispatch = useDispatch()
     const user = useSelector(state => state.user)
@@ -42,40 +42,40 @@ function Quiz16() {
     const handleSubmit = event => {
         event.preventDefault()
         let score = 0
-        if (value1.toLowerCase() === "mirad") {
+        if (value1.toLowerCase() === "canten") {
             score += 1
         }
-        if (value2.toLowerCase() === "bebe") {
+        if (value2.toLowerCase() === "haga") {
             score += 1
         }
-        if (value3.toLowerCase() === "hablá") {
+        if (value3.toLowerCase() === "duerma") {
             score += 1 
         }
-        if (value4.toLowerCase() === "aguanta") {
+        if (value4.toLowerCase() === "conozcan") {
             score += 1
         }
-        if (value5.toLowerCase() === "escuchad") {
+        if (value5.toLowerCase() === "juegue") {
             score += 1
         }
-        if (value6.toLowerCase() === "ven") {
+        if (value6.toLowerCase() === "vengan") {
             score += 1
         }
-        if (value7.toLowerCase() === "escribí") {
+        if (value7.toLowerCase() === "coma") {
             score += 1
         }
-        if (value8.toLowerCase() === "sé") {
+        if (value8.toLowerCase() === "cuelgue") {
             score += 1
         }
-        if (value9.toLowerCase() === "dímelo") {
+        if (value9.toLowerCase() === "hágalo") {
             score += 1
         }
-        if (value10.toLowerCase() === "hacedla") {
+        if (value10.toLowerCase() === "díganmela") {
             score += 1
         }
-        if (value11.toLowerCase() === "vete") {
+        if (value11.toLowerCase() === "váyase") {
             score += 1
         }
-        if (value12.toLowerCase() === "decidíos") {
+        if (value12.toLowerCase() === "pregúntenme") {
             score += 1
         }
         setScore(score)
@@ -83,13 +83,13 @@ function Quiz16() {
         setPercentage(percentage)
         const token = localStorage.getItem("token")
         const payload = { quiz_score: {
-          quiz: 16,
+          quiz: 17,
           score: score,
           percentage: percentage,
           user_id: user.id
         }
         }
-        const thisQuiz = quizScores.find(score => score.quiz === 16)
+        const thisQuiz = quizScores.find(score => score.quiz === 17)
         let method 
         let endURL 
         if (!thisQuiz) {
@@ -117,7 +117,7 @@ function Quiz16() {
 
     return (
         <div>
-            <h1>Quiz 16: The Positive Imperative Mood with Familiar People</h1>
+            <h1>Quiz 17: Polite Commands</h1>
                 
                 <h3>Given the Spanish subject pronoun and verb infinitive, give the conjugated positive imperative form of the verb.<br/><br/>
                 Use the tool below to copy and paste special characters if you need them.
@@ -126,7 +126,7 @@ function Quiz16() {
                 <hr />
                 <form onSubmit={handleSubmit}>
                 <FormControl component="fieldset" className={classes.formControl}>
-                <FormLabel component="legend" color="secondary" focused={focused}>1. vosotres - mirar</FormLabel>
+                <FormLabel component="legend" color="secondary" focused={focused}>1. ustedes - cantar</FormLabel>
                     <TextField
                         variant="outlined"
                         value={value1}
@@ -134,7 +134,7 @@ function Quiz16() {
                         style={{width: "30%", margin: "auto", marginTop: "2px"}}
                     />
                     <hr />
-                    <FormLabel component="legend" color="secondary" focused={focused}>2. tú - beber</FormLabel>
+                    <FormLabel component="legend" color="secondary" focused={focused}>2. usted - hacer</FormLabel>
                     <TextField
                         variant="outlined"
                         value={value2}
@@ -142,7 +142,7 @@ function Quiz16() {
                         style={{width: "30%", margin: "auto", marginTop: "2px"}}
                     />
                     <hr />
-                    <FormLabel component="legend" color="secondary" focused={focused}>3. vos - hablar</FormLabel>
+                    <FormLabel component="legend" color="secondary" focused={focused}>3. usted - dormir ( o --{'>'} ue)</FormLabel>
                     <TextField
                         variant="outlined"
                         value={value3}
@@ -150,7 +150,7 @@ function Quiz16() {
                         style={{width: "30%", margin: "auto", marginTop: "2px"}}
                     />
                     <hr />
-                    <FormLabel component="legend" color="secondary" focused={focused}>4. tú - aguantar</FormLabel>
+                    <FormLabel component="legend" color="secondary" focused={focused}>4. ustedes - conocer</FormLabel>
                     <TextField
                         variant="outlined"
                         value={value4}
@@ -158,7 +158,7 @@ function Quiz16() {
                         style={{width: "30%", margin: "auto", marginTop: "2px"}}
                     />
                     <hr />
-                    <FormLabel component="legend" color="secondary" focused={focused}>5. vosotras - escuchar</FormLabel>
+                    <FormLabel component="legend" color="secondary" focused={focused}>5. usted - jugar ( u --{'>'} ue)</FormLabel>
                     <TextField
                         variant="outlined"
                         value={value5}
@@ -166,7 +166,7 @@ function Quiz16() {
                         style={{width: "30%", margin: "auto", marginTop: "2px"}}
                     />
                     <hr />
-                    <FormLabel component="legend" color="secondary" focused={focused}>6. tú - venir</FormLabel>
+                    <FormLabel component="legend" color="secondary" focused={focused}>6. ustedes - venir</FormLabel>
                     <TextField
                         variant="outlined"
                         value={value6}
@@ -174,7 +174,7 @@ function Quiz16() {
                         style={{width: "30%", margin: "auto", marginTop: "2px"}}
                     />
                     <hr />
-                    <FormLabel component="legend" color="secondary" focused={focused}>7. vos - escribir</FormLabel>
+                    <FormLabel component="legend" color="secondary" focused={focused}>7. usted - comer</FormLabel>
                     <TextField
                         variant="outlined"
                         value={value7}
@@ -182,7 +182,7 @@ function Quiz16() {
                         style={{width: "30%", margin: "auto", marginTop: "2px"}}
                     />
                     <hr />
-                    <FormLabel component="legend" color="secondary" focused={focused}>8. tú - ser</FormLabel>
+                    <FormLabel component="legend" color="secondary" focused={focused}>8. usted - colgar (o --{'>'} ue)</FormLabel>
                     <TextField
                         variant="outlined"
                         value={value8}
@@ -191,7 +191,7 @@ function Quiz16() {
                     />
                     <hr />
                     <h3>Given the pronouns and Spanish verb infinitive, give the conjugated positive imperative form of the verb.</h3>
-                    <FormLabel component="legend" color="secondary" focused={focused}>9. subject: tú, direct object: lo, indirect object: me, verb: decir</FormLabel>
+                    <FormLabel component="legend" color="secondary" focused={focused}>9. subject: usted, direct object: lo, verb: hacer</FormLabel>
                     <TextField
                         variant="outlined"
                         value={value9}
@@ -199,7 +199,7 @@ function Quiz16() {
                         style={{width: "30%", margin: "auto", marginTop: "2px"}}
                     />
                     <hr />
-                    <FormLabel component="legend" color="secondary" focused={focused}>10. subject: vosotros, direct object: la, verb: hacer</FormLabel>
+                    <FormLabel component="legend" color="secondary" focused={focused}>10. subject: ustedes, direct object: la, indirect object: me, verb: decir</FormLabel>
                     <TextField
                         variant="outlined"
                         value={value10}
@@ -207,7 +207,7 @@ function Quiz16() {
                         style={{width: "30%", margin: "auto", marginTop: "2px"}}
                     />
                     <hr />
-                    <FormLabel component="legend" color="secondary" focused={focused}>11. subject: tú, reflexive pronoun: te, verb: ir</FormLabel>
+                    <FormLabel component="legend" color="secondary" focused={focused}>11. subject: usted, reflexive pronoun: se, verb: ir</FormLabel>
                     <TextField
                         variant="outlined"
                         value={value11}
@@ -215,7 +215,7 @@ function Quiz16() {
                         style={{width: "30%", margin: "auto", marginTop: "2px"}}
                     />
                     <hr />
-                    <FormLabel component="legend" color="secondary" focused={focused}>12. subject: vosotres, reflexive pronoun: os, verb: decidir</FormLabel>
+                    <FormLabel component="legend" color="secondary" focused={focused}>12. subject: ustedes, indirect object: me, verb: preguntar</FormLabel>
                     <TextField
                         variant="outlined"
                         value={value12}
@@ -231,10 +231,10 @@ function Quiz16() {
       <div className="score">
         <h2>{percentage ? `You got ${score} out of 12 correct. Percentage: ${percentage}` : null}</h2>
       </div>
-      <Link style={{display: "inline-block"}} className="next-link" exact="true" to="/lessons/16">Return to This Lesson</Link>
-      <Link style={{display: "inline-block"}} className="next-link" exact="true" to="/lessons/17">Next Lesson: The Present Progressive and Unique Pronoun Placement →</Link>
+      <Link style={{display: "inline-block"}} className="next-link" exact="true" to="/lessons/17">Return to This Lesson</Link>
+      <Link style={{display: "inline-block"}} className="next-link" exact="true" to="/lessons/18">Next Lesson: The Present Progressive and Unique Pronoun Placement →</Link>
       </div>
     )
 }
 
-export default Quiz16
+export default Quiz17
