@@ -52,6 +52,7 @@ import Lesson16 from '../lessons/Lesson16'
 import Quiz16 from '../quizzes/Quiz16'
 import Lesson17 from '../lessons/Lesson17'
 import Quiz17 from '../quizzes/Quiz17'
+import Lesson18 from '../lessons/Lesson18'
 
 const drawerWidth = 240;
 
@@ -276,6 +277,9 @@ export default function DrawerMenu() {
           </Route>
           <Route exact path="/quizzes/17">
             <Quiz17 />
+          </Route>
+          <Route exact path="/lessons/18">
+            <Lesson18 />
           </Route>
           <Route exact path="/home">
             <Profile />
