@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function Quiz17() {
+function Quiz18() {
     const classes = useStyles()
     const dispatch = useDispatch()
     const user = useSelector(state => state.user)
@@ -42,40 +42,40 @@ function Quiz17() {
     const handleSubmit = event => {
         event.preventDefault()
         let score = 0
-        if (value1.toLowerCase() === "canten") {
+        if (value1.toLowerCase() === "ella no come") {
             score += 1
         }
-        if (value2.toLowerCase() === "haga") {
+        if (value2.toLowerCase() === "no lo veo") {
             score += 1
         }
-        if (value3.toLowerCase() === "duerma") {
+        if (value3.toLowerCase() === "no la comprendés") {
             score += 1 
         }
-        if (value4.toLowerCase() === "conozcan") {
+        if (value4.toLowerCase() === "no bebéis") {
             score += 1
         }
-        if (value5.toLowerCase() === "juegue") {
+        if (value5.toLowerCase() === "no se duchan") {
             score += 1
         }
-        if (value6.toLowerCase() === "vengan") {
+        if (value6.toLowerCase() === "no hablamos") {
             score += 1
         }
-        if (value7.toLowerCase() === "coma") {
+        if (value7.toLowerCase() === "no nade") {
             score += 1
         }
-        if (value8.toLowerCase() === "cuelgue") {
+        if (value8.toLowerCase() === "no lo tengáis") {
             score += 1
         }
-        if (value9.toLowerCase() === "hágalo") {
+        if (value9.toLowerCase() === "no salgan") {
             score += 1
         }
-        if (value10.toLowerCase() === "díganmela") {
+        if (value10.toLowerCase() === "no me digas") {
             score += 1
         }
-        if (value11.toLowerCase() === "váyase") {
+        if (value11.toLowerCase() === "no hables") {
             score += 1
         }
-        if (value12.toLowerCase() === "pregúntenme") {
+        if (value12.toLowerCase() === "no lo hagas") {
             score += 1
         }
         setScore(score)
@@ -83,13 +83,13 @@ function Quiz17() {
         setPercentage(percentage)
         const token = localStorage.getItem("token")
         const payload = { quiz_score: {
-          quiz: 17,
+          quiz: 18,
           score: score,
           percentage: percentage,
           user_id: user.id
         }
         }
-        const thisQuiz = quizScores.find(score => score.quiz === 17)
+        const thisQuiz = quizScores.find(score => score.quiz === 18)
         let method 
         let endURL 
         if (!thisQuiz) {
@@ -117,110 +117,110 @@ function Quiz17() {
 
     return (
         <div>
-            <h1>Quiz 17: Polite Commands</h1>
+            <h1>Quiz 18: The Spanish Negative</h1>
                 
-                <h3>Given the Spanish subject pronoun and verb infinitive, give the conjugated positive imperative form of the verb.<br/><br/>
+                <h3>Given the mood and positive form of a statement, enter its negative form. Do not change the respective order 
+                    of the words you are given.<br/><br/>
                 Use the tool below to copy and paste special characters if you need them.
                 </h3>
                 <SpecialCharacters />
                 <hr />
                 <form onSubmit={handleSubmit}>
                 <FormControl component="fieldset" className={classes.formControl}>
-                <FormLabel component="legend" color="secondary" focused={focused}>1. ustedes - cantar</FormLabel>
+                <FormLabel component="legend" color="secondary" focused={focused}>1. indicative - ella come</FormLabel>
                     <TextField
                         variant="outlined"
                         value={value1}
                         onInput={e=>setValue1(e.target.value)}
-                        style={{width: "30%", margin: "auto", marginTop: "2px"}}
+                        style={{width: "100%", margin: "auto", marginTop: "2px"}}
                     />
                     <hr />
-                    <FormLabel component="legend" color="secondary" focused={focused}>2. usted - hacer</FormLabel>
+                    <FormLabel component="legend" color="secondary" focused={focused}>2. indicative - lo veo</FormLabel>
                     <TextField
                         variant="outlined"
                         value={value2}
                         onInput={e=>setValue2(e.target.value)}
-                        style={{width: "30%", margin: "auto", marginTop: "2px"}}
+                        style={{width: "100%", margin: "auto", marginTop: "2px"}}
                     />
                     <hr />
-                    <FormLabel component="legend" color="secondary" focused={focused}>3. usted - dormir ( o --{'>'} ue)</FormLabel>
+                    <FormLabel component="legend" color="secondary" focused={focused}>3. indicative - la comprendés</FormLabel>
                     <TextField
                         variant="outlined"
                         value={value3}
                         onInput={e=>setValue3(e.target.value)}
-                        style={{width: "30%", margin: "auto", marginTop: "2px"}}
+                        style={{width: "100%", margin: "auto", marginTop: "2px"}}
                     />
                     <hr />
-                    <FormLabel component="legend" color="secondary" focused={focused}>4. ustedes - conocer</FormLabel>
+                    <FormLabel component="legend" color="secondary" focused={focused}>4. indicative - bebéis</FormLabel>
                     <TextField
                         variant="outlined"
                         value={value4}
                         onInput={e=>setValue4(e.target.value)}
-                        style={{width: "30%", margin: "auto", marginTop: "2px"}}
+                        style={{width: "100%", margin: "auto", marginTop: "2px"}}
                     />
                     <hr />
-                    <FormLabel component="legend" color="secondary" focused={focused}>5. usted - jugar ( u --{'>'} ue)</FormLabel>
+                    <FormLabel component="legend" color="secondary" focused={focused}>5. indicative - se duchan</FormLabel>
                     <TextField
                         variant="outlined"
                         value={value5}
                         onInput={e=>setValue5(e.target.value)}
-                        style={{width: "30%", margin: "auto", marginTop: "2px"}}
+                        style={{width: "100%", margin: "auto", marginTop: "2px"}}
                     />
                     <hr />
-                    <FormLabel component="legend" color="secondary" focused={focused}>6. ustedes - venir</FormLabel>
+                    <FormLabel component="legend" color="secondary" focused={focused}>6. indicative - hablamos</FormLabel>
                     <TextField
                         variant="outlined"
                         value={value6}
                         onInput={e=>setValue6(e.target.value)}
-                        style={{width: "30%", margin: "auto", marginTop: "2px"}}
+                        style={{width: "100%", margin: "auto", marginTop: "2px"}}
                     />
                     <hr />
-                    <FormLabel component="legend" color="secondary" focused={focused}>7. usted - comer</FormLabel>
+                    <FormLabel component="legend" color="secondary" focused={focused}>7. imperative - nade</FormLabel>
                     <TextField
                         variant="outlined"
                         value={value7}
                         onInput={e=>setValue7(e.target.value)}
-                        style={{width: "30%", margin: "auto", marginTop: "2px"}}
+                        style={{width: "100%", margin: "auto", marginTop: "2px"}}
                     />
                     <hr />
-                    <FormLabel component="legend" color="secondary" focused={focused}>8. usted - colgar (o --{'>'} ue)</FormLabel>
+                    <FormLabel component="legend" color="secondary" focused={focused}>8. imperative - tenedlo</FormLabel>
                     <TextField
                         variant="outlined"
                         value={value8}
                         onInput={e=>setValue8(e.target.value)}
-                        style={{width: "30%", margin: "auto", marginTop: "2px"}}
+                        style={{width: "100%", margin: "auto", marginTop: "2px"}}
                     />
                     <hr />
-                    <h3>Given the pronouns and Spanish verb infinitive, give the conjugated positive imperative form of the verb.</h3>
-                    <FormLabel component="legend" color="secondary" focused={focused}>9. subject: usted, direct object: lo, verb: hacer</FormLabel>
+                    <FormLabel component="legend" color="secondary" focused={focused}>9. imperative - salgan</FormLabel>
                     <TextField
                         variant="outlined"
                         value={value9}
                         onInput={e=>setValue9(e.target.value)}
-                        style={{width: "30%", margin: "auto", marginTop: "2px"}}
+                        style={{width: "100%", margin: "auto", marginTop: "2px"}}
                     />
                     <hr />
-                    <FormLabel component="legend" color="secondary" focused={focused}>10. subject: ustedes, direct object: la, indirect object: me, verb: decir</FormLabel>
+                    <FormLabel component="legend" color="secondary" focused={focused}>10. imperative - dime</FormLabel>
                     <TextField
                         variant="outlined"
                         value={value10}
                         onInput={e=>setValue10(e.target.value)}
-                        style={{width: "30%", margin: "auto", marginTop: "2px"}}
+                        style={{width: "100%", margin: "auto", marginTop: "2px"}}
                     />
                     <hr />
-                    <FormLabel component="legend" color="secondary" focused={focused}>11. subject: usted, reflexive pronoun: se, verb: ir</FormLabel>
+                    <FormLabel component="legend" color="secondary" focused={focused}>11. imperative - hablá</FormLabel>
                     <TextField
                         variant="outlined"
                         value={value11}
                         onInput={e=>setValue11(e.target.value)}
-                        style={{width: "30%", margin: "auto", marginTop: "2px"}}
+                        style={{width: "100%", margin: "auto", marginTop: "2px"}}
                     />
                     <hr />
-                    <FormLabel component="legend" color="secondary" focused={focused}>12. subject: ustedes, indirect object: me, verb: preguntar</FormLabel>
+                    <FormLabel component="legend" color="secondary" focused={focused}>12. imperative - hazlo</FormLabel>
                     <TextField
                         variant="outlined"
                         value={value12}
                         onInput={e=>setValue12(e.target.value)}
-                        style={{width: "30%", margin: "auto", marginTop: "2px"}}
+                        style={{width: "100%", margin: "auto", marginTop: "2px"}}
                     />
                     <hr />
           <Button type="submit" variant="outlined" color="primary" className={classes.button}>
@@ -231,10 +231,10 @@ function Quiz17() {
       <div className="score">
         <h2>{percentage ? `You got ${score} out of 12 correct. Percentage: ${percentage}` : null}</h2>
       </div>
-      <Link style={{display: "inline-block"}} className="next-link" exact="true" to="/lessons/17">Return to This Lesson</Link>
-      <Link style={{display: "inline-block"}} className="next-link" exact="true" to="/lessons/18">Next Lesson: The Spanish Negative →</Link>
+      <Link style={{display: "inline-block"}} className="next-link" exact="true" to="/lessons/18">Return to This Lesson</Link>
+      <Link style={{display: "inline-block"}} className="next-link" exact="true" to="/lessons/19">Next Lesson: →</Link>
       </div>
     )
 }
 
-export default Quiz17
+export default Quiz18

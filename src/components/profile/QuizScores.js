@@ -46,7 +46,7 @@ function QuizScores() {
       
     function makeRows() {
         let quizArray = []
-        for (let quizCounter = 1; quizCounter <= 17; quizCounter++) {
+        for (let quizCounter = 1; quizCounter <= 18; quizCounter++) {
             const thisQuiz = quizScores.find(score => score.quiz === quizCounter)
             console.log(thisQuiz)
             if (thisQuiz) {
