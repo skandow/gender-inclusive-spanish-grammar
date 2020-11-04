@@ -172,7 +172,7 @@ function Lesson17() {
         </p>
           </div>
           <Link style={{display: "inline-block"}} className="next-link" exact="true" to="/quizzes/17">Take Quiz!</Link>
-          <Link style={{display: "inline-block"}} className="next-link" exact="true" to="/lessons/18">The Present Progressive and Unique Pronoun Placement →</Link>
+          <Link style={{display: "inline-block"}} className="next-link" exact="true" to="/lessons/18">The Spanish Negative →</Link>
       </div>
     );
   }

@@ -107,7 +107,7 @@ function Lesson15() {
         </p>
           </div>
           <Link style={{display: "inline-block"}} className="next-link" exact="true" to="/quizzes/15">Take Quiz!</Link>
-          <Link style={{display: "inline-block"}} className="next-link" exact="true" to="/lessons/16">The Present Progressive and Unique Pronoun Placement →</Link>
+          <Link style={{display: "inline-block"}} className="next-link" exact="true" to="/lessons/16">The Positive Imperative Mood With Familiar People →</Link>
       </div>
     );
   }

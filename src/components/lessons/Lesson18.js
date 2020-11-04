@@ -85,8 +85,8 @@ function Lesson18() {
              </p>
             <p>In the next lesson, we'll look at a special kind of adjectives: possessive adjectives.</p>
           </div>
-          <Link style={{display: "inline-block"}} className="next-link" exact="true" to="/quizzes/17">Take Quiz!</Link>
-          <Link style={{display: "inline-block"}} className="next-link" exact="true" to="/lessons/18">The Present Progressive and Unique Pronoun Placement →</Link>
+          <Link style={{display: "inline-block"}} className="next-link" exact="true" to="/quizzes/18">Take Quiz!</Link>
+          <Link style={{display: "inline-block"}} className="next-link" exact="true" to="/lessons/19">Possessive Adjectives →</Link>
       </div>
     );
   }
