@@ -8,7 +8,7 @@ import Button from '@material-ui/core/Button';
 import SpecialCharacters from './SpecialCharacters';
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
-import { saveQuizScores } from '../../actions/quizScores.js'
+import { saveQuizScores } from '../../actions/quizScores.js';
 
 const useStyles = makeStyles((theme) => ({
   formControl: {
@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function Quiz18() {
+function Quiz19() {
     const classes = useStyles()
     const dispatch = useDispatch()
     const user = useSelector(state => state.user)
@@ -32,64 +32,48 @@ function Quiz18() {
     const [value6, setValue6] = React.useState('')
     const [value7, setValue7] = React.useState('')
     const [value8, setValue8] = React.useState('')
-    const [value9, setValue9] = React.useState('')
-    const [value10, setValue10] = React.useState('')
-    const [value11, setValue11] = React.useState('')
-    const [value12, setValue12] = React.useState('')
     const [score, setScore] = React.useState('')
     const [percentage, setPercentage] = React.useState('')
 
     const handleSubmit = event => {
         event.preventDefault()
         let score = 0
-        if (value1.toLowerCase() === "ella no come") {
+        if (value1.toLowerCase() === "tu") {
             score += 1
         }
-        if (value2.toLowerCase() === "no lo veo") {
+        if (value2.toLowerCase() === "nuestros") {
             score += 1
         }
-        if (value3.toLowerCase() === "no la comprendés") {
+        if (value3.toLowerCase() === "mi") {
             score += 1 
         }
-        if (value4.toLowerCase() === "no bebéis") {
+        if (value4.toLowerCase() === "vuestres") {
             score += 1
         }
-        if (value5.toLowerCase() === "no se duchan") {
+        if (value5.toLowerCase() === "sus") {
             score += 1
         }
-        if (value6.toLowerCase() === "no hablamos") {
+        if (value6.toLowerCase() === "su") {
             score += 1
         }
-        if (value7.toLowerCase() === "no nade") {
+        if (value7.toLowerCase() === "tu") {
             score += 1
         }
-        if (value8.toLowerCase() === "no lo tengáis") {
-            score += 1
-        }
-        if (value9.toLowerCase() === "no salgan") {
-            score += 1
-        }
-        if (value10.toLowerCase() === "no me digas") {
-            score += 1
-        }
-        if (value11.toLowerCase() === "no hables") {
-            score += 1
-        }
-        if (value12.toLowerCase() === "no lo hagas") {
+        if (value8.toLowerCase() === "su") {
             score += 1
         }
         setScore(score)
-        const percentage = Math.round(score / 12 * 100) + "%"
+        const percentage = Math.round(score / 8 * 100) + "%"
         setPercentage(percentage)
         const token = localStorage.getItem("token")
         const payload = { quiz_score: {
-          quiz: 18,
+          quiz: 19,
           score: score,
           percentage: percentage,
           user_id: user.id
         }
         }
-        const thisQuiz = quizScores.find(score => score.quiz === 18)
+        const thisQuiz = quizScores.find(score => score.quiz === 19)
         let method 
         let endURL 
         if (!thisQuiz) {
@@ -117,17 +101,16 @@ function Quiz18() {
 
     return (
         <div>
-            <h1>Quiz 18: The Spanish Negative</h1>
+            <h1>Quiz 19: Possessive Adjectives</h1>
                 
-                <h3>Given the mood and positive form of a statement, enter its negative form. Do not change the respective order 
-                    of the words you are given.<br/><br/>
+                <h3>Given the noun and the owner in Spanish, write the proper possessive adjective to be used with this noun.<br/><br/>
                 Use the tool below to copy and paste special characters if you need them.
                 </h3>
                 <SpecialCharacters />
                 <hr />
                 <form onSubmit={handleSubmit}>
                 <FormControl component="fieldset" className={classes.formControl}>
-                <FormLabel component="legend" color="secondary" focused={focused}>1. indicative - ella come</FormLabel>
+                <FormLabel component="legend" color="secondary" focused={focused}>1. noun: el gato, owner: tú</FormLabel>
                     <TextField
                         variant="outlined"
                         value={value1}
@@ -135,7 +118,7 @@ function Quiz18() {
                         style={{width: "100%", margin: "auto", marginTop: "2px"}}
                     />
                     <hr />
-                    <FormLabel component="legend" color="secondary" focused={focused}>2. indicative - lo veo</FormLabel>
+                    <FormLabel component="legend" color="secondary" focused={focused}>2. noun: los libros, owners: nosotras</FormLabel>
                     <TextField
                         variant="outlined"
                         value={value2}
@@ -143,7 +126,7 @@ function Quiz18() {
                         style={{width: "100%", margin: "auto", marginTop: "2px"}}
                     />
                     <hr />
-                    <FormLabel component="legend" color="secondary" focused={focused}>3. indicative - la comprendés</FormLabel>
+                    <FormLabel component="legend" color="secondary" focused={focused}>3. noun: la cama, owner: yo</FormLabel>
                     <TextField
                         variant="outlined"
                         value={value3}
@@ -151,7 +134,7 @@ function Quiz18() {
                         style={{width: "100%", margin: "auto", marginTop: "2px"}}
                     />
                     <hr />
-                    <FormLabel component="legend" color="secondary" focused={focused}>4. indicative - bebéis</FormLabel>
+                    <FormLabel component="legend" color="secondary" focused={focused}>4. noun: les niñes, owners: vosotros</FormLabel>
                     <TextField
                         variant="outlined"
                         value={value4}
@@ -159,7 +142,7 @@ function Quiz18() {
                         style={{width: "100%", margin: "auto", marginTop: "2px"}}
                     />
                     <hr />
-                    <FormLabel component="legend" color="secondary" focused={focused}>5. indicative - se duchan</FormLabel>
+                    <FormLabel component="legend" color="secondary" focused={focused}>5. noun: las guitarras, owners: elles</FormLabel>
                     <TextField
                         variant="outlined"
                         value={value5}
@@ -167,7 +150,7 @@ function Quiz18() {
                         style={{width: "100%", margin: "auto", marginTop: "2px"}}
                     />
                     <hr />
-                    <FormLabel component="legend" color="secondary" focused={focused}>6. indicative - hablamos</FormLabel>
+                    <FormLabel component="legend" color="secondary" focused={focused}>6. noun: la casa, owner: usted</FormLabel>
                     <TextField
                         variant="outlined"
                         value={value6}
@@ -175,7 +158,7 @@ function Quiz18() {
                         style={{width: "100%", margin: "auto", marginTop: "2px"}}
                     />
                     <hr />
-                    <FormLabel component="legend" color="secondary" focused={focused}>7. imperative - nade</FormLabel>
+                    <FormLabel component="legend" color="secondary" focused={focused}>7. noun: el reloj, owner: vos</FormLabel>
                     <TextField
                         variant="outlined"
                         value={value7}
@@ -183,43 +166,11 @@ function Quiz18() {
                         style={{width: "100%", margin: "auto", marginTop: "2px"}}
                     />
                     <hr />
-                    <FormLabel component="legend" color="secondary" focused={focused}>8. imperative - tenedlo</FormLabel>
+                    <FormLabel component="legend" color="secondary" focused={focused}>8. noun: le chique, owners: ustedes</FormLabel>
                     <TextField
                         variant="outlined"
                         value={value8}
                         onInput={e=>setValue8(e.target.value)}
-                        style={{width: "100%", margin: "auto", marginTop: "2px"}}
-                    />
-                    <hr />
-                    <FormLabel component="legend" color="secondary" focused={focused}>9. imperative - salgan</FormLabel>
-                    <TextField
-                        variant="outlined"
-                        value={value9}
-                        onInput={e=>setValue9(e.target.value)}
-                        style={{width: "100%", margin: "auto", marginTop: "2px"}}
-                    />
-                    <hr />
-                    <FormLabel component="legend" color="secondary" focused={focused}>10. imperative - dime</FormLabel>
-                    <TextField
-                        variant="outlined"
-                        value={value10}
-                        onInput={e=>setValue10(e.target.value)}
-                        style={{width: "100%", margin: "auto", marginTop: "2px"}}
-                    />
-                    <hr />
-                    <FormLabel component="legend" color="secondary" focused={focused}>11. imperative - hablá</FormLabel>
-                    <TextField
-                        variant="outlined"
-                        value={value11}
-                        onInput={e=>setValue11(e.target.value)}
-                        style={{width: "100%", margin: "auto", marginTop: "2px"}}
-                    />
-                    <hr />
-                    <FormLabel component="legend" color="secondary" focused={focused}>12. imperative - hazlo</FormLabel>
-                    <TextField
-                        variant="outlined"
-                        value={value12}
-                        onInput={e=>setValue12(e.target.value)}
                         style={{width: "100%", margin: "auto", marginTop: "2px"}}
                     />
                     <hr />
@@ -229,12 +180,12 @@ function Quiz18() {
         </FormControl>
       </form> 
       <div className="score">
-        <h2>{percentage ? `You got ${score} out of 12 correct. Percentage: ${percentage}` : null}</h2>
+        <h2>{percentage ? `You got ${score} out of 8 correct. Percentage: ${percentage}` : null}</h2>
       </div>
-      <Link style={{display: "inline-block"}} className="next-link" exact="true" to="/lessons/18">Return to This Lesson</Link>
-      <Link style={{display: "inline-block"}} className="next-link" exact="true" to="/lessons/19">Next Lesson: Possessive Adjectives →</Link>
+      <Link style={{display: "inline-block"}} className="next-link" exact="true" to="/lessons/19">Return to This Lesson</Link>
+      <Link style={{display: "inline-block"}} className="next-link" exact="true" to="/lessons/20">Next Lesson: →</Link>
       </div>
     )
 }
 
-export default Quiz18
+export default Quiz19
