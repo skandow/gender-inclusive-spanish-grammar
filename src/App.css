@@ -226,6 +226,12 @@ table.you-chart {
   height: 200px;
 }
 
+table.spanish-possessive-pronoun-chart {
+  table-layout: fixed;
+  width: 1000px;
+  height: 200px;
+}
+
 .grid {
   display: grid;
   grid-template-areas:

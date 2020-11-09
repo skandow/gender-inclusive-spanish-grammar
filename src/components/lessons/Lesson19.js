@@ -1,12 +1,12 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 
-function Lesson18() {
+function Lesson19() {
 
     return (
       <div className="lesson">
           <div style={{color: "#006341"}}>
-          <h1>Possessive Adjectives</h1>
+          <h1>Possessive Adjectives & Pronouns</h1>
           <hr style={{border: "2px solid #006341"}}></hr>
           </div>
           <div style={{textAlign: "left"}}>
@@ -21,26 +21,10 @@ function Lesson18() {
                  <em>Our</em> house is the red one.<br/>
                  I don't see <em>their</em> car.<br/> 
              </p>
-             <h3>Possessive Adjectives in Spanish:</h3>
-             <p>There are two ways to show possession in Spanish. One is to utilize the preposition <em lang="es">de</em>,
-             which means <em>of</em> in this particular context. If the owner of the noun referenced is a pronoun (me, you, etc.),
-             then the proper prepositional pronoun should be used after <em lang="es">de</em>.</p>
-             <p className="example">
-                 Where is my pencil?<br/>
-                 <em lang="es">¿Dónde está el lápiz de mí?</em><br/><br/>
-                 Show me your homework.<br/>
-                 <em lang="es">Muestrame la tarea de tí.</em><br/><br/>
-                 This is hir book.<br/>
-                 <em lang="es">Este es el libro de elle.</em><br/><br/>
-                 Our house is the red one.<br/>
-                 <em lang="es">La casa de nosotros es el rojo.</em><br/><br/>
-                 I don't see their car.<br/>
-                 <em lang="es">No veo el coche de ellas.</em>
-             </p>
-             <p>The other way is to utilize a possessive adjective. Let's see these in both English and Spanish.</p>
-             <div>
+                <p>Let's take a look at possessive adjectives in English:</p>
+                <div>
                 <table>
-                <caption>English Subject Pronouns</caption>
+                <caption>English Possessive Adjectives</caption>
                     <thead>
                     
                     <tr>
@@ -71,6 +55,24 @@ function Lesson18() {
                     </tbody>
                 </table>
             </div>
+             <h3>Possessive Adjectives in Spanish:</h3>
+             <p>There are two ways to show possession in Spanish. One is to utilize the preposition <em lang="es">de</em>,
+             which means <em>of</em> in this particular context. If the owner of the noun referenced is a pronoun (me, you, etc.),
+             then the proper prepositional pronoun should be used after <em lang="es">de</em>.</p>
+             <p className="example">
+                 Where is my pencil?<br/>
+                 <em lang="es">¿Dónde está el lápiz de mí?</em><br/><br/>
+                 Show me your homework.<br/>
+                 <em lang="es">Muestrame la tarea de tí.</em><br/><br/>
+                 This is hir book.<br/>
+                 <em lang="es">Este es el libro de elle.</em><br/><br/>
+                 Our house is the red one.<br/>
+                 <em lang="es">La casa de nosotros es el rojo.</em><br/><br/>
+                 I don't see their car.<br/>
+                 <em lang="es">No veo el coche de ellas.</em>
+             </p>
+             <p>The other way is to utilize a possessive adjective. Let's see these in both English and Spanish.</p>
+             
             <div>
         <table id="subject-pronoun-chart">
         <caption>Spanish Possessive Adjectives - Singular Objects</caption>
@@ -101,7 +103,7 @@ function Lesson18() {
                 <tr>
                     <td style={{backgroundColor: "#b81140"}} lang="es">vuestre</td></tr>
                 <tr>
-                    <th rowSpan="4" scope="row">Third Person</th>
+                    <th scope="row">Third Person</th>
                     <td lang="es">su</td>
                     <td lang="es">su</td>
                 </tr>
@@ -147,12 +149,106 @@ function Lesson18() {
                  <em lang="es">No veo su coche de ellas.</em>
              </p>
              <p>Doing so allows us to more clearly clarify who the owner is of a particular object</p>
-            <p>For our final lesson of this section, we'll look at a the pronoun equivalent of possessive adjectives.</p>
+             <h3>Possessive Pronouns</h3>
+             <p>Let's take a look at one of the above examples we've been using and see it written to convey the same meaning two different ways:</p>
+             <p className="example">This is <em>hir</em> book.<br/>
+             This book is <em>hirs</em>.</p>
+             <p>In the first sentence, which we've seen before, the word used to designate that the book belongs to someone is an adjective. But in the second sentence, the
+                 word being utilized for the same task is a pronoun.
+             </p>
+             <p>Let's look at possessive pronouns in English.</p>
+             <div>
+                <table>
+                <caption>English Possessive Pronouns</caption>
+                    <thead>
+                    
+                    <tr>
+                        <td>&nbsp;</td>
+                        <th scope="col">Singular</th>
+                        <th scope="col">Plural</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <th scope="row">First Person</th>
+                        <td>mine</td>
+                        <td>ours</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Second Person</th>
+                        <td>yours</td>
+                        <td>yours</td>
+                    </tr>
+                    <tr>
+                        <th rowSpan="4" scope="row">Third Person</th>
+                        <td>his</td>
+                        <td rowSpan="4">their</td>
+                    </tr>
+                    <tr><td>hers</td></tr>
+                    <tr><td>hirs</td></tr>
+                    <tr><td>its</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <p>Like possessive Spanish adjectives, possessive Spanish pronouns base their endings on the number and gender of the noun they are replacing. Like the previous charts, this 
+                chart structures the pronouns based on who the owner is. Notice for each of these there are six possible endings:
+            </p>
+            <div>
+        <table className="spanish-possessive-pronoun-chart">
+        <caption>Spanish Possessive Pronouns</caption>
+                <thead>
+                
+                <tr>
+                    <td>&nbsp;</td>
+                    <th scope="col">Singular</th>
+                    <th scope="col">Plural</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <th scope="row">First Person</th>
+                    <td lang="es">mío/-a/-e/-os/-as/-es</td>
+                    <td lang="es">nuestro/-a/-e/-os/-as/-es</td>
+                </tr>
+                <tr>
+                    <th scope="row">Second Person</th>
+                    <td lang="es">tuyo/-a/-e/-os/-as/-es</td>                    
+                    <td style={{backgroundColor: "#b81140"}} lang="es">vuestro/-a/-e/-os/-as/-es</td>
+                </tr>
+                <tr>
+                    <th scope="row">Third Person</th>
+                    <td lang="es">suyo/-a/-e/-os/-as/-es</td>
+                    <td lang="es">suyo/-a/-e/-os/-as/-es</td>
+                </tr>
+                </tbody>
+        </table>
+        </div>
+        <p>Let's take a look at some of these possessive pronouns in action. For each example, we'll italicize the object being replaced by the pronoun as 
+            well as the pronoun itself.
+        </p>
+        <p className="example">
+            That <em>cat</em> is <em>mine</em>.<br/>
+            <span lang="es">Ese <em>gato</em> es <em>mío</em>.</span><br/><br/>
+            These <em>plates</em> are <em>yours (singular, familiar)</em>.<br/>
+            <span lang="es">Estos <em>platos</em> son <em>tuyos</em>.</span><br/><br/>
+            This <em>bed</em> is <em>hers</em>.<br/>
+            <span lang="es">Esta <em>cama</em> es <em>suya</em>.</span><br/><br/>
+            Those <em>manzanas</em> are <em>ours</em>.<br/>
+            <span lang="es">Esas <em>manzanas</em> son <em>nuestras</em>.</span><br/><br/>
+            Are the <em>children</em> yours (plural, familiar)?<br/>
+            <span style={{color: "#b81140"}} lang="es">¿Les <em>chiques</em> son <em>vuestres</em>?</span><br/>
+            OR<br/>
+            <span lang="es">¿Les <em>chiques</em> son <em>suyes</em>?</span><br/><br/>
+            The <em>little child (gender neutral)</em> is <em>theirs</em>.<br/>
+            <span lang="es">Le <em>niñe</em> es <em>suye</em>.</span>
+        </p>
+        <p>Remember that for BOTH possessive adjectives and pronouns, the gender and count must match the object whose ownership is being referenced!</p>
+            <p>For our final lesson, we'll look at one more category of pronouns and adjectives that we've seen a bit of in previous lessons: demonstrative pronouns and adjectives.</p>
           </div>
           <Link style={{display: "inline-block"}} className="next-link" exact="true" to="/quizzes/19">Take Quiz!</Link>
-          <Link style={{display: "inline-block"}} className="next-link" exact="true" to="/lessons/20">Possessive Pronouns →</Link>
+          <Link style={{display: "inline-block"}} className="next-link" exact="true" to="/lessons/20">Demonstrative Adjectives and Pronouns →</Link>
       </div>
     );
   }
   
-  export default Lesson18;
+  export default Lesson19;
