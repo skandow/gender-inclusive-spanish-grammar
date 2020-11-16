@@ -3,16 +3,14 @@ import { useSelector } from 'react-redux';
 
 function Profile() {
   const user = useSelector(state => state.user)
-  let greeting 
-  if (user.preferred_pronouns.substr(0, 2) === "he") {
-      greeting = "¡Bienvenido"
-  } else if (user.preferred_pronouns.substr(0, 3) === "she") {
-      greeting = "¡Bienvenida"
-  } else {
-      greeting = "¡Bienvenide"
-  }
-
-  console.log(user)
+  let greeting
+    if (user.preferred_pronouns.substr(0, 2) === "he") {
+        greeting = "¡Bienvenido"
+    } else if (user.preferred_pronouns.substr(0, 3) === "she") {
+        greeting = "¡Bienvenida"
+    } else {
+        greeting = "¡Bienvenide"
+    }
 
   return (
     <div className="profile">

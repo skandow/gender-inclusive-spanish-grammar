@@ -102,6 +102,8 @@ export default function DrawerMenu() {
     dispatch(deleteQuizScores());
   }
 
+  console.log("at the drawer menu")
+
   return (
     <div className={classes.root}>
       <CssBaseline />
@@ -111,7 +113,7 @@ export default function DrawerMenu() {
             
           </Typography>
           <Typography style={{flex:1}}>
-              <Link className="bar-link" to={"/home"}>
+              <Link className="bar-link" to={"/"}>
                 <Button color="inherit">Home</Button>
               </Link>
             <Link className="bar-link" to={"/edit"}>
@@ -305,7 +307,7 @@ export default function DrawerMenu() {
           <Route exact path="/final_message">
             <FinalMessage />
           </Route>
-          <Route exact path="/home">
+          <Route exact path="/">
             <Profile />
           </Route>
           <Route exact path="/edit">

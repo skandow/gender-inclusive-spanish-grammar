@@ -108,6 +108,7 @@ export default function EditProfile() {
 
   return (
     <div>
+      {user ?
     <Container component="main" maxWidth="md" style={{height: '76vh'}}>
       <CssBaseline />
       <div className={classes.paper}>
@@ -185,6 +186,7 @@ export default function EditProfile() {
         {/* <Copyright /> */}
       </Box>
     </Container>
+    : null}
     </div>
   );
 }

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Redirect } from 'react-router-dom';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -9,7 +9,6 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import { useDispatch } from 'react-redux';
-import { useSelector } from 'react-redux';
 import { loginUser } from '../../actions/user.js'
 import { saveQuizScores } from '../../actions/quizScores.js';
 
@@ -45,33 +44,10 @@ const useStyles = makeStyles((theme) => ({
 export default function Login() {
   const dispatch = useDispatch();
   const classes = useStyles();
-  const user = useSelector(state => state.user)
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
   const [redirect, setRedirect] = useState('')
-
-  useEffect(() => {
-    const token = localStorage.getItem("token")
-    if (token) {
-      const reqObj = {
-        method: "GET",
-        headers: {
-          'Authorization': `Bearer ${token}`
-        }
-      }
-        fetch('http://localhost:3001/api/v1/profile', reqObj)
-        .then(resp => {
-            setRedirect('/home')
-            return resp.json()})
-        .then(data => {
-          console.log("Hello user", user)
-          dispatch(loginUser(data.user.data.attributes))
-          dispatch(saveQuizScores(data.user.data.attributes.quiz_scores))
-          console.log("Goodbye!", user)
-    })
-  }
-})
 
   const handleSubmit = event => {
     event.preventDefault();
@@ -92,7 +68,7 @@ export default function Login() {
       if(resp.status === 401) {
           throw Error("The username or password is incorrect")
       } else {
-          setRedirect("/home")
+          setRedirect("/")
           return resp.json()
       }
       })

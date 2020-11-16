@@ -48,7 +48,6 @@ function QuizScores() {
         let quizArray = []
         for (let quizCounter = 1; quizCounter <= 20; quizCounter++) {
             const thisQuiz = quizScores.find(score => score.quiz === quizCounter)
-            console.log(thisQuiz)
             if (thisQuiz) {
                 let thisRow = createData(quizCounter, thisQuiz.score, thisQuiz.percentage)
                 quizArray.push(thisRow)
