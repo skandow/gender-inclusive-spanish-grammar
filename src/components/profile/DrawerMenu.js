@@ -136,7 +136,7 @@ export default function DrawerMenu() {
         }}
         anchor="left"
       >
-        <div className={classes.toolbar} style={{color: "white", backgroundColor: "#b81140"}}>
+        <div className={classes.toolbar} style={{color: "white", backgroundColor: "#b81140", position: "relative"}}>
           <h5 id="corner-label">Gender Inclusive Spanish</h5>
         </div>
         <Divider />
