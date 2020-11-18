@@ -206,7 +206,7 @@ function Lesson4() {
             </p>
           </div>
           <Link style={{display: "inline-block"}} className="next-link" exact="true" to="/quizzes/4">Take Quiz!</Link>
-          <Link style={{display: "inline-block"}} className="next-link" exact="true" to="/lessons/5">Adjectives →</Link>
+          <Link style={{display: "inline-block"}} className="next-link" exact="true" to="/lessons/5">Next Lesson: Adjectives →</Link>
       </div>
     );
   }

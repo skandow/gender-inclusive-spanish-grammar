@@ -117,7 +117,7 @@ function Lesson5() {
             begin Part 2 with a look at another verb used with adjectives: the verb <em lang="es">estar</em>.</p>           
           </div>
           <Link style={{display: "inline-block"}} className="next-link" exact="true" to="/quizzes/5">Take Quiz!</Link>
-          <Link style={{display: "inline-block"}} className="next-link" exact="true" to="/lessons/6">The Verb <em>Estar</em> →</Link>
+          <Link style={{display: "inline-block"}} className="next-link" exact="true" to="/lessons/6">Next Lesson: The Verb <em>Estar</em> →</Link>
       </div>
     );
   }
