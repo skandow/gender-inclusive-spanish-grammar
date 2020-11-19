@@ -6,14 +6,14 @@ function Lesson13() {
     return (
       <div className="lesson">
           <div style={{color: "#006341"}}>
-          <h1>Indirect Object Pronouns</h1>
-          <hr style={{border: "2px solid #006341"}}></hr>
+            <h1>Indirect Object Pronouns</h1>
+            <hr style={{border: "2px solid #006341"}}></hr>
           </div>
           <div style={{textAlign: "left"}}>
-            <h3>Direct vs. Indirect Pronouns in English</h3>
-             <p>In the English language, we don't often differentiate between direct and indirect object pronouns. Consider this sentence which began our last lesson.</p>
+            <h3>Direct vs. Indirect Pronouns in English:</h3>
+            <p>In the English language, we don't often differentiate between direct and indirect object pronouns. Consider this sentence which began our last lesson.</p>
             <p className="example">When does Sarah read the book to her daughter?<br/>
-            <em>She</em> reads <em>it</em> to <em>her</em> every night.</p>
+                <em>She</em> reads <em>it</em> to <em>her</em> every night.</p>
             <p>In the last lesson, we talked about how the pronoun <em>it</em> is the direct object pronoun. In this lesson, we'll look at how the pronoun <em>her</em> is
             functioning.</p>
             <p><strong>Indirect object pronouns</strong> tell us who an action is being done to through the direct object. In the case above, Sarah reads the book directly, but to whom? That is the question
@@ -45,51 +45,50 @@ function Lesson13() {
                 It's less likely we would word the sentence this way as native English speakers, but because we CAN and the sentence retains its original meaning, <em>it</em> in this case is an
                 indirect object pronoun.</li>
             </ol>
-             <h3>Spanish Indirect Object Pronouns</h3>
-             <p>Here is the chart of Spanish indirect object pronouns. Again, you should compare this chart to the reflexive pronoun and direct object pronoun charts.</p>
+            <h3>Spanish Indirect Object Pronouns:</h3>
+            <p>Here is the chart of Spanish indirect object pronouns. Again, you should compare this chart to the reflexive pronoun and direct object pronoun charts.</p>
             <div>
                 <table>
-                <caption>Spanish Indirect Object Pronouns</caption>
+                    <caption>Spanish Indirect Object Pronouns</caption>
                     <thead>
-                    
-                    <tr>
-                        <td>&nbsp;</td>
-                        <th scope="col">Singular</th>
-                        <th scope="col">Plural</th>
-                    </tr>
+                        <tr>
+                            <td>&nbsp;</td>
+                            <th scope="col">Singular</th>
+                            <th scope="col">Plural</th>
+                        </tr>
                     </thead>
                     <tbody>
-                    <tr>
-                        <th scope="row">First Person</th>
-                        <td>me</td>
-                        <td>nos</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Second Person</th>
-                        <td>te</td>
-                        <td style={{backgroundColor: "#b81140"}}>os</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Third Person</th>
-                        <td>le</td>
-                        <td>les</td>
-                    </tr>
+                        <tr>
+                            <th scope="row">First Person</th>
+                            <td>me</td>
+                            <td>nos</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Second Person</th>
+                            <td>te</td>
+                            <td style={{backgroundColor: "#b81140"}}>os</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Third Person</th>
+                            <td>le</td>
+                            <td>les</td>
+                        </tr>
                     </tbody>
                 </table>
-        </div>
-        <p>Again, the first and second person forms are identical here to their counterparts in the previous two lessons.</p>
-        <p>Regarding third-person usage, <em lang="es">le</em> would be used for any indirect object pronoun that corresponds to <em>él</em>,
-        <em> ella</em>, <em>elle</em>, or <em>usted</em>, while <em lang="es">les</em> would be used for any indirect object pronoun that corresponds to 
-        <em> ellos</em>, <em>ellas</em>, <em>elles</em>, or <em>ustedes</em>.</p>
-        <p>It should also be noted that, like reflexive/reciprocal and direct object pronouns, indirect object pronouns are typically placed before the verb they connect to.</p>
-        <p>Let's look at a brief example:</p>
-        <p className="example">I write to them every week.<br/>
-        <em lang="es">Yo les escribo todas las semanas.</em></p>
-        <p>Notice the structure in the above sentence, the subject pronoun, which in this case is optional because of the verb, comes first. The indirect object pronoun is next, followed by the verb.</p>
-        <h3>Rules Regarding Using Direct and Indirect Objects:</h3>
-             <p>Now that we have taken a look at both direct and indirect objects in action separately, let's take a look at how they work together, utilizing the sentence that began this and the last lessons:</p>
+            </div>
+            <p>Again, the first and second person forms are identical here to their counterparts in the previous two lessons.</p>
+            <p>Regarding third-person usage, <em lang="es">le</em> would be used for any indirect object pronoun that corresponds to <em>él</em>,
+            <em> ella</em>, <em>elle</em>, or <em>usted</em>, while <em lang="es">les</em> would be used for any indirect object pronoun that corresponds to 
+            <em> ellos</em>, <em>ellas</em>, <em>elles</em>, or <em>ustedes</em>.</p>
+            <p>It should also be noted that, like reflexive/reciprocal and direct object pronouns, indirect object pronouns are typically placed before the verb they connect to.</p>
+            <p>Let's look at a brief example:</p>
+            <p className="example">I write to them every week.<br/>
+                <em lang="es">Yo les escribo todas las semanas.</em></p>
+            <p>Notice the structure in the above sentence, the subject pronoun, which in this case is optional because of the verb, comes first. The indirect object pronoun is next, followed by the verb.</p>
+            <h3>Rules Regarding Using Direct and Indirect Objects:</h3>
+            <p>Now that we have taken a look at both direct and indirect objects in action separately, let's take a look at how they work together, utilizing the sentence that began this and the last lessons:</p>
             <p className="example">When does Sarah read the book to her daughter?<br/>
-            <em>She</em> reads <em>it</em> to <em>her</em> every night.</p>
+                <em>She</em> reads <em>it</em> to <em>her</em> every night.</p>
             <p>We know from these two lessons that <em>she</em> is a subject pronoun, <em>it</em> is a direct object pronoun, and <em>her</em> is an indirect object pronoun.</p>
             <p>Let's try to convert this second sentence now into Spanish. Let's break down the steps:</p>
             <ol>
@@ -115,7 +114,7 @@ function Lesson13() {
             <p>There are other ways we can express the connection that an indirect object has to a verb. These pronouns, used after prepositions, will be explored in the next lesson.</p>
           </div>
           <Link style={{display: "inline-block"}} className="next-link" exact="true" to="/quizzes/13">Take Quiz!</Link>
-          <Link style={{display: "inline-block"}} className="next-link" exact="true" to="/lessons/14">Combining Prepositional Pronouns →</Link>
+          <Link style={{display: "inline-block"}} className="next-link" exact="true" to="/lessons/14">Next Lesson: Combining Prepositional Pronouns →</Link>
       </div>
     );
   }

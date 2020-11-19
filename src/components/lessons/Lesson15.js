@@ -6,43 +6,44 @@ function Lesson15() {
     return (
       <div className="lesson">
           <div style={{color: "#006341"}}>
-          <h1>The Present Progressive and Unique Pronoun Placement</h1>
-          <hr style={{border: "2px solid #006341"}}></hr>
+            <h1>The Present Progressive and Unique Pronoun Placement</h1>
+            <hr style={{border: "2px solid #006341"}}></hr>
           </div>
           <div style={{textAlign: "left"}}>
             <h3>The Present Progressive:</h3>
-             <p>So far, we've explored two verb tenses, both in the indicative mood: the present simple and the present perfect. Consider these two sentences in English and Spanish:</p>
+            <p>So far, we've explored two verb tenses, both in the indicative mood: the present simple and the present perfect. Consider these two sentences in English and Spanish:</p>
             <p className="example">Present Simple:<br/>
-            I speak to my class every day.<br/>
-            <em lang="es">Hablo con mi clase todos los días.</em><br/><br/>
-            Present Perfect:<br/>
-            I have spoken with my class every day this week.<br/>
-            <em lang="es">He hablado con mi clase todos los días de esta semana.</em></p>
+                I speak to my class every day.<br/>
+                <em lang="es">Hablo con mi clase todos los días.</em><br/><br/>
+                Present Perfect:<br/>
+                I have spoken with my class every day this week.<br/>
+                <em lang="es">He hablado con mi clase todos los días de esta semana.</em></p>
             <p>In English, there is a third tense in the present: the present continuous, or as it's called in Spanish: the present progressive. This tense is typically used to indicate an
             action occuring in the present that began sometime in the past or an action that will happen in the near future.</p>
             <p className="example">Present Progressive:<br/>
-            I am speaking to my class right now.<br/>
-            <em lang="es">Estoy hablando con mi clase ahora mismo.</em></p>
+                I am speaking to my class right now.<br/>
+                <em lang="es">Estoy hablando con mi clase ahora mismo.</em></p>
             <p>The present progressive is rather simple to form in Spanish. It requires conjugating the verb <em lang="es">estar</em> based on 
             the subject of the sentence and combining it with the present participle, which is regularly formed by doing the following:</p>
             <ol>
                 <li>Take the infinitive of the verb and remove the last two letters (<em>-ar</em>, <em>-er</em>, <em>-ir</em>)</li>
-                <li>Add to the stem one of the following endings:</li>
+                <li>Add to the stem one of the following endings:
                     <ul>
                         <li>If the infinitive ends in <em>-ar</em>, add <em>-ando</em></li>
                         <li>If the infinitive ends in <em>-er</em> or <em>-ir</em>, add <em>-iendo</em></li>
                     </ul>
+                </li>
             </ol>
             <p>Let's see this with three verbs, utilized with the subject <em lang="es"></em>:</p>
             <p className="example">Infinitive: <em lang="es">amar</em><br/>
-            Present Participle: <em lang="es">amando</em><br/>
-            Present Progressive: <em lang="es">estoy amando</em><br/><br/>
-            Infinitive: <em lang="es">temer</em><br/>
-            Present Participle: <em lang="es">temiendo</em><br/>
-            Present Progressive: <em lang="es">estoy temiendo</em><br/><br/>
-            Infinitive: <em lang="es">vivir</em><br/>
-            Present Participle: <em lang="es">viviendo</em><br/>
-            Present Progressive: <em lang="es">estoy viviendo</em></p>
+                Present Participle: <em lang="es">amando</em><br/>
+                Present Progressive: <em lang="es">estoy amando</em><br/><br/>
+                Infinitive: <em lang="es">temer</em><br/>
+                Present Participle: <em lang="es">temiendo</em><br/>
+                Present Progressive: <em lang="es">estoy temiendo</em><br/><br/>
+                Infinitive: <em lang="es">vivir</em><br/>
+                Present Participle: <em lang="es">viviendo</em><br/>
+                Present Progressive: <em lang="es">estoy viviendo</em></p>
             <h3>Irregular Present Participle Construction Rules:</h3>
             <p>Most Spanish verbs, even irregular verbs such as <em lang="es">ser</em> and <em lang="es">ver</em> can form their present participles using the 
             rules above, but there are some exceptions, all of which correspond to <em>-er</em> or <em>-ir</em> verbs:</p>
@@ -102,12 +103,12 @@ function Lesson15() {
                 We are giving it (feminine noun) to you (plural, familiar, Spain).<br/>
                 <em lang="es">Estamos dándoosla.</em>
             </p>
-            <p>Notice in the above example that an accent is necessary to preserve the proper syllable stress in the Present Progressive form.</p>
-        <p>We returned at the end of Part 3 to looking at verbs. We'll explore verbs in much more detail in Part 4.
-        </p>
+            <p>Notice in the above example that a tilde is necessary to preserve the proper syllable stress in the Present Progressive form.</p>
+            <p>We returned at the end of Part 3 to looking at verbs. We'll explore verbs in much more detail in Part 4.
+            </p>
           </div>
           <Link style={{display: "inline-block"}} className="next-link" exact="true" to="/quizzes/15">Take Quiz!</Link>
-          <Link style={{display: "inline-block"}} className="next-link" exact="true" to="/lessons/16">The Positive Imperative Mood With Familiar People →</Link>
+          <Link style={{display: "inline-block"}} className="next-link" exact="true" to="/lessons/16">Next Lesson: The Positive Imperative Mood With Familiar People →</Link>
       </div>
     );
   }
