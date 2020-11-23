@@ -1,5 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
+import Box from '@material-ui/core/Box';
+import Copyright from '../containers/Copyright'
 
 function Lesson19() {
 
@@ -241,8 +243,12 @@ function Lesson19() {
             <p>Remember that for BOTH possessive adjectives and pronouns, the gender and count must match the object whose ownership is being referenced!</p>
             <p>For our final lesson, we'll look at one more category of pronouns and adjectives that we've seen a bit of in previous lessons: demonstrative pronouns and adjectives.</p>
           </div>
-          <Link style={{display: "inline-block"}} className="next-link" exact="true" to="/quizzes/19">Take Quiz!</Link>
-          <Link style={{display: "inline-block"}} className="next-link" exact="true" to="/lessons/20">Next Lesson: Demonstrative Adjectives and Pronouns →</Link>
+          <Box mt={4}>
+            <Link className="next-link" exact="true" to="/quizzes/19">Take Quiz!</Link>
+            <br/>
+            <Link className="next-link" exact="true" to="/lessons/20">Next Lesson: Demonstrative Adjectives and Pronouns →</Link>
+          </Box>
+          <Copyright />
       </div>
     );
   }

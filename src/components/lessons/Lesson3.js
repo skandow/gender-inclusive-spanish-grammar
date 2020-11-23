@@ -1,6 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { HashLink } from 'react-router-hash-link'
+import Box from '@material-ui/core/Box';
+import Copyright from '../containers/Copyright'
 
 function Lesson3() {
     return (
@@ -178,8 +180,12 @@ function Lesson3() {
             once the examples shifted to the plural side of things.  This is a good time to discuss next
             how nouns and adjectives work in Spanish.</p>
           </div>
-          <Link style={{display: "inline-block"}} className="next-link" exact="true" to="/quizzes/3">Take Quiz!</Link>
-          <Link style={{display: "inline-block"}} className="next-link" exact="true" to="/lessons/4">Next Lesson: Nouns →</Link>
+          <Box mt={4}>
+            <Link className="next-link" exact="true" to="/quizzes/3">Take Quiz!</Link>
+            <br/>
+            <Link className="next-link" exact="true" to="/lessons/4">Next Lesson: Nouns →</Link>
+          </Box>
+          <Copyright />
       </div>
     );
   }

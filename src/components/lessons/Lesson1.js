@@ -1,5 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import Box from '@material-ui/core/Box';
+import Copyright from '../containers/Copyright'
 
 function Lesson1() {
     return (
@@ -56,8 +58,12 @@ function Lesson1() {
             are probably the easiest to convert from English to Spanish.
             </p>
           </div>
-          <Link style={{display: "inline-block"}} className="next-link" exact="true" to="/quizzes/1">Take Quiz!</Link>
-          <Link style={{display: "inline-block"}} className="next-link" exact="true" to="/lessons/2">Next Lesson: Subject Pronouns →</Link>
+          <Box mt={4}>
+            <Link className="next-link" exact="true" to="/quizzes/1">Take Quiz!</Link>
+            <br/>
+            <Link className="next-link" exact="true" to="/lessons/2">Next Lesson: Subject Pronouns →</Link>
+          </Box>
+          <Copyright />
       </div>
     );
   }

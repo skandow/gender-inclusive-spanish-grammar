@@ -1,5 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import Box from '@material-ui/core/Box';
+import Copyright from '../containers/Copyright'
 
 function Lesson10() {
     
@@ -10,7 +12,7 @@ function Lesson10() {
             <hr style={{border: "2px solid #006341"}}></hr>
           </div>
           <div style={{textAlign: "left"}}>
-            <h3>How Stem-Changing Verbs Work</h3>
+            <h3>How Stem-Changing Verbs Work:</h3>
             <p>We've taken a look at how to conjugate regular and irregular verbs in the present indicative.  There is another category of verbs
             that utilizes the regular endings we've taken a look at.  However, when they are conjugated, the stem - or, the part of the verb that 
             remains after removing the <em>-ar</em>, <em>-er</em>, or <em>-ir</em> ending - changes.  Let's see how this operates in the conjugation 
@@ -239,8 +241,12 @@ function Lesson10() {
             a solid basis to explore these other forms.  Part 3 will explore the concept of pronouns further in depth.
             </p>
           </div>
-          <Link style={{display: "inline-block"}} className="next-link" exact="true" to="/quizzes/10">Take Quiz!</Link>
-          <Link style={{display: "inline-block"}} className="next-link" exact="true" to="/lessons/11">Next Lesson: Reflexive and Reciprocal Pronouns →</Link>
+          <Box mt={4}>
+            <Link className="next-link" exact="true" to="/quizzes/10">Take Quiz!</Link>
+            <br/>
+            <Link className="next-link" exact="true" to="/lessons/11">Next Lesson: Reflexive and Reciprocal Pronouns →</Link>
+          </Box>
+          <Copyright />
       </div>
     );
   }

@@ -1,6 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { useSelector } from 'react-redux';
+import Box from '@material-ui/core/Box';
+import Copyright from '../containers/Copyright'
 
 function Lesson5() {
     const user = useSelector(state => state.user)
@@ -116,8 +118,12 @@ function Lesson5() {
             <p>However, <em lang="es">ser</em> is not the only verb in the Spanish language to connect nouns to adjectives.  We'll
             begin Part 2 with a look at another verb used with adjectives: the verb <em lang="es">estar</em>.</p>           
           </div>
-          <Link style={{display: "inline-block"}} className="next-link" exact="true" to="/quizzes/5">Take Quiz!</Link>
-          <Link style={{display: "inline-block"}} className="next-link" exact="true" to="/lessons/6">Next Lesson: The Verb <em>Estar</em> →</Link>
+          <Box mt={4}>
+            <Link className="next-link" exact="true" to="/quizzes/5">Take Quiz!</Link>
+            <br/>
+            <Link className="next-link" exact="true" to="/lessons/6">Next Lesson: The Verb <em>Estar</em> →</Link>
+          </Box>
+          <Copyright />
       </div>
     );
   }

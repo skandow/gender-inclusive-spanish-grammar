@@ -1,6 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { useSelector } from 'react-redux';
+import Box from '@material-ui/core/Box';
+import Copyright from '../containers/Copyright'
 
 function Lesson12() {
     const user = useSelector(state => state.user)
@@ -197,8 +199,12 @@ function Lesson12() {
             <p>We'll next explore the other type of object pronoun: indirect object pronouns.
             </p>
           </div>
-          <Link style={{display: "inline-block"}} className="next-link" exact="true" to="/quizzes/12">Take Quiz!</Link>
-          <Link style={{display: "inline-block"}} className="next-link" exact="true" to="/lessons/13">Next Lesson: Indirect Object Pronouns →</Link>
+          <Box mt={4}>
+            <Link className="next-link" exact="true" to="/quizzes/12">Take Quiz!</Link>
+            <br/>
+            <Link className="next-link" exact="true" to="/lessons/13">Next Lesson: Indirect Object Pronouns →</Link>
+          </Box>
+          <Copyright />
       </div>
     );
   }

@@ -1,5 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
+import Box from '@material-ui/core/Box';
+import Copyright from '../containers/Copyright'
 
 function Lesson17() {
 
@@ -168,8 +170,12 @@ function Lesson17() {
             <p>In the next lesson, we'll look at how to say <em>no</em> in both the Indicative and Imperative moods.
             </p>
           </div>
-          <Link style={{display: "inline-block"}} className="next-link" exact="true" to="/quizzes/17">Take Quiz!</Link>
-          <Link style={{display: "inline-block"}} className="next-link" exact="true" to="/lessons/18">Next Lessong: The Spanish Negative →</Link>
+          <Box mt={4}>
+            <Link className="next-link" exact="true" to="/quizzes/17">Take Quiz!</Link>
+            <br/>
+            <Link className="next-link" exact="true" to="/lessons/18">Next Lessong: The Spanish Negative →</Link>
+          </Box>
+          <Copyright />
       </div>
     );
   }

@@ -4,26 +4,14 @@ import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import TextField from '@material-ui/core/TextField';
 import { NavLink } from 'react-router-dom';
-import Box from '@material-ui/core/Box';
-import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
+import Typography from '@material-ui/core/Typography';
 import { useDispatch } from 'react-redux';
 import { loginUser } from '../../actions/user.js'
 import { saveQuizScores } from '../../actions/quizScores.js';
+import Copyright from '../containers/Copyright'
 
-function Copyright() {
-  return (
-    <Typography variant="body2" color="textSecondary" align="center">
-      {'Copyright © '}
-      
-        Gender Inclusive Spanish Grammar
-      {' '}
-      {new Date().getFullYear()}
-      {'.'}
-    </Typography>
-  );
-}
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -126,14 +114,12 @@ export default function Login() {
           >
             Sign In
           </Button>
-              <NavLink style={{margin: "auto"}} to="/sign_up" exact>
-                Don't have an account? Sign Up
-              </NavLink>
+          <NavLink id="sign-up-link" style={{margin: "auto"}} to="/sign_up" exact>
+              Don't have an account? Sign Up
+          </NavLink>
         </form>
       </div>
-      <Box mt={8}>
-        <Copyright />
-      </Box>
+      <Copyright />
     </Container>
   );
 }

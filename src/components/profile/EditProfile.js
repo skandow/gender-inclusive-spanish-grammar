@@ -6,26 +6,13 @@ import TextField from '@material-ui/core/TextField';
 import FormControl from '@material-ui/core/FormControl';
 import InputLabel from '@material-ui/core/InputLabel';
 import NativeSelect from '@material-ui/core/NativeSelect';
-import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import { useDispatch } from 'react-redux';
 import { loginUser } from '../../actions/user.js';
 import { useSelector } from 'react-redux';
-
-// function Copyright() {
-//   return (
-//     <Typography variant="body2" color="textSecondary" align="center">
-//       {'Copyright © '}
-      
-//         Gender Inclusive Spanish Grammar
-//       {' '}
-//       {new Date().getFullYear()}
-//       {'.'}
-//     </Typography>
-//   );
-// }
+import Copyright from '../containers/Copyright'
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -35,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
     alignItems: 'center'
   },
   form: {
-    width: '100%', // Fix IE 11 issue.
+    width: '50%',
     marginTop: theme.spacing(1)
   },
   submit: {
@@ -77,7 +64,7 @@ export default function EditProfile() {
       if(resp.status === 406) {
       throw Error("Username must be unique")
       } else {
-      setRedirect("/home")
+      setRedirect("/")
       return resp.json()
   }
   })
@@ -109,82 +96,79 @@ export default function EditProfile() {
   return (
     <div>
       {user ?
-    <Container component="main" maxWidth="md" style={{height: '76vh'}}>
-      <CssBaseline />
-      <div className={classes.paper}>
-        <Typography component="h1" variant="h5">
-          Please Enter Your Information Below to Edit Your Profile
-        </Typography>
-        {errorMessage ? <Typography component="h2" variant="h6">
-        <div style={{color: "#b81140", width: "100%"}}>{errorMessage}</div>
-        </Typography> : null}
-        <form className={classes.form} onSubmit={handleSubmit} noValidate>
-          <TextField
-            variant="outlined"
-            color="secondary"
-            margin="normal"
-            required
-            fullWidth
-            id="username"
-            label="Username"
-            name="username"
-            value={username}
-            onInput={e=>setUsername(e.target.value)}
-            autoFocus
-          />
-          <TextField
-            variant="outlined"
-            color="secondary"
-            margin="normal"
-            required
-            fullWidth
-            name="email"
-            value={email}
-            onInput={e=>setEmail(e.target.value)}
-            label="Email Address"
-            id="email"
-          />
-          <FormControl className={classes.margin}>
-        <InputLabel htmlFor="demo-customized-select-native">Preferred Pronouns</InputLabel>
-            <NativeSelect
-          id="demo-customized-select-native"
-          value={preferredPronouns}
-          onChange={handleChange}
+      <Container component="main" maxWidth="md" style={{height: '76vh'}}>
+        <CssBaseline />
+        <div className={classes.paper}>
+          <Typography component="h1" variant="h5">
+            Please Enter Your Information Below to Edit Your Profile
+          </Typography>
+          {errorMessage ? <Typography component="h2" variant="h6">
+            <div style={{color: "#b81140", width: "100%"}}>{errorMessage}</div>
+          </Typography> : null}
+          <form className={classes.form} onSubmit={handleSubmit} noValidate>
+            <TextField
+              variant="outlined"
+              color="secondary"
+              margin="normal"
+              required
+              fullWidth
+              id="username"
+              label="Username"
+              name="username"
+              value={username}
+              onInput={e=>setUsername(e.target.value)}
+              autoFocus
+            />
+            <TextField
+              variant="outlined"
+              color="secondary"
+              margin="normal"
+              required
+              fullWidth
+              name="email"
+              value={email}
+              onInput={e=>setEmail(e.target.value)}
+              label="Email Address"
+              id="email"
+            />
+            <FormControl className={classes.margin}>
+              <InputLabel htmlFor="demo-customized-select-native">Preferred Pronouns</InputLabel>
+              <NativeSelect
+                id="demo-customized-select-native"
+                value={preferredPronouns}
+                onChange={handleChange}
+              >
+                <option aria-label="None" value="" />
+                <option value={"he, his, him, himself"}>he, his, him, himself</option>
+                <option value={"she, hers, her, herself"}>she, hers, her, herself</option>
+                <option value={"they, theirs, them, themselves"}>they, theirs, them, themselves</option>
+                <option value={"My pronouns aren't listed"}>My pronouns aren't listed.</option>
+              </NativeSelect>
+            </FormControl>
+            {showInput ? <TextField
+              variant="outlined"
+              color="secondary"
+              margin="normal"
+              fullWidth
+              id="preferred-pronouns"
+              label="Your preferred pronouns"
+              name="preferred-pronouns"
+              value={preferredPronouns}
+              onInput={e=>setPreferredPronouns(e.target.value)}
+              autoFocus
+            />:null}
+            <Button
+              type="submit"
+              fullWidth
+              variant="contained"
+              color="primary"
+              className={classes.submit}
             >
-          <option aria-label="None" value="" />
-          <option value={"he, his, him, himself"}>he, his, him, himself</option>
-          <option value={"she, hers, her, herself"}>she, hers, her, herself</option>
-          <option value={"they, theirs, them, themselves"}>they, theirs, them, themselves</option>
-          <option value={"My pronouns aren't listed"}>My pronouns aren't listed.</option>
-        </NativeSelect>
-        </FormControl>
-        {showInput ? <TextField
-            variant="outlined"
-            color="secondary"
-            margin="normal"
-            fullWidth
-            id="preferred-pronouns"
-            label="Your preferred pronouns"
-            name="preferred-pronouns"
-            value={preferredPronouns}
-            onInput={e=>setPreferredPronouns(e.target.value)}
-            autoFocus
-          />:null}
-          <Button
-            type="submit"
-            fullWidth
-            variant="contained"
-            color="primary"
-            className={classes.submit}
-          >
-            Edit Your Profile
-          </Button>
-            
+              Edit Your Profile
+            </Button>
         </form>
       </div>
-      <Box mt={8}>
-        {/* <Copyright /> */}
-      </Box>
+      <Copyright />
     </Container>
     : null}
     </div>

@@ -1,5 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
+import Box from '@material-ui/core/Box';
+import Copyright from '../containers/Copyright'
 
 function Lesson14() {
 
@@ -113,8 +115,12 @@ function Lesson14() {
             <p>In the last lesson of this section, we'll look at another type of verb referenced in a previous lesson and see how the pronouns we've explored are placed when they're used.
             </p>
           </div>
-          <Link style={{display: "inline-block"}} className="next-link" exact="true" to="/quizzes/14">Take Quiz!</Link>
-          <Link style={{display: "inline-block"}} className="next-link" exact="true" to="/lessons/15">Next Lesson: The Present Progressive and Unique Pronoun Placement →</Link>
+          <Box mt={4}>
+            <Link className="next-link" exact="true" to="/quizzes/14">Take Quiz!</Link>
+            <br/>
+            <Link className="next-link" exact="true" to="/lessons/15">Next Lesson: The Present Progressive and Unique Pronoun Placement →</Link>
+          </Box>
+          <Copyright />
       </div>
     );
   }

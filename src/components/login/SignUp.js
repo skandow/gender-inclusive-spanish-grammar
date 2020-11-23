@@ -6,26 +6,13 @@ import FormControl from '@material-ui/core/FormControl';
 import { NavLink } from 'react-router-dom'
 import InputLabel from '@material-ui/core/InputLabel';
 import NativeSelect from '@material-ui/core/NativeSelect';
-import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import { useDispatch } from 'react-redux';
 import { loginUser } from '../../actions/user.js'
 import { saveQuizScores } from '../../actions/quizScores.js';
-
-function Copyright() {
-  return (
-    <Typography variant="body2" color="textSecondary" align="center">
-      {'Copyright © '}
-      
-        Gender Inclusive Spanish Grammar
-      {' '}
-      {new Date().getFullYear()}
-      {'.'}
-    </Typography>
-  );
-}
+import Copyright from '../containers/Copyright'
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -35,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
     alignItems: 'center'
   },
   form: {
-    width: '100%', // Fix IE 11 issue.
+    width: '100%',
     marginTop: theme.spacing(1)
   },
   submit: {
@@ -108,7 +95,7 @@ export default function SignUp() {
           Please Enter Your Information Below to Sign Up
         </Typography>
         {errorMessage ? <Typography component="h2" variant="h6">
-        <div style={{color: "#b81140", width: "100%"}}>{errorMessage}</div>
+          <div style={{color: "#b81140", width: "100%"}}>{errorMessage}</div>
         </Typography> : null}
         <form className={classes.form} onSubmit={handleSubmit} noValidate>
           <TextField
@@ -147,20 +134,20 @@ export default function SignUp() {
             id="email"
           />
           <FormControl className={classes.margin}>
-        <InputLabel htmlFor="demo-customized-select-native">Preferred Pronouns</InputLabel>
+            <InputLabel htmlFor="demo-customized-select-native">Preferred Pronouns</InputLabel>
             <NativeSelect
-          id="demo-customized-select-native"
-          value={preferredPronouns}
-          onChange={handleChange}
+            id="demo-customized-select-native"
+            value={preferredPronouns}
+            onChange={handleChange}
             >
-          <option aria-label="None" value="" />
-          <option value={"he, his, him, himself"}>he, his, him, himself</option>
-          <option value={"she, hers, her, herself"}>she, hers, her, herself</option>
-          <option value={"they, theirs, them, themselves"}>they, theirs, them, themselves</option>
-          <option value={"My pronouns aren't listed"}>My pronouns aren't listed.</option>
-        </NativeSelect>
-        </FormControl>
-        {showInput ? <TextField
+              <option aria-label="None" value="" />
+              <option value={"he, his, him, himself"}>he, his, him, himself</option>
+              <option value={"she, hers, her, herself"}>she, hers, her, herself</option>
+              <option value={"they, theirs, them, themselves"}>they, theirs, them, themselves</option>
+              <option value={"My pronouns aren't listed"}>My pronouns aren't listed.</option>
+            </NativeSelect>
+          </FormControl>
+          {showInput ? <TextField
             variant="outlined"
             margin="normal"
             fullWidth
@@ -180,16 +167,13 @@ export default function SignUp() {
           >
             Sign Up
           </Button>
-          
-              <NavLink style={{margin: "auto"}} to="/login" exact>
-                Return to Log In
-              </NavLink>
+          <NavLink id="sign-up-link" style={{margin: "auto"}} to="/login" exact>
+            Return to Log In
+          </NavLink>
             
         </form>
       </div>
-      <Box mt={8}>
-        <Copyright />
-      </Box>
+      <Copyright />
     </Container>
   );
 }

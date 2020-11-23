@@ -1,5 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import Box from '@material-ui/core/Box';
+import Copyright from '../containers/Copyright'
 
 function Lesson7() {
     
@@ -351,8 +353,12 @@ function Lesson7() {
             <p>For all this discussion about "regular" verbs in Spanish, just as in English, there are <strong>several</strong> verbs that are irregular.  
             The next lesson will look at how to conjugate the most common of these in the Present Indicative.</p>  
         </div>
-          <Link style={{display: "inline-block"}} className="next-link" exact="true" to="/quizzes/7">Take Quiz!</Link>
-          <Link style={{display: "inline-block"}} className="next-link" exact="true" to="/lessons/8">Next Lesson: Commonly Used Irregular Verbs →</Link>
+        <Box mt={4}>
+          <Link className="next-link" exact="true" to="/quizzes/7">Take Quiz!</Link>
+          <br/>
+          <Link className="next-link" exact="true" to="/lessons/8">Next Lesson: Commonly Used Irregular Verbs →</Link>
+        </Box>
+        <Copyright />
       </div>
     );
   }

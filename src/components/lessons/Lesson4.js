@@ -1,6 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { HashLink } from 'react-router-hash-link'
+import Box from '@material-ui/core/Box';
+import Copyright from '../containers/Copyright'
 
 function Lesson4() {
     return (
@@ -205,8 +207,12 @@ function Lesson4() {
             the type of adjective used with these nouns can also provide clues to their gender.
             </p>
           </div>
-          <Link style={{display: "inline-block"}} className="next-link" exact="true" to="/quizzes/4">Take Quiz!</Link>
-          <Link style={{display: "inline-block"}} className="next-link" exact="true" to="/lessons/5">Next Lesson: Adjectives →</Link>
+          <Box mt={4}>
+            <Link className="next-link" exact="true" to="/quizzes/4">Take Quiz!</Link>
+            <br/>
+            <Link className="next-link" exact="true" to="/lessons/5">Next Lesson: Adjectives →</Link>
+          </Box>
+          <Copyright />
       </div>
     );
   }

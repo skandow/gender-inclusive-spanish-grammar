@@ -1,5 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import Box from '@material-ui/core/Box';
+import Copyright from '../containers/Copyright'
 
 function Lesson8() {
     
@@ -197,8 +199,12 @@ function Lesson8() {
             depending on how it is used, both of which are irregular.  One of the two is actually a verb that creates an entire new category of 
             verb tense through its use, so we'll be looking at both of these irregular verbs in the next lesson.</p>
           </div>
-          <Link style={{display: "inline-block"}} className="next-link" exact="true" to="/quizzes/8">Take Quiz!</Link>
-          <Link style={{display: "inline-block"}} className="next-link" exact="true" to="/lessons/9">Next Lesson: The Verbs <em lang="es">Tener</em>, <em lang="es">Haber</em>, and the Present Perfect Tense →</Link>
+          <Box mt={4}>
+            <Link className="next-link" exact="true" to="/quizzes/8">Take Quiz!</Link>
+            <br/>
+            <Link className="next-link" exact="true" to="/lessons/9">Next Lesson: The Verbs <em lang="es">Tener</em>, <em lang="es">Haber</em>, and the Present Perfect Tense →</Link>
+          </Box>
+          <Copyright />
       </div>
     );
   }

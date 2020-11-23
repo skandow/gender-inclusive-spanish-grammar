@@ -1,5 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
+import Box from '@material-ui/core/Box';
+import Copyright from '../containers/Copyright'
 
 function Lesson15() {
 
@@ -107,8 +109,12 @@ function Lesson15() {
             <p>We returned at the end of Part 3 to looking at verbs. We'll explore verbs in much more detail in Part 4.
             </p>
           </div>
-          <Link style={{display: "inline-block"}} className="next-link" exact="true" to="/quizzes/15">Take Quiz!</Link>
-          <Link style={{display: "inline-block"}} className="next-link" exact="true" to="/lessons/16">Next Lesson: The Positive Imperative Mood With Familiar People →</Link>
+          <Box mt={4}>
+            <Link className="next-link" exact="true" to="/quizzes/15">Take Quiz!</Link>
+            <br/>
+            <Link className="next-link" exact="true" to="/lessons/16">Next Lesson: The Positive Imperative Mood With Familiar People →</Link>
+          </Box>
+          <Copyright />
       </div>
     );
   }

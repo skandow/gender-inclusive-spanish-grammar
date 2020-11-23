@@ -1,5 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
+import Box from '@material-ui/core/Box';
+import Copyright from '../containers/Copyright'
 
 function Lesson18() {
 
@@ -90,8 +92,12 @@ function Lesson18() {
             </p>
             <p>In the next lesson, we'll look at a special kind of adjectives & pronouns: those which show possession.</p>
           </div>
-          <Link style={{display: "inline-block"}} className="next-link" exact="true" to="/quizzes/18">Take Quiz!</Link>
-          <Link style={{display: "inline-block"}} className="next-link" exact="true" to="/lessons/19">Next Lesson: Possessive Adjectives & Pronouns →</Link>
+          <Box mt={4}>
+            <Link className="next-link" exact="true" to="/quizzes/18">Take Quiz!</Link>
+            <br/>
+            <Link className="next-link" exact="true" to="/lessons/19">Next Lesson: Possessive Adjectives & Pronouns →</Link>
+          </Box>
+          <Copyright />
       </div>
     );
   }

@@ -1,6 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { HashLink } from 'react-router-hash-link'
+import Box from '@material-ui/core/Box';
+import Copyright from '../containers/Copyright'
 
 function Lesson2() {
     return (
@@ -240,8 +242,12 @@ function Lesson2() {
             this information to begin conjugating verbs.
             </p>
           </div>
-          <Link style={{display: "inline-block"}} className="next-link" exact="true" to="/quizzes/2">Take Quiz!</Link>
-          <Link style={{display: "inline-block"}} className="next-link" exact="true" to="/lessons/3">Next Lesson: The Verb <em>Ser</em> →</Link>
+          <Box mt={4}>
+            <Link className="next-link" exact="true" to="/quizzes/2">Take Quiz!</Link>
+            <br/>
+            <Link className="next-link" exact="true" to="/lessons/3">Next Lesson: The Verb <em>Ser</em> →</Link>
+          </Box>
+          <Copyright />
       </div>
     );
   }

@@ -1,6 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { useSelector } from 'react-redux';
+import Box from '@material-ui/core/Box';
+import Copyright from '../containers/Copyright'
 
 function Lesson6() {
     const user = useSelector(state => state.user)
@@ -203,8 +205,12 @@ function Lesson6() {
             <p>Now that we've conjugated the two Spanish verbs we use in place of <em>to be</em>, we should look at verb conjugation 
             in general.  That will be featured in the next lesson.</p>    
         </div>
-          <Link style={{display: "inline-block"}} className="next-link" exact="true" to="/quizzes/6">Take Quiz!</Link>
-          <Link style={{display: "inline-block"}} className="next-link" exact="true" to="/lessons/7">Next Lesson: Regular Verbs in the Present Indicative →</Link>
+        <Box mt={4}>
+          <Link className="next-link" exact="true" to="/quizzes/6">Take Quiz!</Link>
+          <br/>
+          <Link className="next-link" exact="true" to="/lessons/7">Next Lesson: Regular Verbs in the Present Indicative →</Link>
+        </Box>
+        <Copyright />
       </div>
     );
   }

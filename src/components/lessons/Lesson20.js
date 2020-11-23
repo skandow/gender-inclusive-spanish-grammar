@@ -1,5 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
+import Box from '@material-ui/core/Box';
+import Copyright from '../containers/Copyright'
 
 function Lesson20() {
 
@@ -246,8 +248,12 @@ function Lesson20() {
             </p>
             <p>We'll give a final message regarding next steps on the next page.</p>
           </div>
-          <Link style={{display: "inline-block"}} className="next-link" exact="true" to="/quizzes/20">Take Quiz!</Link>
-          <Link style={{display: "inline-block"}} className="next-link" exact="true" to="/final_message">Next Steps →</Link>
+          <Box mt={4}>
+            <Link className="next-link" exact="true" to="/quizzes/20">Take Quiz!</Link>
+            <br/>
+            <Link className="next-link" exact="true" to="/final_message">Next Steps →</Link>
+          </Box>
+          <Copyright />
       </div>
     );
   }
