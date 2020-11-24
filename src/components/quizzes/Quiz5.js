@@ -9,7 +9,9 @@ import FormLabel from '@material-ui/core/FormLabel';
 import Button from '@material-ui/core/Button';
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
-import { saveQuizScores } from '../../actions/quizScores.js'
+import { saveQuizScores } from '../../actions/quizScores.js';
+import Box from '@material-ui/core/Box';
+import Copyright from '../containers/Copyright'
 
 const useStyles = makeStyles((theme) => ({
   formControl: {
@@ -95,8 +97,8 @@ function Quiz5() {
     return (
         <div>
             <h1>Quiz 5: Adjectives</h1>
-                <form onSubmit={handleSubmit}>
-                <h3>For each sentence, identfy which adjective should be used with each noun</h3>
+            <form onSubmit={handleSubmit}>
+              <h3>For each sentence, identfy which adjective should be used with each noun</h3>
                 <FormControl component="fieldset" className={classes.formControl}>
                     <FormLabel component="legend" color="secondary" focused={focused}>1. The old cats: los gatos _____</FormLabel>
                     <RadioGroup aria-label="quiz" name="quiz" value={value1} onChange={e=>setValue1(e.target.value)}>
@@ -145,16 +147,20 @@ function Quiz5() {
                         <FormControlLabel value="limpio" control={<Radio />} label="limpio" />
                         <FormControlLabel value="limpias" control={<Radio />} label="limpias" />
                     </RadioGroup>
-          <Button type="submit" variant="outlined" color="primary" className={classes.button}>
-            Check Answers
-          </Button>
-        </FormControl>
-      </form> 
-      <div className="score">
-        <h2>{percentage ? `You got ${score} out of 6 correct. Percentage: ${percentage}` : null}</h2>
-      </div>
-      <Link style={{display: "inline-block"}} className="next-link" exact="true" to="/lessons/5">Return to This Lesson</Link>
-      <Link style={{display: "inline-block"}} className="next-link" exact="true" to="/lessons/6">Next Lesson: The Verb <em>Estar</em> →</Link>
+                    <Button type="submit" variant="outlined" color="primary" className={classes.button}>
+                      Check Answers
+                    </Button>
+                </FormControl>
+            </form> 
+            <div className="score">
+              <h2>{percentage ? `You got ${score} out of 6 correct. Percentage: ${percentage}` : null}</h2>
+            </div>
+            <Box mt={4}>  
+              <Link className="next-link" exact="true" to="/lessons/5">Return to Lesson 5</Link>
+              <br/>
+              <Link className="next-link" exact="true" to="/lessons/6">Next Lesson: The Verb <em>Estar</em> →</Link>
+            </Box>
+            <Copyright />
       </div>
     )
 }

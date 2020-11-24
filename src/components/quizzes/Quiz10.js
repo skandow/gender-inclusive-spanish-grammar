@@ -7,7 +7,9 @@ import FormLabel from '@material-ui/core/FormLabel';
 import Button from '@material-ui/core/Button';
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
-import { saveQuizScores } from '../../actions/quizScores.js'
+import { saveQuizScores } from '../../actions/quizScores.js';
+import Box from '@material-ui/core/Box';
+import Copyright from '../containers/Copyright'
 
 const useStyles = makeStyles((theme) => ({
   formControl: {
@@ -117,7 +119,7 @@ function Quiz10() {
     return (
         <div>
             <h1>Quiz 10: Stem-Changing Verbs</h1>
-                <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit}>
                 <h3>Given the infinitive (and the stem change if applicable), write the <em lang="es">yo</em> form of the verb</h3>
                 <FormControl component="fieldset" className={classes.formControl}>
                 <FormLabel component="legend" color="secondary" focused={focused}>1. servir (e --{'>'} i) - to serve </FormLabel>
@@ -216,16 +218,20 @@ function Quiz10() {
                         style={{width: "100%", margin: "auto", marginTop: "2px"}}
                     />
                     <hr />
-          <Button type="submit" variant="outlined" color="primary" className={classes.button}>
-            Check Answers
-          </Button>
-        </FormControl>
-      </form> 
-      <div className="score">
-        <h2>{percentage ? `You got ${score} out of 12 correct. Percentage: ${percentage}` : null}</h2>
-      </div>
-      <Link style={{display: "inline-block"}} className="next-link" exact="true" to="/lessons/10">Return to This Lesson</Link>
-      <Link style={{display: "inline-block"}} className="next-link" exact="true" to="/lessons/11">Next Lesson: Reflexive and Reciprocal Pronouns →</Link>
+                    <Button type="submit" variant="outlined" color="primary" className={classes.button}>
+                        Check Answers
+                    </Button>
+                </FormControl>
+            </form> 
+            <div className="score">
+                <h2>{percentage ? `You got ${score} out of 12 correct. Percentage: ${percentage}` : null}</h2>
+            </div>
+            <Box mt={4}>
+                <Link className="next-link" exact="true" to="/lessons/10">Return to Lesson 10</Link>
+                <br/>
+                <Link className="next-link" exact="true" to="/lessons/11">Next Lesson: Reflexive and Reciprocal Pronouns →</Link>
+            </Box>
+            <Copyright />
       </div>
     )
 }

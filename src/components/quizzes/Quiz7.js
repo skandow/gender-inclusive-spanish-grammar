@@ -9,7 +9,9 @@ import FormLabel from '@material-ui/core/FormLabel';
 import Button from '@material-ui/core/Button';
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
-import { saveQuizScores } from '../../actions/quizScores.js'
+import { saveQuizScores } from '../../actions/quizScores.js';
+import Box from '@material-ui/core/Box';
+import Copyright from '../containers/Copyright'
 
 const useStyles = makeStyles((theme) => ({
   formControl: {
@@ -119,11 +121,11 @@ function Quiz7() {
     return (
         <div>
             <h1>Quiz 7: Regular Verbs in the Present Indicative</h1>
-                <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit}>
                 <h3>Given the Spanish subject pronoun and the verb infinitive, choose the correct conjugation of the verb</h3>
                 <FormControl component="fieldset" className={classes.formControl}>
                     <FormLabel component="legend" color="secondary" focused={focused}>1. tú - comer</FormLabel>
-                    <RadioGroup aria-label="quiz" name="quiz" value={value1} onChange={e=>setValue1(e.target.value)}>
+                    <RadioGroup style={{margin: "auto"}} aria-label="quiz" name="quiz" value={value1} onChange={e=>setValue1(e.target.value)}>
                         <FormControlLabel value="como" control={<Radio />} label="como" />
                         <FormControlLabel value="come" control={<Radio />} label="come" />
                         <FormControlLabel value="comemos" control={<Radio />} label="comemos" />
@@ -131,7 +133,7 @@ function Quiz7() {
                     </RadioGroup>
                     <hr />
                     <FormLabel component="legend" color="secondary" focused={focused}>2. nosotras - mandar</FormLabel>
-                    <RadioGroup aria-label="quiz" name="quiz" value={value2} onChange={e=>setValue2(e.target.value)}>
+                    <RadioGroup style={{margin: "auto"}} aria-label="quiz" name="quiz" value={value2} onChange={e=>setValue2(e.target.value)}>
                         <FormControlLabel value="manda" control={<Radio />} label="manda" />
                         <FormControlLabel value="mandas" control={<Radio />} label="mandas" />
                         <FormControlLabel value="mandamos" control={<Radio />} label="mandamos" />
@@ -139,7 +141,7 @@ function Quiz7() {
                     </RadioGroup>
                     <hr />
                     <FormLabel component="legend" color="secondary" focused={focused}>3. elles - luchar</FormLabel>
-                    <RadioGroup aria-label="quiz" name="quiz" value={value3} onChange={e=>setValue3(e.target.value)}>
+                    <RadioGroup style={{margin: "auto"}} aria-label="quiz" name="quiz" value={value3} onChange={e=>setValue3(e.target.value)}>
                         <FormControlLabel value="lucháis" control={<Radio />} label="lucháis" />
                         <FormControlLabel value="luchan" control={<Radio />} label="luchan" />
                         <FormControlLabel value="luchamos" control={<Radio />} label="luchamos" />
@@ -147,7 +149,7 @@ function Quiz7() {
                     </RadioGroup>
                     <hr />
                     <FormLabel component="legend" color="secondary" focused={focused}>4. yo - escribir</FormLabel>
-                    <RadioGroup aria-label="quiz" name="quiz" value={value4} onChange={e=>setValue4(e.target.value)}>
+                    <RadioGroup style={{margin: "auto"}} aria-label="quiz" name="quiz" value={value4} onChange={e=>setValue4(e.target.value)}>
                         <FormControlLabel value="escribo" control={<Radio />} label="escribo" />
                         <FormControlLabel value="escribe" control={<Radio />} label="escribe" />
                         <FormControlLabel value="escriben" control={<Radio />} label="escriben" />
@@ -155,7 +157,7 @@ function Quiz7() {
                     </RadioGroup>
                     <hr />
                     <FormLabel component="legend" color="secondary" focused={focused}>5. vos - aprender</FormLabel>
-                    <RadioGroup aria-label="quiz" name="quiz" value={value5} onChange={e=>setValue5(e.target.value)}>
+                    <RadioGroup style={{margin: "auto"}} aria-label="quiz" name="quiz" value={value5} onChange={e=>setValue5(e.target.value)}>
                         <FormControlLabel value="aprendes" control={<Radio />} label="aprendes" />
                         <FormControlLabel value="aprendés" control={<Radio />} label="aprendés" />
                         <FormControlLabel value="aprendéis" control={<Radio />} label="aprendéis" />
@@ -163,7 +165,7 @@ function Quiz7() {
                     </RadioGroup>
                     <hr />
                     <FormLabel component="legend" color="secondary" focused={focused}>6. usted - vivir </FormLabel>
-                    <RadioGroup aria-label="quiz" name="quiz" value={value6} onChange={e=>setValue6(e.target.value)}>
+                    <RadioGroup style={{margin: "auto"}} aria-label="quiz" name="quiz" value={value6} onChange={e=>setValue6(e.target.value)}>
                         <FormControlLabel value="vives" control={<Radio />} label="vives" />
                         <FormControlLabel value="vivo" control={<Radio />} label="vivo" />
                         <FormControlLabel value="vivimos" control={<Radio />} label="vivimos" />
@@ -171,7 +173,7 @@ function Quiz7() {
                     </RadioGroup>
                     <hr />
                     <FormLabel component="legend" color="secondary" focused={focused}>7. vosotros - leer </FormLabel>
-                    <RadioGroup aria-label="quiz" name="quiz" value={value7} onChange={e=>setValue7(e.target.value)}>
+                    <RadioGroup style={{margin: "auto"}} aria-label="quiz" name="quiz" value={value7} onChange={e=>setValue7(e.target.value)}>
                         <FormControlLabel value="leemos" control={<Radio />} label="leemos" />
                         <FormControlLabel value="leen" control={<Radio />} label="leen" />
                         <FormControlLabel value="leéis" control={<Radio />} label="leéis" />
@@ -179,7 +181,7 @@ function Quiz7() {
                     </RadioGroup>
                     <hr />
                     <FormLabel component="legend" color="secondary" focused={focused}>8. ustedes - preguntar</FormLabel>
-                    <RadioGroup aria-label="quiz" name="quiz" value={value8} onChange={e=>setValue8(e.target.value)}>
+                    <RadioGroup style={{margin: "auto"}} aria-label="quiz" name="quiz" value={value8} onChange={e=>setValue8(e.target.value)}>
                         <FormControlLabel value="pregunto" control={<Radio />} label="pregunto" />
                         <FormControlLabel value="preguntás" control={<Radio />} label="preguntás" />
                         <FormControlLabel value="preguntáis" control={<Radio />} label="preguntáis" />
@@ -188,7 +190,7 @@ function Quiz7() {
                     <hr />
                     <h3>Given the verb and its infinitive, select which of the given subject pronouns is implied as doing the action.</h3>
                     <FormLabel component="legend" color="secondary" focused={focused}>9. creo - creer</FormLabel>
-                    <RadioGroup aria-label="quiz" name="quiz" value={value9} onChange={e=>setValue9(e.target.value)}>
+                    <RadioGroup style={{margin: "auto"}} aria-label="quiz" name="quiz" value={value9} onChange={e=>setValue9(e.target.value)}>
                         <FormControlLabel value="yo" control={<Radio />} label="yo" />
                         <FormControlLabel value="tú" control={<Radio />} label="tú" />
                         <FormControlLabel value="usted" control={<Radio />} label="usted" />
@@ -196,7 +198,7 @@ function Quiz7() {
                     </RadioGroup>
                     <hr />
                     <FormLabel component="legend" color="secondary" focused={focused}>10. escuchamos - escuchar</FormLabel>
-                    <RadioGroup aria-label="quiz" name="quiz" value={value10} onChange={e=>setValue10(e.target.value)}>
+                    <RadioGroup style={{margin: "auto"}} aria-label="quiz" name="quiz" value={value10} onChange={e=>setValue10(e.target.value)}>
                         <FormControlLabel value="vosotres" control={<Radio />} label="vosotres" />
                         <FormControlLabel value="ustedes" control={<Radio />} label="ustedes" />
                         <FormControlLabel value="ellos" control={<Radio />} label="ellos" />
@@ -204,7 +206,7 @@ function Quiz7() {
                     </RadioGroup>
                     <hr />
                     <FormLabel component="legend" color="secondary" focused={focused}>11. brinden - brindir</FormLabel>
-                    <RadioGroup aria-label="quiz" name="quiz" value={value11} onChange={e=>setValue11(e.target.value)}>
+                    <RadioGroup style={{margin: "auto"}} aria-label="quiz" name="quiz" value={value11} onChange={e=>setValue11(e.target.value)}>
                         <FormControlLabel value="tú" control={<Radio />} label="tú" />
                         <FormControlLabel value="vos" control={<Radio />} label="vos" />
                         <FormControlLabel value="elles" control={<Radio />} label="elles" />
@@ -212,23 +214,27 @@ function Quiz7() {
                     </RadioGroup>
                     <hr />
                     <FormLabel component="legend" color="secondary" focused={focused}>12. aparca - aparcar</FormLabel>
-                    <RadioGroup aria-label="quiz" name="quiz" value={value12} onChange={e=>setValue12(e.target.value)}>
+                    <RadioGroup style={{margin: "auto"}} aria-label="quiz" name="quiz" value={value12} onChange={e=>setValue12(e.target.value)}>
                         <FormControlLabel value="yo" control={<Radio />} label="yo" />
                         <FormControlLabel value="ella" control={<Radio />} label="ella" />
                         <FormControlLabel value="ellos" control={<Radio />} label="ellos" />
                         <FormControlLabel value="vos" control={<Radio />} label="vos" />
                     </RadioGroup>
                     <hr />
-          <Button type="submit" variant="outlined" color="primary" className={classes.button}>
-            Check Answers
-          </Button>
-        </FormControl>
-      </form> 
-      <div className="score">
-        <h2>{percentage ? `You got ${score} out of 12 correct. Percentage: ${percentage}` : null}</h2>
-      </div>
-      <Link style={{display: "inline-block"}} className="next-link" exact="true" to="/lessons/7">Return to This Lesson</Link>
-      <Link style={{display: "inline-block"}} className="next-link" exact="true" to="/lessons/8">Next Lesson: Commonly Used Irregular Verbs →</Link>
+                    <Button style={{width: "40%", margin: "auto"}} type="submit" variant="outlined" color="primary" className={classes.button}>
+                        Check Answers
+                    </Button>
+                </FormControl>
+            </form> 
+            <div className="score">
+                <h2>{percentage ? `You got ${score} out of 12 correct. Percentage: ${percentage}` : null}</h2>
+            </div>
+            <Box mt={4}>
+                <Link className="next-link" exact="true" to="/lessons/7">Return to Lesson 7</Link>
+                <br/>
+                <Link className="next-link" exact="true" to="/lessons/8">Next Lesson: Commonly Used Irregular Verbs →</Link>
+            </Box>
+            <Copyright />
       </div>
     )
 }

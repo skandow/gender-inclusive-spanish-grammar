@@ -9,7 +9,9 @@ import FormLabel from '@material-ui/core/FormLabel';
 import Button from '@material-ui/core/Button';
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
-import { saveQuizScores } from '../../actions/quizScores.js'
+import { saveQuizScores } from '../../actions/quizScores.js';
+import Box from '@material-ui/core/Box';
+import Copyright from '../containers/Copyright'
 
 const useStyles = makeStyles((theme) => ({
   formControl: {
@@ -95,8 +97,8 @@ function Quiz4() {
     return (
         <div>
             <h1>Quiz 4: Nouns</h1>
-                <form onSubmit={handleSubmit}>
-                <h3>For each sentence, identfy which definite article should be used with each noun</h3>
+            <form onSubmit={handleSubmit}>
+              <h3>For each sentence, identfy which definite article should be used with each noun</h3>
                 <FormControl component="fieldset" className={classes.formControl}>
                     <FormLabel component="legend" color="secondary" focused={focused}>1. The friends (all female): _____ amigas</FormLabel>
                     <RadioGroup aria-label="quiz" name="quiz" value={value1} onChange={e=>setValue1(e.target.value)}>
@@ -145,16 +147,20 @@ function Quiz4() {
                         <FormControlLabel value="la" control={<Radio />} label="la" />
                         <FormControlLabel value="el" control={<Radio />} label="el" />
                     </RadioGroup>
-          <Button type="submit" variant="outlined" color="primary" className={classes.button}>
-            Check Answers
-          </Button>
-        </FormControl>
-      </form> 
-      <div className="score">
-        <h2>{percentage ? `You got ${score} out of 6 correct. Percentage: ${percentage}` : null}</h2>
-      </div>
-      <Link style={{display: "inline-block"}} className="next-link" exact="true" to="/lessons/4">Return to This Lesson</Link>
-      <Link style={{display: "inline-block"}} className="next-link" exact="true" to="/lessons/5">Next Lesson: Adjectives →</Link>
+                    <Button type="submit" variant="outlined" color="primary" className={classes.button}>
+                      Check Answers
+                    </Button>
+                </FormControl>
+            </form> 
+            <div className="score">
+              <h2>{percentage ? `You got ${score} out of 6 correct. Percentage: ${percentage}` : null}</h2>
+            </div>
+            <Box mt={4}>
+              <Link className="next-link" exact="true" to="/lessons/4">Return to Lesson 4</Link>
+              <br/>
+              <Link className="next-link" exact="true" to="/lessons/5">Next Lesson: Adjectives →</Link>
+            </Box>
+            <Copyright />
       </div>
     )
 }

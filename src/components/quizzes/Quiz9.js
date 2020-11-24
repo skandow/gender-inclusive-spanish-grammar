@@ -10,7 +10,10 @@ import FormLabel from '@material-ui/core/FormLabel';
 import Button from '@material-ui/core/Button';
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
-import { saveQuizScores } from '../../actions/quizScores.js'
+import { saveQuizScores } from '../../actions/quizScores.js';
+import Box from '@material-ui/core/Box';
+import Copyright from '../containers/Copyright'
+
 
 const useStyles = makeStyles((theme) => ({
   formControl: {
@@ -120,11 +123,11 @@ function Quiz9() {
     return (
         <div>
             <h1>Quiz 9: The Verbs <em lang="es">Tener</em>, <em lang="es">Haber</em>, and the Present Perfect Tense</h1>
-                <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit}>
                 <h3>Given the statement in English (and additional context), choose the single word that means the equivalent of the underlined portion</h3>
                 <FormControl component="fieldset" className={classes.formControl}>
                     <FormLabel component="legend" color="secondary" focused={focused}>1. <u>We have</u> ten balloons for the party.</FormLabel>
-                    <RadioGroup aria-label="quiz" name="quiz" value={value1} onChange={e=>setValue1(e.target.value)}>
+                    <RadioGroup style={{margin: "auto"}} aria-label="quiz" name="quiz" value={value1} onChange={e=>setValue1(e.target.value)}>
                         <FormControlLabel value="tengo" control={<Radio />} label="tengo" />
                         <FormControlLabel value="tenemos" control={<Radio />} label="tenemos" />
                         <FormControlLabel value="he" control={<Radio />} label="he" />
@@ -132,7 +135,7 @@ function Quiz9() {
                     </RadioGroup>
                     <hr />
                     <FormLabel component="legend" color="secondary" focused={focused}>2. <u>Have you (singular, familiar)</u> written your paper?</FormLabel>
-                    <RadioGroup aria-label="quiz" name="quiz" value={value2} onChange={e=>setValue2(e.target.value)}>
+                    <RadioGroup style={{margin: "auto"}} aria-label="quiz" name="quiz" value={value2} onChange={e=>setValue2(e.target.value)}>
                         <FormControlLabel value="tienes" control={<Radio />} label="tienes" />
                         <FormControlLabel value="tenéis" control={<Radio />} label="tenéis" />
                         <FormControlLabel value="has" control={<Radio />} label="has" />
@@ -140,7 +143,7 @@ function Quiz9() {
                     </RadioGroup>
                     <hr />
                     <FormLabel component="legend" color="secondary" focused={focused}>3. <u>They have</u> a chance.</FormLabel>
-                    <RadioGroup aria-label="quiz" name="quiz" value={value3} onChange={e=>setValue3(e.target.value)}>
+                    <RadioGroup style={{margin: "auto"}} aria-label="quiz" name="quiz" value={value3} onChange={e=>setValue3(e.target.value)}>
                         <FormControlLabel value="tienen" control={<Radio />} label="tienen" />
                         <FormControlLabel value="tiene" control={<Radio />} label="tiene" />
                         <FormControlLabel value="han" control={<Radio />} label="han" />
@@ -148,7 +151,7 @@ function Quiz9() {
                     </RadioGroup>
                     <hr />
                     <FormLabel component="legend" color="secondary" focused={focused}>4. <u>I am</u> twenty-six years old.</FormLabel>
-                    <RadioGroup aria-label="quiz" name="quiz" value={value4} onChange={e=>setValue4(e.target.value)}>
+                    <RadioGroup style={{margin: "auto"}} aria-label="quiz" name="quiz" value={value4} onChange={e=>setValue4(e.target.value)}>
                         <FormControlLabel value="soy" control={<Radio />} label="soy" />
                         <FormControlLabel value="estoy" control={<Radio />} label="estoy" />
                         <FormControlLabel value="he" control={<Radio />} label="he" />
@@ -156,7 +159,7 @@ function Quiz9() {
                     </RadioGroup>
                     <hr />
                     <FormLabel component="legend" color="secondary" focused={focused}>5. <u>You (plural, familiar, Spain) have</u> done it.</FormLabel>
-                    <RadioGroup aria-label="quiz" name="quiz" value={value5} onChange={e=>setValue5(e.target.value)}>
+                    <RadioGroup style={{margin: "auto"}} aria-label="quiz" name="quiz" value={value5} onChange={e=>setValue5(e.target.value)}>
                         <FormControlLabel value="tienes" control={<Radio />} label="tienes" />
                         <FormControlLabel value="tienen" control={<Radio />} label="tienen" />
                         <FormControlLabel value="han" control={<Radio />} label="han" />
@@ -164,7 +167,7 @@ function Quiz9() {
                     </RadioGroup>
                     <hr />
                     <FormLabel component="legend" color="secondary" focused={focused}>6. <u>He has</u> a red bicycle.</FormLabel>
-                    <RadioGroup aria-label="quiz" name="quiz" value={value6} onChange={e=>setValue6(e.target.value)}>
+                    <RadioGroup style={{margin: "auto"}} aria-label="quiz" name="quiz" value={value6} onChange={e=>setValue6(e.target.value)}>
                         <FormControlLabel value="tiene" control={<Radio />} label="tiene" />
                         <FormControlLabel value="ha" control={<Radio />} label="ha" />
                         <FormControlLabel value="hay" control={<Radio />} label="hay" />
@@ -220,16 +223,20 @@ function Quiz9() {
                         style={{width: "20%", margin: "auto", marginTop: "2px"}}
                     />
                     <hr />
-          <Button type="submit" variant="outlined" color="primary" className={classes.button}>
-            Check Answers
-          </Button>
-        </FormControl>
-      </form> 
-      <div className="score">
-        <h2>{percentage ? `You got ${score} out of 12 correct. Percentage: ${percentage}` : null}</h2>
-      </div>
-      <Link style={{display: "inline-block"}} className="next-link" exact="true" to="/lessons/9">Return to This Lesson</Link>
-      <Link style={{display: "inline-block"}} className="next-link" exact="true" to="/lessons/10">Next Lesson: Stem-Changing Verbs →</Link>
+                    <Button style={{width: "40%", margin: "auto"}} type="submit" variant="outlined" color="primary" className={classes.button}>
+                        Check Answers
+                    </Button>
+                </FormControl>
+            </form> 
+            <div className="score">
+                <h2>{percentage ? `You got ${score} out of 12 correct. Percentage: ${percentage}` : null}</h2>
+            </div>
+            <Box mt={4}>
+                <Link className="next-link" exact="true" to="/lessons/9">Return to Lesson 9</Link>
+                <br/>
+                <Link className="next-link" exact="true" to="/lessons/10">Next Lesson: Stem-Changing Verbs →</Link>
+            </Box>
+            <Copyright />
       </div>
     )
 }
