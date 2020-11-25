@@ -8,7 +8,9 @@ import Button from '@material-ui/core/Button';
 import SpecialCharacters from './SpecialCharacters';
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
-import { saveQuizScores } from '../../actions/quizScores.js'
+import { saveQuizScores } from '../../actions/quizScores.js';
+import Box from '@material-ui/core/Box';
+import Copyright from '../containers/Copyright'
 
 const useStyles = makeStyles((theme) => ({
   formControl: {
@@ -102,14 +104,13 @@ function Quiz12() {
     return (
         <div>
             <h1>Quiz 12: Direct Object Pronouns</h1>
-                
-                <h3>Given the English sentence, Spanish object gender, if applicable, and Spanish verb infinitive, write the direct object pronoun and conjugated verb in Spanish.<br/><br/> Use 
-                    the tool below to copy and paste special characters if you need them.
-                </h3>
-                <SpecialCharacters />
-                <hr />
-                <form onSubmit={handleSubmit}>
-                <FormControl component="fieldset" className={classes.formControl}>
+            <h3>Given the English sentence, Spanish object gender, if applicable, and Spanish verb infinitive, write the direct object pronoun and conjugated verb in Spanish.<br/><br/> Use 
+                the tool below to copy and paste special characters if you need them.
+            </h3>
+            <SpecialCharacters />
+            <hr />
+            <form onSubmit={handleSubmit}>
+              <FormControl component="fieldset" className={classes.formControl}>
                 <FormLabel component="legend" color="secondary" focused={focused}>1. I <u>see you (familiar, singular)</u> in this painting. - ver</FormLabel>
                     <TextField
                         variant="outlined"
@@ -174,16 +175,20 @@ function Quiz12() {
                         style={{width: "30%", margin: "auto", marginTop: "2px"}}
                     />
                     <hr />
-          <Button type="submit" variant="outlined" color="primary" className={classes.button}>
-            Check Answers
-          </Button>
-        </FormControl>
-      </form> 
-      <div className="score">
-        <h2>{percentage ? `You got ${score} out of 8 correct. Percentage: ${percentage}` : null}</h2>
-      </div>
-      <Link style={{display: "inline-block"}} className="next-link" exact="true" to="/lessons/12">Return to This Lesson</Link>
-      <Link style={{display: "inline-block"}} className="next-link" exact="true" to="/lessons/13">Next Lesson: Indirect Object Pronouns →</Link>
+                    <Button style={{width: "40%", margin: "auto"}} type="submit" variant="outlined" color="primary" className={classes.button}>
+                      Check Answers
+                    </Button>
+              </FormControl>
+            </form> 
+            <div className="score">
+              <h2>{percentage ? `You got ${score} out of 8 correct. Percentage: ${percentage}` : null}</h2>
+            </div>
+            <Box mt={4}>
+              <Link className="next-link" exact="true" to="/lessons/12">Return to Lesson 12</Link>
+              <br/>
+              <Link className="next-link" exact="true" to="/lessons/13">Next Lesson: Indirect Object Pronouns →</Link>
+            </Box>
+            <Copyright />
       </div>
     )
 }

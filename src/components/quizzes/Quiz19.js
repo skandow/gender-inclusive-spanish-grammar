@@ -9,6 +9,8 @@ import SpecialCharacters from './SpecialCharacters';
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
 import { saveQuizScores } from '../../actions/quizScores.js';
+import Box from '@material-ui/core/Box';
+import Copyright from '../containers/Copyright'
 
 const useStyles = makeStyles((theme) => ({
   formControl: {
@@ -134,15 +136,14 @@ function Quiz19() {
     return (
         <div>
             <h1>Quiz 19: Possessive Adjectives & Pronouns</h1>
-                
-                <h3>Given the noun and the owner in Spanish, write the proper possessive adjective to be used with this noun.<br/><br/>
+            <h3>Given the noun and the owner in Spanish, write the proper possessive adjective to be used with this noun.<br/><br/>
                 Use the tool below to copy and paste special characters if you need them.
-                </h3>
-                <SpecialCharacters />
-                <hr />
-                <form onSubmit={handleSubmit}>
+            </h3>
+            <SpecialCharacters />
+            <hr />
+            <form onSubmit={handleSubmit}>
                 <FormControl component="fieldset" className={classes.formControl}>
-                <FormLabel component="legend" color="secondary" focused={focused}>1. noun: el gato, owner: tú</FormLabel>
+                    <FormLabel component="legend" color="secondary" focused={focused}>1. noun: el gato, owner: tú</FormLabel>
                     <TextField
                         variant="outlined"
                         value={value1}
@@ -272,16 +273,20 @@ function Quiz19() {
                         style={{width: "30%", margin: "auto", marginTop: "2px"}}
                     />
                     <hr />
-          <Button type="submit" variant="outlined" color="primary" className={classes.button}>
-            Check Answers
-          </Button>
-        </FormControl>
-      </form> 
-      <div className="score">
-        <h2>{percentage ? `You got ${score} out of 16 correct. Percentage: ${percentage}` : null}</h2>
-      </div>
-      <Link style={{display: "inline-block"}} className="next-link" exact="true" to="/lessons/19">Return to This Lesson</Link>
-      <Link style={{display: "inline-block"}} className="next-link" exact="true" to="/lessons/20">Next Lesson: →</Link>
+                    <Button style={{width: "30%", margin: "auto"}} type="submit" variant="outlined" color="primary" className={classes.button}>
+                        Check Answers
+                    </Button>
+                </FormControl>
+            </form> 
+            <div className="score">
+                <h2>{percentage ? `You got ${score} out of 16 correct. Percentage: ${percentage}` : null}</h2>
+            </div>
+            <Box mt={4}>
+                <Link className="next-link" exact="true" to="/lessons/19">Return to Lesson 19</Link>
+                <br/>
+                <Link className="next-link" exact="true" to="/lessons/20">Next Lesson: Demonstrative Adjectives & Pronouns →</Link>
+            </Box>
+            <Copyright />
       </div>
     )
 }

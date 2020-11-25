@@ -18,6 +18,7 @@ import ListItemText from '@material-ui/core/ListItemText';
 import Profile from './Profile'
 import EditProfile from './EditProfile'
 import QuizScores from './QuizScores'
+import Dictionary from './Dictionary'
 import Lesson1 from '../lessons/Lesson1'
 import Quiz1 from '../quizzes/Quiz1'
 import Lesson2 from '../lessons/Lesson2'
@@ -121,6 +122,9 @@ export default function DrawerMenu() {
             </Link>
             <Link className="bar-link" to={"/quiz_scores"}>
               <Button color="inherit">Quiz Scores</Button>
+            </Link>
+            <Link className="bar-link" to={"/dictionary"}>
+              <Button color="inherit">Dictionary</Button>
             </Link>
             <Link className="bar-link" to={"/"}>
               <Button onClick={handleLogOut} color="inherit">Logout</Button>
@@ -315,6 +319,9 @@ export default function DrawerMenu() {
           </Route>
           <Route exact path="/quiz_scores">
             <QuizScores />
+          </Route>
+          <Route exact path="/dictionary">
+            <Dictionary />
           </Route>
         </Switch>
         </ScrollToTop>

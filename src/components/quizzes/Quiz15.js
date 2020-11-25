@@ -8,7 +8,9 @@ import Button from '@material-ui/core/Button';
 import SpecialCharacters from './SpecialCharacters';
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
-import { saveQuizScores } from '../../actions/quizScores.js'
+import { saveQuizScores } from '../../actions/quizScores.js';
+import Box from '@material-ui/core/Box';
+import Copyright from '../containers/Copyright'
 
 const useStyles = makeStyles((theme) => ({
   formControl: {
@@ -110,14 +112,13 @@ function Quiz15() {
     return (
         <div>
             <h1>Quiz 15: The Present Progressive and Unique Pronoun Placement</h1>
-                
-                <h3>Given the Spanish subject pronoun and verb infinitive, give the conjugated present progressive form of the verb.<br/><br/>
+            <h3>Given the Spanish subject pronoun and verb infinitive, give the conjugated present progressive form of the verb.<br/><br/>
                 Use the tool below to copy and paste special characters if you need them.
-                </h3>
-                <SpecialCharacters />
-                <hr />
-                <form onSubmit={handleSubmit}>
-                <FormControl component="fieldset" className={classes.formControl}>
+            </h3>
+            <SpecialCharacters />
+            <hr />
+            <form onSubmit={handleSubmit}>
+              <FormControl component="fieldset" className={classes.formControl}>
                 <FormLabel component="legend" color="secondary" focused={focused}>1. tú - hablar</FormLabel>
                     <TextField
                         variant="outlined"
@@ -199,16 +200,20 @@ function Quiz15() {
                         style={{width: "30%", margin: "auto", marginTop: "2px"}}
                     />
                     <hr />
-          <Button type="submit" variant="outlined" color="primary" className={classes.button}>
-            Check Answers
-          </Button>
-        </FormControl>
-      </form> 
-      <div className="score">
-        <h2>{percentage ? `You got ${score} out of 10 correct. Percentage: ${percentage}` : null}</h2>
-      </div>
-      <Link style={{display: "inline-block"}} className="next-link" exact="true" to="/lessons/15">Return to This Lesson</Link>
-      <Link style={{display: "inline-block"}} className="next-link" exact="true" to="/lessons/16">Next Lesson: The Present Progressive and Unique Pronoun Placement →</Link>
+                    <Button style={{width: "30%", margin: "auto"}} type="submit" variant="outlined" color="primary" className={classes.button}>
+                      Check Answers
+                    </Button>
+              </FormControl>
+            </form> 
+            <div className="score">
+              <h2>{percentage ? `You got ${score} out of 10 correct. Percentage: ${percentage}` : null}</h2>
+            </div>
+            <Box mt={4}>
+              <Link className="next-link" exact="true" to="/lessons/15">Return to Lesson 15</Link>
+              <br/>
+              <Link className="next-link" exact="true" to="/lessons/16">Next Lesson: The Present Progressive and Unique Pronoun Placement →</Link>
+            </Box>
+            <Copyright />
       </div>
     )
 }

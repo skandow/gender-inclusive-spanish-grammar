@@ -11,7 +11,9 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import SpecialCharacters from './SpecialCharacters';
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
-import { saveQuizScores } from '../../actions/quizScores.js'
+import { saveQuizScores } from '../../actions/quizScores.js';
+import Box from '@material-ui/core/Box';
+import Copyright from '../containers/Copyright'
 
 const useStyles = makeStyles((theme) => ({
   formControl: {
@@ -121,47 +123,46 @@ function Quiz14() {
     return (
         <div>
             <h1>Quiz 14: Prepositional Pronouns</h1>
-                
-                <h3>Given the English sentence, select whether the word <em>for</em> in the italicized portion should be replaced by <em lang="es">por</em> or 
+            <h3>Given the English sentence, select whether the word <em>for</em> in the italicized portion should be replaced by <em lang="es">por</em> or 
                 <em lang="es"> para</em> in the Spanish translation.<br/><br/>
                 Use the tool below to copy and paste special characters if you need them.
-                </h3>
-                <SpecialCharacters />
-                <hr />
-                <form onSubmit={handleSubmit}>
+            </h3>
+            <SpecialCharacters />
+            <hr />
+            <form onSubmit={handleSubmit}>
                 <FormControl component="fieldset" className={classes.formControl}>
-                <FormLabel component="legend" color="secondary" focused={focused}>1. When are you leaving <em>for</em> Mexico?</FormLabel>
-                    <RadioGroup aria-label="quiz" name="quiz" value={value1} onChange={e=>setValue1(e.target.value)}>
+                    <FormLabel component="legend" color="secondary" focused={focused}>1. When are you leaving <em>for</em> Mexico?</FormLabel>
+                    <RadioGroup style={{margin: "auto"}} aria-label="quiz" name="quiz" value={value1} onChange={e=>setValue1(e.target.value)}>
                         <FormControlLabel value="por" control={<Radio />} label="por" />
                         <FormControlLabel value="para" control={<Radio />} label="para" />
                     </RadioGroup>
                     <hr />
                     <FormLabel component="legend" color="secondary" focused={focused}>2. I want to trade my sandwich <em>for</em> your cookie.</FormLabel>
-                    <RadioGroup aria-label="quiz" name="quiz" value={value2} onChange={e=>setValue2(e.target.value)}>
+                    <RadioGroup style={{margin: "auto"}} aria-label="quiz" name="quiz" value={value2} onChange={e=>setValue2(e.target.value)}>
                         <FormControlLabel value="por" control={<Radio />} label="por" />
                         <FormControlLabel value="para" control={<Radio />} label="para" />
                     </RadioGroup>
                     <hr />
                     <FormLabel component="legend" color="secondary" focused={focused}>3. We have to exercise <em>for</em> forty-five minutes.</FormLabel>
-                    <RadioGroup aria-label="quiz" name="quiz" value={value3} onChange={e=>setValue3(e.target.value)}>
+                    <RadioGroup style={{margin: "auto"}} aria-label="quiz" name="quiz" value={value3} onChange={e=>setValue3(e.target.value)}>
                         <FormControlLabel value="por" control={<Radio />} label="por" />
                         <FormControlLabel value="para" control={<Radio />} label="para" />
                     </RadioGroup>
                     <hr />
                     <FormLabel component="legend" color="secondary" focused={focused}>4. You need to finish this report <em>for</em> Friday.</FormLabel>
-                    <RadioGroup aria-label="quiz" name="quiz" value={value4} onChange={e=>setValue4(e.target.value)}>
+                    <RadioGroup style={{margin: "auto"}} aria-label="quiz" name="quiz" value={value4} onChange={e=>setValue4(e.target.value)}>
                         <FormControlLabel value="por" control={<Radio />} label="por" />
                         <FormControlLabel value="para" control={<Radio />} label="para" />
                     </RadioGroup>
                     <hr />
                     <FormLabel component="legend" color="secondary" focused={focused}>5. Ze made this <em>for</em> me.</FormLabel>
-                    <RadioGroup aria-label="quiz" name="quiz" value={value5} onChange={e=>setValue5(e.target.value)}>
+                    <RadioGroup style={{margin: "auto"}} aria-label="quiz" name="quiz" value={value5} onChange={e=>setValue5(e.target.value)}>
                         <FormControlLabel value="por" control={<Radio />} label="por" />
                         <FormControlLabel value="para" control={<Radio />} label="para" />
                     </RadioGroup>
                     <hr />
                     <FormLabel component="legend" color="secondary" focused={focused}>6. Are you traveling <em>for</em> business or pleasure?</FormLabel>
-                    <RadioGroup aria-label="quiz" name="quiz" value={value6} onChange={e=>setValue6(e.target.value)}>
+                    <RadioGroup style={{margin: "auto"}} aria-label="quiz" name="quiz" value={value6} onChange={e=>setValue6(e.target.value)}>
                         <FormControlLabel value="por" control={<Radio />} label="por" />
                         <FormControlLabel value="para" control={<Radio />} label="para" />
                     </RadioGroup>
@@ -215,16 +216,20 @@ function Quiz14() {
                         style={{width: "30%", margin: "auto", marginTop: "2px"}}
                     />
                     <hr />
-          <Button type="submit" variant="outlined" color="primary" className={classes.button}>
-            Check Answers
-          </Button>
-        </FormControl>
-      </form> 
-      <div className="score">
-        <h2>{percentage ? `You got ${score} out of 12 correct. Percentage: ${percentage}` : null}</h2>
-      </div>
-      <Link style={{display: "inline-block"}} className="next-link" exact="true" to="/lessons/14">Return to This Lesson</Link>
-      <Link style={{display: "inline-block"}} className="next-link" exact="true" to="/lessons/15">Next Lesson: The Present Progressive and Unique Pronoun Placement →</Link>
+                    <Button style={{width: "30%", margin: "auto"}} type="submit" variant="outlined" color="primary" className={classes.button}>
+                        Check Answers
+                    </Button>
+                </FormControl>
+            </form> 
+            <div className="score">
+                <h2>{percentage ? `You got ${score} out of 12 correct. Percentage: ${percentage}` : null}</h2>
+            </div>
+            <Box mt={4}>
+                <Link className="next-link" exact="true" to="/lessons/14">Return to Lesson 14</Link>
+                <br/>
+                <Link className="next-link" exact="true" to="/lessons/15">Next Lesson: The Present Progressive and Unique Pronoun Placement →</Link>
+            </Box>
+            <Copyright />
       </div>
     )
 }

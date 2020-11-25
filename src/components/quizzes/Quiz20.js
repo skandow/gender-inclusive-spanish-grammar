@@ -9,6 +9,8 @@ import SpecialCharacters from './SpecialCharacters';
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
 import { saveQuizScores } from '../../actions/quizScores.js';
+import Box from '@material-ui/core/Box';
+import Copyright from '../containers/Copyright'
 
 const useStyles = makeStyles((theme) => ({
   formControl: {
@@ -118,20 +120,19 @@ function Quiz20() {
     return (
         <div>
             <h1>Quiz 20: Demonstrative Adjectives & Pronouns</h1>
-                
-                <h3>Given the noun in Spanish and location comparable to the speaker (here, there, far away), write the proper demonstrative adjective to be used with this noun.<br/><br/>
+            <h3>Given the noun in Spanish and location comparable to the speaker (here, there, far away), write the proper demonstrative adjective to be used with this noun.<br/><br/>
                 Use the tool below to copy and paste special characters if you need them.
-                </h3>
-                <SpecialCharacters />
-                <hr />
-                <form onSubmit={handleSubmit}>
+            </h3>
+            <SpecialCharacters />
+            <hr />
+            <form onSubmit={handleSubmit}>
                 <FormControl component="fieldset" className={classes.formControl}>
-                <FormLabel component="legend" color="secondary" focused={focused}>1. noun: la ventana, location: there</FormLabel>
+                    <FormLabel component="legend" color="secondary" focused={focused}>1. noun: la ventana, location: there</FormLabel>
                     <TextField
                         variant="outlined"
                         value={value1}
                         onInput={e=>setValue1(e.target.value)}
-                        style={{width: "50%", margin: "auto", marginTop: "2px"}}
+                        style={{width: "80%", margin: "auto", marginTop: "2px"}}
                     />
                     <hr />
                     <FormLabel component="legend" color="secondary" focused={focused}>2. noun: los platos, location: here</FormLabel>
@@ -139,7 +140,7 @@ function Quiz20() {
                         variant="outlined"
                         value={value2}
                         onInput={e=>setValue2(e.target.value)}
-                        style={{width: "50%", margin: "auto", marginTop: "2px"}}
+                        style={{width: "80%", margin: "auto", marginTop: "2px"}}
                     />
                     <hr />
                     <FormLabel component="legend" color="secondary" focused={focused}>3. noun: le chique, location: there</FormLabel>
@@ -147,7 +148,7 @@ function Quiz20() {
                         variant="outlined"
                         value={value3}
                         onInput={e=>setValue3(e.target.value)}
-                        style={{width: "50%", margin: "auto", marginTop: "2px"}}
+                        style={{width: "80%", margin: "auto", marginTop: "2px"}}
                     />
                     <hr />
                     <FormLabel component="legend" color="secondary" focused={focused}>4. noun: el baño, location: far away</FormLabel>
@@ -155,7 +156,7 @@ function Quiz20() {
                         variant="outlined"
                         value={value4}
                         onInput={e=>setValue4(e.target.value)}
-                        style={{width: "50%", margin: "auto", marginTop: "2px"}}
+                        style={{width: "80%", margin: "auto", marginTop: "2px"}}
                     />
                     <hr />
                     <FormLabel component="legend" color="secondary" focused={focused}>5. noun: las damas, location: there</FormLabel>
@@ -163,7 +164,7 @@ function Quiz20() {
                         variant="outlined"
                         value={value5}
                         onInput={e=>setValue5(e.target.value)}
-                        style={{width: "50%", margin: "auto", marginTop: "2px"}}
+                        style={{width: "80%", margin: "auto", marginTop: "2px"}}
                     />
                     <hr />
                     <FormLabel component="legend" color="secondary" focused={focused}>6. noun: unknown, location: here</FormLabel>
@@ -171,7 +172,7 @@ function Quiz20() {
                         variant="outlined"
                         value={value6}
                         onInput={e=>setValue6(e.target.value)}
-                        style={{width: "50%", margin: "auto", marginTop: "2px"}}
+                        style={{width: "80%", margin: "auto", marginTop: "2px"}}
                     />
                     <hr />
                     <FormLabel component="legend" color="secondary" focused={focused}>7. noun: la cama, location: here</FormLabel>
@@ -179,7 +180,7 @@ function Quiz20() {
                         variant="outlined"
                         value={value7}
                         onInput={e=>setValue7(e.target.value)}
-                        style={{width: "50%", margin: "auto", marginTop: "2px"}}
+                        style={{width: "80%", margin: "auto", marginTop: "2px"}}
                     />
                     <hr />
                     <FormLabel component="legend" color="secondary" focused={focused}>8. noun: el perro, location: there</FormLabel>
@@ -187,7 +188,7 @@ function Quiz20() {
                         variant="outlined"
                         value={value8}
                         onInput={e=>setValue8(e.target.value)}
-                        style={{width: "50%", margin: "auto", marginTop: "2px"}}
+                        style={{width: "80%", margin: "auto", marginTop: "2px"}}
                     />
                     <hr />
                 <FormLabel component="legend" color="secondary" focused={focused}>9. noun: les niñes, location: far away</FormLabel>
@@ -195,7 +196,7 @@ function Quiz20() {
                         variant="outlined"
                         value={value9}
                         onInput={e=>setValue9(e.target.value)}
-                        style={{width: "50%", margin: "auto", marginTop: "2px"}}
+                        style={{width: "80%", margin: "auto", marginTop: "2px"}}
                     />
                     <hr />
                     <FormLabel component="legend" color="secondary" focused={focused}>10. noun: las alumnas, location: here</FormLabel>
@@ -203,7 +204,7 @@ function Quiz20() {
                         variant="outlined"
                         value={value10}
                         onInput={e=>setValue10(e.target.value)}
-                        style={{width: "50%", margin: "auto", marginTop: "2px"}}
+                        style={{width: "80%", margin: "auto", marginTop: "2px"}}
                     />
                     <hr />
                     <FormLabel component="legend" color="secondary" focused={focused}>11. noun: unknown, location: there</FormLabel>
@@ -211,7 +212,7 @@ function Quiz20() {
                         variant="outlined"
                         value={value11}
                         onInput={e=>setValue11(e.target.value)}
-                        style={{width: "50%", margin: "auto", marginTop: "2px"}}
+                        style={{width: "80%", margin: "auto", marginTop: "2px"}}
                     />
                     <hr />
                     <FormLabel component="legend" color="secondary" focused={focused}>12. noun: los bolígrafos, location: there</FormLabel>
@@ -219,19 +220,23 @@ function Quiz20() {
                         variant="outlined"
                         value={value12}
                         onInput={e=>setValue12(e.target.value)}
-                        style={{width: "50%", margin: "auto", marginTop: "2px"}}
+                        style={{width: "80%", margin: "auto", marginTop: "2px"}}
                     />
                     <hr />
-          <Button type="submit" variant="outlined" color="primary" className={classes.button}>
-            Check Answers
-          </Button>
-        </FormControl>
-      </form> 
-      <div className="score">
-        <h2>{percentage ? `You got ${score} out of 12 correct. Percentage: ${percentage}` : null}</h2>
-      </div>
-      <Link style={{display: "inline-block"}} className="next-link" exact="true" to="/lessons/20">Return to This Lesson</Link>
-      <Link style={{display: "inline-block"}} className="next-link" exact="true" to="/final_message">Next Lesson: →</Link>
+                    <Button style={{width: "80%", margin: "auto"}} type="submit" variant="outlined" color="primary" className={classes.button}>
+                        Check Answers
+                    </Button>
+                </FormControl>
+            </form> 
+            <div className="score">
+                <h2>{percentage ? `You got ${score} out of 12 correct. Percentage: ${percentage}` : null}</h2>
+            </div>
+            <Box mt={4}>
+                <Link className="next-link" exact="true" to="/lessons/20">Return to Lesson 20</Link>
+                <br/>
+                <Link className="next-link" exact="true" to="/final_message">Next Steps →</Link>
+            </Box>
+            <Copyright />
       </div>
     )
 }
