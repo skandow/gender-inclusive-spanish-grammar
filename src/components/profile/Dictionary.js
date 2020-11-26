@@ -1,7 +1,6 @@
 import React from 'react';
 
 export default function Dictionary() {
-    const url = "https://www.dictionaryapi.com/api/v3/references/spanish/json/language?key=b1947923-495e-4218-b698-eafcbf46899c"
 
     const onButton = () => {
         getJSON(url, function(err, data) {
