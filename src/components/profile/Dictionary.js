@@ -33,6 +33,7 @@ export default function Dictionary() {
     const urlKey = process.env.REACT_APP_DICTIONARY_KEY
     const [partOfSpeech, setPartOfSpeech] = React.useState('')
     const [language, setLanguage] = React.useState('')
+    const [gender, setGender] = React.useState('')
     const [wordToTranslate, setWordToTranslate] = React.useState('')
     const [translatedWord, setTranslatedWord] = React.useState('')
     const [error, setError] = React.useState('')
@@ -65,7 +66,7 @@ export default function Dictionary() {
 
     const parseData = data => {
         console.log(data)
-        let thisWordData = data.find(word => word.fl === partOfSpeech && word.meta.lang === language && word.hwi.hw === wordToTranslate)
+        let thisWordData = data.find(word => word.fl.includes(partOfSpeech) && word.meta.lang === language && word.hwi.hw === wordToTranslate)
         console.log(thisWordData)
         if (!thisWordData) {
             setError("Error: There was no matching word for the entered data.")
@@ -76,7 +77,41 @@ export default function Dictionary() {
             } else {
                 translatedWordData = thisWordData.shortdef[0]
             }
-            setTranslatedWord(translatedWordData)
+            let masculine = translatedWordData
+            let feminine = translatedWordData
+            let genderNeutral = translatedWordData
+            let typicalMasculineEndings = ["o", "r"]
+            let theseWords = translatedWordData.split(",")
+            if (translatedWordData.includes(",")) {
+                console.log("There is more than one word here...")
+                theseWords[1] = theseWords[1].split(';')[0]
+                if (theseWords[1].charAt(theseWords[1].length - 1) === "a" && typicalMasculineEndings.includes(theseWords[0].charAt(theseWords[0].length - 1))) {
+                    masculine = theseWords[0]
+                    feminine = theseWords[1]
+                    genderNeutral = theseWords[1].substr(0, theseWords[1].length - 1) + "e"
+                }
+            }
+            console.log(theseWords)
+            console.log(partOfSpeech === "adjective")
+            console.log(theseWords[0].charAt(theseWords[0].length - 1) === "o")
+            if (partOfSpeech === "adjective" && theseWords[0].charAt(theseWords[0].length - 1) === "o") {
+                masculine = theseWords[0]
+                feminine = theseWords[0].substr(0, theseWords[0].length - 1) + "a"
+                genderNeutral = theseWords[0].substr(0, theseWords[0].length - 1) + "e"
+            } 
+            switch(gender) {
+                case "masculine":
+                    setTranslatedWord(masculine)
+                    break;
+                case "feminine":
+                    setTranslatedWord(feminine)
+                    break;
+                case "non-binary":
+                    setTranslatedWord(genderNeutral)
+                    break;
+                default:
+                    setTranslatedWord(translatedWordData)
+            }
         }
     }
 
@@ -114,6 +149,13 @@ export default function Dictionary() {
                     <RadioGroup style={{margin: "auto"}} row value={language} onChange={e=>setLanguage(e.target.value)}>
                         <FormControlLabel value="en" control={<Radio />} label="English to Spanish" />
                         <FormControlLabel value="es" control={<Radio />} label="Spanish to English" />
+                    </RadioGroup>
+                    <FormLabel style={{textAlign: "left"}} component="legend" color="secondary" focused={focused}>Gender (if applicable):</FormLabel>
+                    <RadioGroup style={{margin: "auto"}} row value={gender} onChange={e=>setGender(e.target.value)}>
+                        <FormControlLabel value="masculine" control={<Radio />} label="masculine" />
+                        <FormControlLabel value="feminine" control={<Radio />} label="feminine" />
+                        <FormControlLabel value="non-binary" control={<Radio />} label="non-binary" />
+                        <FormControlLabel value="" control={<Radio />} label="N/A" />
                     </RadioGroup>
                     <TextField
                     variant="outlined"
