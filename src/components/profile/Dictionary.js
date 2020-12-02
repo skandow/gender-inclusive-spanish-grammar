@@ -38,22 +38,64 @@ export default function Dictionary() {
     const [translatedWord, setTranslatedWord] = React.useState('')
     const [error, setError] = React.useState('')
     
-    const url = urlBase + wordToTranslate + urlKey
+    const url = urlBase + wordToTranslate.toLowerCase() + urlKey
+
+    const specialWordEnglish = ["this", "that", "these", "those", "they", "we"]
+    const specialWordSpanishMasculine = ["este", "ese", "estos", "esos", "ellos", "nosotros"]
+    const specialWordSpanishFeminine = ["esta", "esa", "estas", "esas", "ellas", "nosotras"]
+    const specialWordSpanishNonBinary = ["este", "ese", "estes", "eses", "elles", "nosotres"]
 
     const handleSubmit = event => {
         event.preventDefault();
         setTranslatedWord('')
+        setWordToTranslate(wordToTranslate.toLowerCase())
         if (!partOfSpeech || !language || !wordToTranslate) {
             setError('Error: Be sure that all fields are filled in.')
         } else {
             setError('')
-            getJSON(url, function(err, data) {
-                if (err !== null) {
-                    console.log('Something went wrong: ' + err);
-                } else {
-                    parseData(data)
-                }
-            })
+            console.log("Word to translate: ", wordToTranslate)
+            let specialWordReply = checkForSpecialWord(wordToTranslate.toLowerCase())
+            if (specialWordReply !== "") {
+                setTranslatedWord(specialWordReply)
+            } else {
+                getJSON(url, function(err, data) {
+                    if (err !== null) {
+                        console.log('Something went wrong: ' + err);
+                    } else {
+                        parseData(data)
+                    }
+                })
+            }
+        }
+    }
+
+    const checkForSpecialWord = word => {
+        console.log("Checking for special word", specialWordEnglish, word)
+        console.log("Is the word included? ", specialWordEnglish.includes(word))
+        if (language === "en" && specialWordEnglish.includes(word)) {
+            let index = specialWordEnglish.indexOf(word)
+            if (gender === "masculine" || gender === "") {
+                return specialWordSpanishMasculine[index]
+            } else if (gender === "feminine") {
+                return specialWordSpanishFeminine[index]
+            } else if (gender === "non-binary") {
+                return specialWordSpanishNonBinary[index]
+            }
+        } else if (language === "es") {
+            if (specialWordSpanishMasculine.includes(word)) {
+                let index = specialWordSpanishMasculine.indexOf(word)
+                return specialWordEnglish[index]
+            } else if (specialWordSpanishFeminine.includes(word)) {
+                let index = specialWordSpanishFeminine.indexOf(word)
+                return specialWordEnglish[index]
+            } else if (specialWordSpanishNonBinary.includes(word)) {
+                let index = specialWordSpanishNonBinary.indexOf(word)
+                return specialWordEnglish[index]
+            } else {
+                return ""
+            }
+        } else {
+            return ""
         }
     }
 
@@ -66,7 +108,7 @@ export default function Dictionary() {
 
     const parseData = data => {
         console.log(data)
-        let thisWordData = data.find(word => word.fl.includes(partOfSpeech) && word.meta.lang === language && word.hwi.hw === wordToTranslate)
+        let thisWordData = data.find(word => word.fl.includes(partOfSpeech) && word.meta.lang === language && word.hwi.hw === wordToTranslate.toLowerCase())
         console.log(thisWordData)
         if (!thisWordData) {
             setError("Error: There was no matching word for the entered data.")
