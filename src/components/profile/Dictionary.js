@@ -9,6 +9,7 @@ import Radio from '@material-ui/core/Radio';
 import RadioGroup from '@material-ui/core/RadioGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormLabel from '@material-ui/core/FormLabel';
+const pluralize = require('pluralize')
 
 const useStyles = makeStyles((theme) => ({
     paper: {
@@ -38,7 +39,7 @@ export default function Dictionary() {
     const [translatedWord, setTranslatedWord] = React.useState('')
     const [error, setError] = React.useState('')
     
-    const url = urlBase + wordToTranslate.toLowerCase() + urlKey
+    const url = urlBase + pluralize.singular(wordToTranslate.toLowerCase()) + urlKey
 
     const specialWordEnglish = ["this", "that", "these", "those", "they", "we"]
     const specialWordSpanishMasculine = ["este", "ese", "estos", "esos", "ellos", "nosotros"]
@@ -48,6 +49,7 @@ export default function Dictionary() {
     const handleSubmit = event => {
         event.preventDefault();
         setTranslatedWord('')
+        console.log("Is this word plural?", pluralize.isPlural(wordToTranslate.toLowerCase()))
         setWordToTranslate(wordToTranslate.toLowerCase())
         if (!partOfSpeech || !language || !wordToTranslate) {
             setError('Error: Be sure that all fields are filled in.')
@@ -108,7 +110,7 @@ export default function Dictionary() {
 
     const parseData = data => {
         console.log(data)
-        let thisWordData = data.find(word => word.fl.includes(partOfSpeech) && word.meta.lang === language && word.hwi.hw === wordToTranslate.toLowerCase())
+        let thisWordData = data.find(word => word.fl.includes(partOfSpeech) && word.meta.lang === language && word.hwi.hw === pluralize.singular(wordToTranslate.toLowerCase()))
         console.log(thisWordData)
         if (!thisWordData) {
             setError("Error: There was no matching word for the entered data.")
@@ -173,7 +175,7 @@ export default function Dictionary() {
     }
 
     const focused = true
-
+    console.log("Is the word to translate plural? ", wordToTranslate, pluralize.isPlural(wordToTranslate), pluralize.plural(translatedWord))
     return (
         <Container component="main" maxWidth="md" style={{height: '76vh'}}>
             <CssBaseline />
@@ -222,7 +224,7 @@ export default function Dictionary() {
                     </Button>
                     {translatedWord ? 
                     <div style={{border: "solid #006341 2px", padding: "2px", marginTop: "15px"}}>
-                    {wordToTranslate} = {translatedWord}
+                    {wordToTranslate} = {pluralize.isPlural(wordToTranslate) ? pluralize.plural(translatedWord) : translatedWord}
                     </div> : error ?
                     <div>
                         <div style={{border: "solid #b81140 2px", padding: "2px", marginTop: "15px"}}>{error}</div>

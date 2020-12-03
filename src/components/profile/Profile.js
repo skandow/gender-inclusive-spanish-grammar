@@ -28,14 +28,15 @@ function Profile() {
 
   return (
     <div className="profile">
-        <div id="profile-info">
-          <h2 style={{display: "inline-block", margin: "auto"}}>{greeting}!</h2>
-          <img style={{width: "300px", display: "inline-block", float: "left"}} src="https://upload.wikimedia.org/wikipedia/commons/3/3f/Spanish_language_%28main%29.png" alt="Spanish language flag"/>
-          <img style={{width: "300px", display: "inline-block", float: "right"}} src="https://upload.wikimedia.org/wikipedia/commons/4/43/Nonbinary_Pride_Flag.png" alt="Spanish language flag"/>
-          <div id="profile-details">
+        <div id="profile-info" style={{height: "280px", border: "2px solid white", overflow: "hidden"}}>
+          <h2 style={{margin: "auto"}}>{greeting}!</h2>
+          <img style={{maxWidth: "300px", display: "inline-block", float: "left"}} src="https://upload.wikimedia.org/wikipedia/commons/3/3f/Spanish_language_%28main%29.png" alt="Spanish language flag"/>
+          <div id="profile-details" style={{display: "inline-block", width: "200px"}}>
             <h3>Username: {user.username}</h3>
             <h3>Preferred Pronouns: {user.preferred_pronouns}</h3>
           </div>
+          <img style={{maxWidth: "300px", display: "inline-block", float: "right"}} src="https://upload.wikimedia.org/wikipedia/commons/4/43/Nonbinary_Pride_Flag.png" alt="Spanish language flag"/>
+          
         </div>
         <div style={{textAlign: "left"}}>
           <p>Spanish, like other gendered languages, can give individuals the power to claim their gender identity via the pronouns AND adjectives they use to describe themselves – unless they identify outside the gender binary.</p>
