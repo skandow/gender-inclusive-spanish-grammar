@@ -28,7 +28,7 @@ function Profile() {
 
   return (
     <div className="profile">
-        <div id="profile-info" style={{height: "280px", border: "2px solid white", overflow: "hidden"}}>
+        <div id="profile-info" style={{height: "280px", border: "2px solid white", overflowY: "scroll"}}>
           <h2 style={{margin: "auto"}}>{greeting}!</h2>
           <img style={{maxWidth: "300px", display: "inline-block", float: "left"}} src="https://upload.wikimedia.org/wikipedia/commons/3/3f/Spanish_language_%28main%29.png" alt="Spanish language flag"/>
           <div id="profile-details" style={{display: "inline-block", width: "200px"}}>

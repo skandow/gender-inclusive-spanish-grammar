@@ -3,6 +3,7 @@ import Container from '@material-ui/core/Container';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { withStyles, makeStyles } from '@material-ui/core/styles';
+import Typography from '@material-ui/core/Typography';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
@@ -64,7 +65,9 @@ function QuizScores() {
 
     return (
         <Container>
-            <h1>Your Quiz Scores</h1>
+            <Typography component="h1" variant="h3">
+              Your Quiz Scores
+            </Typography>
             <TableContainer component={Paper}>
                 <Table className={classes.table} aria-label="customized table">
                     <TableHead>

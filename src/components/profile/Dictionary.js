@@ -3,12 +3,14 @@ import Container from '@material-ui/core/Container';
 import Copyright from '../containers/Copyright';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import { makeStyles } from '@material-ui/core/styles';
+import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import Radio from '@material-ui/core/Radio';
 import RadioGroup from '@material-ui/core/RadioGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormLabel from '@material-ui/core/FormLabel';
+import Fade from 'react-reveal/Fade';
 const pluralize = require('pluralize')
 
 const useStyles = makeStyles((theme) => ({
@@ -20,6 +22,7 @@ const useStyles = makeStyles((theme) => ({
     },
     form: {
       width: '50%',
+      height: '80%',
       marginTop: theme.spacing(1)
     },
     submit: {
@@ -175,13 +178,19 @@ export default function Dictionary() {
     }
 
     const focused = true
+    const endResult = pluralize.isPlural(wordToTranslate) ? pluralize.plural(translatedWord) : translatedWord
+    const result = wordToTranslate + " = " + endResult
     console.log("Is the word to translate plural? ", wordToTranslate, pluralize.isPlural(wordToTranslate), pluralize.plural(translatedWord))
     return (
-        <Container component="main" maxWidth="md" style={{height: '76vh'}}>
+        <Container component="main" maxWidth="md">
             <CssBaseline />
             <div className={classes.paper}>
-                <h1>Enter the word you would like translated.</h1>
-                
+                <Typography component="h1" variant="h4">
+                    Enter the word you would like translated.
+                </Typography>
+                <Typography component="h1" variant="h6">
+                    Be sure to make a selection for each field.
+                </Typography>
                 <form className={classes.form} onSubmit={handleSubmit}>
                     <FormLabel style={{textAlign: "left"}} component="legend" color="secondary" focused={focused}>Part of speech:</FormLabel>
                     <RadioGroup style={{margin: "auto"}} row value={partOfSpeech} onChange={e=>setPartOfSpeech(e.target.value)}>
@@ -222,15 +231,18 @@ export default function Dictionary() {
                     >
                     Translate This Word
                     </Button>
-                    {translatedWord ? 
-                    <div style={{border: "solid #006341 2px", padding: "2px", marginTop: "15px"}}>
-                    {wordToTranslate} = {pluralize.isPlural(wordToTranslate) ? pluralize.plural(translatedWord) : translatedWord}
-                    </div> : error ?
-                    <div>
-                        <div style={{border: "solid #b81140 2px", padding: "2px", marginTop: "15px"}}>{error}</div>
-                    </div> :
-                    null}
                 </form>
+                {translatedWord ? 
+                    <div style={{border: "solid #006341 2px", padding: "5px", marginTop: "15px", marginBottom: "-20px", width: "50%"}}>
+                        <Fade right>
+                            {result}
+                        </Fade>
+                        </div> : error ?
+                        <div style={{border: "solid #b81140 2px", padding: "5px", marginTop: "15px", marginBottom: "-20px", width: "50%"}}>
+                             <Fade left>{error}</Fade>
+                        </div>
+                         :
+                <div style={{height: "29px"}}>{null}</div>}
                 <Copyright />
             </div>
         </Container>

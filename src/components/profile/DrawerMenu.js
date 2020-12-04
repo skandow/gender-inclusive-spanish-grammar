@@ -103,8 +103,6 @@ export default function DrawerMenu() {
     dispatch(deleteQuizScores());
   }
 
-  console.log("at the drawer menu")
-
   return (
     <div className={classes.root}>
       <CssBaseline />
@@ -132,6 +130,7 @@ export default function DrawerMenu() {
           </Typography>
         </Toolbar>
       </AppBar>
+      
       <Drawer
         className={classes.drawer}
         variant="permanent"
@@ -140,10 +139,16 @@ export default function DrawerMenu() {
         }}
         anchor="left"
       >
-        <div className={classes.toolbar} style={{color: "white", backgroundColor: "#b81140", position: "relative"}}>
+        <div className={classes.toolbar} style={{color: "white", backgroundColor: "#b81140", position: "fixed", zIndex: "1", width: drawerWidth, borderRight: "solid 1px white", borderBottom: "solid 1px white"}}>
           <h5 id="corner-label">Gender Inclusive Spanish</h5>
         </div>
         <Divider />
+        <div className={classes.toolbar} style={{color: "white", backgroundColor: "#b81140"}}>
+          <h5 id="corner-label">Gender Inclusive Spanish</h5>
+        </div>
+        <div className={classes.toolbar} style={{textAlign: "left", paddingLeft: "5px", color: "white", backgroundColor: "#b81140"}}>
+          <h5 id="corner-label">Part 1: Introduction</h5>
+        </div>
         <List style={{backgroundColor: "lightskyblue"}}>
           {['Lesson 1', 'Lesson 2', 'Lesson 3', 'Lesson 4', 'Lesson 5'].map((text, index) => (
             <Link className="menu-link" key={text} to={"/" + text.toLowerCase().replace(" ", "s/")}>
@@ -154,6 +159,9 @@ export default function DrawerMenu() {
           ))}
         </List>
         <Divider />
+        <div className={classes.toolbar} style={{textAlign: "left", paddingLeft: "5px", color: "white", backgroundColor: "#b81140"}}>
+          <h5 id="corner-label">Part 2: Verbs</h5>
+        </div>
         <List style={{backgroundColor: "lightskyblue"}}>
           {['Lesson 6', 'Lesson 7', 'Lesson 8', 'Lesson 9', 'Lesson 10'].map((text, index) => (
             <Link className="menu-link" key={text} to={"/" + text.toLowerCase().replace(" ", "s/")}>
@@ -164,6 +172,9 @@ export default function DrawerMenu() {
           ))}
         </List>
         <Divider />
+        <div className={classes.toolbar} style={{textAlign: "left", paddingLeft: "5px", color: "white", backgroundColor: "#b81140"}}>
+          <h5 id="corner-label">Part 3: Object Pronouns</h5>
+        </div>
         <List style={{backgroundColor: "lightskyblue"}}>
           {['Lesson 11', 'Lesson 12', 'Lesson 13', 'Lesson 14', 'Lesson 15'].map((text, index) => (
              <Link className="menu-link" key={text} to={"/" + text.toLowerCase().replace(" ", "s/")}>
@@ -174,6 +185,9 @@ export default function DrawerMenu() {
           ))}
         </List>
         <Divider />
+        <div className={classes.toolbar} style={{textAlign: "left", paddingLeft: "5px", color: "white", backgroundColor: "#b81140"}}>
+          <h5 id="corner-label">Part 4: Commands/Pronouns</h5>
+        </div>
         <List style={{backgroundColor: "lightskyblue"}}>
           {['Lesson 16', 'Lesson 17', 'Lesson 18', 'Lesson 19', 'Lesson 20'].map((text, index) => (
              <Link className="menu-link" key={text} to={"/" + text.toLowerCase().replace(" ", "s/")}>

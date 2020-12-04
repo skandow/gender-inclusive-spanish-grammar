@@ -196,7 +196,6 @@ td[class^="third"] {
 }
 
 .next-link {
-  border: 1px solid white;
   font-size: 15px;
   max-width: max-content;
   text-decoration: none;
@@ -266,3 +265,9 @@ table.spanish-possessive-pronoun-chart {
   padding: 10px 15px 10px 25px;
   font-style: italic;
 }
+
+.score {
+  height: 60px;
+}
+
+

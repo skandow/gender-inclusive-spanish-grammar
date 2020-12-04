@@ -10,6 +10,7 @@ import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
 import { saveQuizScores } from '../../actions/quizScores.js';
 import Box from '@material-ui/core/Box';
+import Fade from 'react-reveal/Fade';
 import Copyright from '../containers/Copyright'
 
 const useStyles = makeStyles((theme) => ({
@@ -224,18 +225,22 @@ function Quiz17() {
                         style={{width: "30%", margin: "auto", marginTop: "2px"}}
                     />
                     <hr />
-                    <Button style={{width: "30%", margin: "auto"}} type="submit" variant="outlined" color="primary" className={classes.button}>
+                    <Button style={{width: "30%", margin: "auto"}} type="submit" variant="contained" color="primary" className={classes.button}>
                         Check Answers
                     </Button>
                 </FormControl>
             </form> 
             <div className="score">
-                <h2>{percentage ? `You got ${score} out of 12 correct. Percentage: ${percentage}` : null}</h2>
+            {percentage ?
+              <Fade right> 
+                <h2>You got {score} out of 12 correct. Percentage: {percentage}</h2>
+              </Fade>
+            : null}
             </div>
             <Box mt={4}>
-                <Link className="next-link" exact="true" to="/lessons/17">Return to Lesson 17</Link>
+                <Button variant="contained" color="primary" className={classes.button}><Link className="next-link" exact="true" to="/lessons/17">Return to Lesson 17</Link></Button>
                 <br/>
-                <Link className="next-link" exact="true" to="/lessons/18">Next Lesson: The Spanish Negative →</Link>
+                <Button variant="contained" color="primary" className={classes.button}><Link className="next-link" exact="true" to="/lessons/18">Next Lesson: The Spanish Negative →</Link></Button>
             </Box>
             <Copyright />
       </div>

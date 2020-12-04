@@ -2,9 +2,19 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { useSelector } from 'react-redux';
 import Box from '@material-ui/core/Box';
-import Copyright from '../containers/Copyright'
+import Copyright from '../containers/Copyright';
+import Button from '@material-ui/core/Button';
+import { makeStyles } from '@material-ui/core/styles';
+
+const useStyles = makeStyles((theme) => ({
+    button: {
+      margin: theme.spacing(1, 1, 0, 0),
+    },
+  }));
 
 function Lesson5() {
+    const classes = useStyles();
+
     const user = useSelector(state => state.user)
     let subjectPronoun
     if (user.preferred_pronouns.substr(0, 2) === "he") {
@@ -119,9 +129,9 @@ function Lesson5() {
             begin Part 2 with a look at another verb used with adjectives: the verb <em lang="es">estar</em>.</p>           
           </div>
           <Box mt={4}>
-            <Link className="next-link" exact="true" to="/quizzes/5">Take Quiz!</Link>
+            <Button variant="contained" color="primary" className={classes.button}><Link className="next-link" exact="true" to="/quizzes/5">Take Quiz!</Link></Button>
             <br/>
-            <Link className="next-link" exact="true" to="/lessons/6">Next Lesson: The Verb <em>Estar</em> →</Link>
+            <Button variant="contained" color="primary" className={classes.button}><Link className="next-link" exact="true" to="/lessons/6">Next Lesson: The Verb <em>Estar</em> →</Link></Button>
           </Box>
           <Copyright />
       </div>

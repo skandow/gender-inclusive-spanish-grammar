@@ -1,9 +1,18 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 import Box from '@material-ui/core/Box';
-import Copyright from '../containers/Copyright'
+import Copyright from '../containers/Copyright';
+import Button from '@material-ui/core/Button';
+import { makeStyles } from '@material-ui/core/styles';
+
+const useStyles = makeStyles((theme) => ({
+    button: {
+      margin: theme.spacing(1, 1, 0, 0),
+    },
+  }));
 
 function Lesson19() {
+    const classes = useStyles();
 
     return (
       <div className="lesson">
@@ -244,9 +253,9 @@ function Lesson19() {
             <p>For our final lesson, we'll look at one more category of pronouns and adjectives that we've seen a bit of in previous lessons: demonstrative pronouns and adjectives.</p>
           </div>
           <Box mt={4}>
-            <Link className="next-link" exact="true" to="/quizzes/19">Take Quiz!</Link>
+            <Button variant="contained" color="primary" className={classes.button}><Link className="next-link" exact="true" to="/quizzes/19">Take Quiz!</Link></Button>
             <br/>
-            <Link className="next-link" exact="true" to="/lessons/20">Next Lesson: Demonstrative Adjectives and Pronouns →</Link>
+            <Button variant="contained" color="primary" className={classes.button}><Link className="next-link" exact="true" to="/lessons/20">Next Lesson: Demonstrative Adjectives and Pronouns →</Link></Button>
           </Box>
           <Copyright />
       </div>

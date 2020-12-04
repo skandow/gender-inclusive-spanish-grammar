@@ -11,6 +11,7 @@ import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
 import { saveQuizScores } from '../../actions/quizScores.js'
 import Box from '@material-ui/core/Box';
+import Fade from 'react-reveal/Fade';
 import Copyright from '../containers/Copyright'
 
 const useStyles = makeStyles((theme) => ({
@@ -147,18 +148,22 @@ function Quiz2() {
                         <FormControlLabel value="tú" control={<Radio />} label="tú" />
                         <FormControlLabel value="vosotros/as/es" control={<Radio />} label="vosotros/as/es" />
                     </RadioGroup>
-                    <Button type="submit" variant="outlined" color="primary" className={classes.button}>
+                    <Button type="submit" variant="contained" color="primary" className={classes.button}>
                       Check Answers
                     </Button>
                 </FormControl>
             </form> 
             <div className="score">
-              <h2>{percentage ? `You got ${score} out of 6 correct. Percentage: ${percentage}` : null}</h2>
+            {percentage ?
+              <Fade right> 
+                <h2>You got {score} out of 6 correct. Percentage: {percentage}</h2>
+              </Fade>
+            : null}
             </div>
             <Box mt={4}>
-              <Link className="next-link" exact="true" to="/lessons/2">Return to Lesson 2</Link>
+              <Button variant="contained" color="primary" className={classes.button}><Link className="next-link" exact="true" to="/lessons/2">Return to Lesson 2</Link></Button>
               <br/>
-              <Link className="next-link" exact="true" to="/lessons/3">Next Lesson: The Verb <em>Ser</em> →</Link>
+              <Button variant="contained" color="primary" className={classes.button}><Link className="next-link" exact="true" to="/lessons/3">Next Lesson: The Verb <em>Ser</em> →</Link></Button>
             </Box>
             <Copyright />
       </div>
