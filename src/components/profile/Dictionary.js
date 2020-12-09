@@ -1,4 +1,5 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import Container from '@material-ui/core/Container';
 import Copyright from '../containers/Copyright';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -11,7 +12,7 @@ import RadioGroup from '@material-ui/core/RadioGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormLabel from '@material-ui/core/FormLabel';
 import Fade from 'react-reveal/Fade';
-const pluralize = require('pluralize')
+const pluralize = require('pluralize');
 
 const useStyles = makeStyles((theme) => ({
     paper: {
@@ -41,13 +42,29 @@ export default function Dictionary() {
     const [wordToTranslate, setWordToTranslate] = React.useState('')
     const [translatedWord, setTranslatedWord] = React.useState('')
     const [error, setError] = React.useState('')
+
+    const user = useSelector(state => state.user)
+    let subjectPronoun
+    if (user.preferred_pronouns.substr(0, 2) === "he" || user.preferred_pronouns.substr(0, 3) === "she" || user.preferred_pronouns.substr(0, 4) === "they") {
+        subjectPronoun = "they (singular)"
+    } else {
+        subjectPronoun = user.preferred_pronouns.split(" ")[0].split(",")[0]
+    }
+
+    const urlMiddle = partOfSpeech === "noun" ? pluralize.singular(wordToTranslate.toLowerCase()) : wordToTranslate.toLowerCase()
     
-    const url = urlBase + pluralize.singular(wordToTranslate.toLowerCase()) + urlKey
+    const url = urlBase + urlMiddle + urlKey
 
     const specialWordEnglish = ["this", "that", "these", "those", "they", "we"]
     const specialWordSpanishMasculine = ["este", "ese", "estos", "esos", "ellos", "nosotros"]
     const specialWordSpanishFeminine = ["esta", "esa", "estas", "esas", "ellas", "nosotras"]
     const specialWordSpanishNonBinary = ["este", "ese", "estes", "eses", "elles", "nosotres"]
+    const nonBinarySubjectPronouns = ["e", "ey", "per", "sie", "ve", "zie", "ze"]
+    const nonBinaryObjectPronouns = ["em", "per", "sir", "ver", "zim", "hir", "zir"]
+    const nonBinaryPossessivePronouns = ["eirs", "pers", "hirs", "vers", "zirs"]
+    const nonBinaryReflexivePronouns = ["eirself", "perself", "hirself", "verself", "zirself"]
+    const nonBinaryPossessiveAdjectives = ["eir", "pers", "hir", "vis", "zir"]
+    const nonBinarySpanishPronouns = ["elle", "elles"]
 
     const handleSubmit = event => {
         event.preventDefault();
@@ -77,6 +94,41 @@ export default function Dictionary() {
     const checkForSpecialWord = word => {
         console.log("Checking for special word", specialWordEnglish, word)
         console.log("Is the word included? ", specialWordEnglish.includes(word))
+        if (nonBinarySpanishPronouns.includes(word) && language === "es") {
+            if (word === "elles") {
+                return "they"
+            } else {
+                return subjectPronoun
+            }            
+        }
+        if (nonBinarySubjectPronouns.includes(word)) {
+            return "elle"
+        }
+        if (nonBinaryObjectPronouns.includes(word) && partOfSpeech === "pronoun") {
+            return "le"
+        }
+        if (nonBinaryPossessivePronouns.includes(word)) {
+            switch(gender) {
+                case "masculine":
+                    return "suyo";
+                case "feminine":
+                    return "suya";
+                case "non-binary":
+                    return "suye";
+                default:
+                    return "suyo";
+            }
+        }
+        if (nonBinaryReflexivePronouns.includes(word)) {
+            return "se"
+        }
+        if (nonBinaryPossessiveAdjectives.includes(word) && partOfSpeech === "adjective") {
+            if (pluralize.isPlural(word)) {
+                return "sus"
+            } else {
+                return "su"
+            }
+        }
         if (language === "en" && specialWordEnglish.includes(word)) {
             let index = specialWordEnglish.indexOf(word)
             if (gender === "masculine" || gender === "") {
@@ -113,7 +165,12 @@ export default function Dictionary() {
 
     const parseData = data => {
         console.log(data)
-        let thisWordData = data.find(word => word.fl.includes(partOfSpeech) && word.meta.lang === language && word.hwi.hw === pluralize.singular(wordToTranslate.toLowerCase()))
+        let thisWordData
+        if (partOfSpeech === "noun") {
+            thisWordData = data.find(word => word.fl.includes(partOfSpeech) && word.meta.lang === language && word.hwi.hw === pluralize.singular(wordToTranslate.toLowerCase()))
+        } else {
+            thisWordData = data.find(word => word.fl.includes(partOfSpeech) && word.meta.lang === language && word.hwi.hw === wordToTranslate.toLowerCase())
+        }
         console.log(thisWordData)
         if (!thisWordData) {
             setError("Error: There was no matching word for the entered data.")
@@ -178,7 +235,7 @@ export default function Dictionary() {
     }
 
     const focused = true
-    const endResult = pluralize.isPlural(wordToTranslate) ? pluralize.plural(translatedWord) : translatedWord
+    const endResult = pluralize.isPlural(wordToTranslate) ? nonBinaryPossessivePronouns.includes(wordToTranslate) ? translatedWord : partOfSpeech !== "noun" ? translatedWord : pluralize.plural(translatedWord) : translatedWord
     const result = wordToTranslate + " = " + endResult
     console.log("Is the word to translate plural? ", wordToTranslate, pluralize.isPlural(wordToTranslate), pluralize.plural(translatedWord))
     return (
