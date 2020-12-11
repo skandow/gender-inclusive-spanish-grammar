@@ -193,6 +193,34 @@ export default function Dictionary() {
                     masculine = theseWords[0]
                     feminine = theseWords[1]
                     genderNeutral = theseWords[1].substr(0, theseWords[1].length - 1) + "e"
+                } else if (translatedWordData.includes("(")) {
+                    let thisWord = theseWords[0].split(" (")[0]
+                    translatedWordData = thisWord
+                    if (partOfSpeech === "noun" || partOfSpeech === "adjective") {
+                        if (typicalMasculineEndings.includes(thisWord.charAt(thisWord.length - 1))) {
+                            masculine = thisWord
+                            if (masculine[masculine.length - 1] === "o") {
+                                feminine = thisWord.substr(0, thisWord.length - 1) + "a"
+                                genderNeutral = thisWord.substr(0, thisWord.length - 1) + "e"
+                            } else {
+                                feminine = thisWord + "a"
+                                genderNeutral = thisWord + "e"
+                            }
+                        } else {
+                            masculine = thisWord
+                            feminine = thisWord
+                            genderNeutral = thisWord
+                        } 
+                    } else {
+                    masculine = thisWord
+                    feminine = thisWord
+                    genderNeutral = thisWord
+                    }
+                } else {
+                    masculine = theseWords[0]
+                    feminine = theseWords[0]
+                    genderNeutral = theseWords[0]
+                    translatedWordData = theseWords[0]
                 }
             }
             console.log(theseWords)
