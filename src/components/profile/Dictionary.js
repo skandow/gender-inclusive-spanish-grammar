@@ -84,10 +84,32 @@ export default function Dictionary() {
                     if (err !== null) {
                         console.log('Something went wrong: ' + err);
                     } else {
+                        determineRefetch(data)
+                    }
+                })
+            }
+        }
+    }
+
+    const determineRefetch = data => {
+        let compareWord = pluralize.singular(wordToTranslate)
+        let lastLetter = compareWord.charAt(compareWord.length - 1)
+        console.log("in determine refectch")
+        if (!data[0].fl && language === "es") {
+            if (lastLetter === "a" || lastLetter === "e") {
+                console.log("last letter is e or a")
+                let masculineForm = compareWord.substr(0, wordToTranslate.length - 1) + "o"
+                let newUrl = urlBase + masculineForm + urlKey
+                getJSON(newUrl, function(err, data) {
+                    if (err !== null) {
+                        console.log('Something went wrong: ' + err)
+                    } else {
                         parseData(data)
                     }
                 })
             }
+        } else {
+            parseData(data)
         }
     }
 
@@ -164,11 +186,20 @@ export default function Dictionary() {
     }
 
     const parseData = data => {
-        console.log(data)
-        let thisWordData
-        if (partOfSpeech === "noun") {
-            thisWordData = data.find(word => word.fl.includes(partOfSpeech) && word.meta.lang === language && word.hwi.hw === pluralize.singular(wordToTranslate.toLowerCase()))
+        if (language === "en") {
+            parseEnglishData(data)
         } else {
+            parseSpanishData(data)
+        }
+    }
+
+    const parseEnglishData = data => {
+        let thisWordData
+        let compareWord = pluralize.singular(wordToTranslate.toLowerCase())
+        if (partOfSpeech === "noun") {
+            thisWordData = data.find(word => word.fl.includes(partOfSpeech) && word.meta.lang === language && word.hwi.hw === compareWord)
+        }
+        else {
             thisWordData = data.find(word => word.fl.includes(partOfSpeech) && word.meta.lang === language && word.hwi.hw === wordToTranslate.toLowerCase())
         }
         console.log(thisWordData)
@@ -246,6 +277,48 @@ export default function Dictionary() {
             }
         }
     }
+
+    const parseSpanishData = data => {
+        console.log(data)
+        let thisWordData
+        let compareWord = pluralize.singular(wordToTranslate.toLowerCase())
+        console.log("compare word: ", compareWord)
+        if (partOfSpeech === "noun") {
+            thisWordData = data.find(word => word.fl.includes(partOfSpeech) && word.meta.lang === language && word.hwi.hw === compareWord)
+            console.log("compare word: ", compareWord, "this word data: ", thisWordData)
+            if (!thisWordData) {
+                console.log("got to here", compareWord.charAt(compareWord.length - 1))
+                if (compareWord.charAt(compareWord.length - 1) === "a") {
+                    console.log("got to here as well")
+                    compareWord = compareWord.substr(0, compareWord.length - 1) + "o"
+                    console.log("new compare word: ", compareWord)
+                    thisWordData = data.find(word => word.fl.includes(partOfSpeech) && word.meta.lang === language && word.hwi.hw === compareWord)
+                } 
+            }
+        } else {
+            thisWordData = data.find(word => word.fl.includes(partOfSpeech) && word.meta.lang === language && word.hwi.hw === wordToTranslate.toLowerCase())
+        }
+        console.log(thisWordData)
+        if (!thisWordData) {
+            setError("Error: There was no matching word for the entered data.")
+        } else {
+            let translatedWordData
+            if (thisWordData.shortdef[0].includes(":")) {
+                translatedWordData = thisWordData.shortdef[0].split(": ").pop()
+            } else {
+                translatedWordData = thisWordData.shortdef[0]
+            }
+            let theseWords = translatedWordData.split(",")
+            if (translatedWordData.includes(",")) {
+                console.log("There is more than one word here...")
+                theseWords[1] = theseWords[1].split(';')[0]
+            } else {
+                translatedWordData = theseWords[0]
+            }
+            setTranslatedWord(translatedWordData)
+        }
+    }
+        
 
     const getJSON = function(url, callback) {
         const xhr = new XMLHttpRequest();
