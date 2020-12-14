@@ -284,7 +284,7 @@ export default function Dictionary() {
         let compareWord = pluralize.singular(wordToTranslate.toLowerCase())
         console.log("compare word: ", compareWord)
         if (partOfSpeech === "noun") {
-            thisWordData = data.find(word => word.fl.includes(partOfSpeech) && word.meta.lang === language && word.hwi.hw === compareWord)
+            thisWordData = data.find(word => word.fl && word.fl.includes(partOfSpeech) && word.meta.lang === language)
             console.log("compare word: ", compareWord, "this word data: ", thisWordData)
             if (!thisWordData) {
                 console.log("got to here", compareWord.charAt(compareWord.length - 1))
@@ -296,7 +296,7 @@ export default function Dictionary() {
                 } 
             }
         } else {
-            thisWordData = data.find(word => word.fl.includes(partOfSpeech) && word.meta.lang === language && word.hwi.hw === wordToTranslate.toLowerCase())
+            thisWordData = data.find(word => word.fl && word.fl.includes(partOfSpeech) && word.meta.lang === language && word.hwi.hw === wordToTranslate.toLowerCase())
         }
         console.log(thisWordData)
         if (!thisWordData) {
