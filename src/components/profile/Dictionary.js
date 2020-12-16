@@ -55,10 +55,10 @@ export default function Dictionary() {
     
     const url = urlBase + urlMiddle + urlKey
 
-    const specialWordEnglish = ["this", "that", "these", "those", "they", "we"]
+    const specialWordEnglish = ["this", "that", "these", "those", "they", "we", "cousin", "cousins"]
     const specialWordSpanishMasculine = ["este", "ese", "estos", "esos", "ellos", "nosotros"]
     const specialWordSpanishFeminine = ["esta", "esa", "estas", "esas", "ellas", "nosotras"]
-    const specialWordSpanishNonBinary = ["este", "ese", "estes", "eses", "elles", "nosotres"]
+    const specialWordSpanishNonBinary = ["este", "ese", "estes", "eses", "elles", "nosotres", "prime", "primes"]
     const nonBinarySubjectPronouns = ["e", "ey", "per", "sie", "ve", "zie", "ze"]
     const nonBinaryObjectPronouns = ["em", "per", "sir", "ver", "zim", "hir", "zir"]
     const nonBinaryPossessivePronouns = ["eirs", "pers", "hirs", "vers", "zirs"]
@@ -337,6 +337,20 @@ export default function Dictionary() {
             setTranslatedWord(translatedWordData)
         }
     }
+
+    const pluralizeSpanishWord = translatedWord => {
+        let vowels = ["a", "e", "i", "o", "u"]
+        let lastLetter = translatedWord.charAt(translatedWord.length - 1)
+        if (vowels.includes(lastLetter)) {
+            return translatedWord + "s"
+        } else if (lastLetter === "z") {
+            return translatedWord.substr(0, translatedWord.length - 1) + "ces"
+        } else if (translatedWord.substr(translatedWord.length - 3) === "ión") {
+            return translatedWord.substr(0, translatedWord.length - 3) + "iones"
+        } else {
+            return translatedWord + "es"
+        }
+    }
         
 
     const getJSON = function(url, callback) {
@@ -355,7 +369,7 @@ export default function Dictionary() {
     }
 
     const focused = true
-    const endResult = pluralize.isPlural(wordToTranslate) ? nonBinaryPossessivePronouns.includes(wordToTranslate) ? translatedWord : partOfSpeech !== "noun" ? translatedWord : pluralize.plural(translatedWord) : translatedWord
+    const endResult = pluralize.isPlural(wordToTranslate) ? nonBinaryPossessivePronouns.includes(wordToTranslate) ? translatedWord : partOfSpeech !== "noun" ? translatedWord : language === "es" ? pluralize.plural(translatedWord) : pluralizeSpanishWord(translatedWord) : translatedWord
     const result = wordToTranslate + " = " + endResult
     console.log("Is the word to translate plural? ", wordToTranslate, pluralize.isPlural(wordToTranslate), pluralize.plural(translatedWord))
     return (
