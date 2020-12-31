@@ -27,7 +27,7 @@ class App extends Component {
           'Authorization': `Bearer ${token}`
         }
       }
-      fetch('http://localhost:3001/api/v1/profile', reqObj)
+      fetch('https://git.heroku.com/inclusive-spanish-grammar-serv.git/api/v1/profile', reqObj)
       .then(resp => {
           return resp.json()})
       .then(data => {

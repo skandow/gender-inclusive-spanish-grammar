@@ -57,7 +57,7 @@ export default function SignUp() {
         body: JSON.stringify(payload)
     }
 
-    fetch("http://localhost:3001/api/v1/users", reqObj)
+    fetch("https://git.heroku.com/inclusive-spanish-grammar-serv.git/api/v1/users", reqObj)
     .then(resp => {
       if(resp.status === 406) {
       throw Error("Username must be unique")
