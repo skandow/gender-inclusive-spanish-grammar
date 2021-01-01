@@ -59,7 +59,7 @@ export default function EditProfile() {
         body: JSON.stringify(payload)
     }
 
-    fetch(`https://musi-cal-back-end.herokuapp.com/api/v1/users/${user.id}`, reqObj)
+    fetch(`https://inclusive-spanish-grammar-serv.herokuapp.com/api/v1/users/${user.id}`, reqObj)
     .then(resp => {
       if(resp.status === 406) {
       throw Error("Username must be unique")

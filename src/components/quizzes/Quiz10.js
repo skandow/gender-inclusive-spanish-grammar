@@ -109,7 +109,7 @@ function Quiz10() {
         },
         body: JSON.stringify(payload)
       }
-        fetch(`https://musi-cal-back-end.herokuapp.com/quiz_scores${endURL}`, reqObj)
+        fetch(`https://inclusive-spanish-grammar-serv.herokuapp.com/quiz_scores${endURL}`, reqObj)
         .then(resp => resp.json())
         .then(data => {
           dispatch(saveQuizScores(data.user.data.attributes.quiz_scores))
