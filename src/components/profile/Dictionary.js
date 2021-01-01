@@ -69,13 +69,11 @@ export default function Dictionary() {
     const handleSubmit = event => {
         event.preventDefault();
         setTranslatedWord('')
-        console.log("Is this word plural?", pluralize.isPlural(wordToTranslate.toLowerCase()))
         setWordToTranslate(wordToTranslate.toLowerCase())
         if (!partOfSpeech || !language || !wordToTranslate) {
             setError('Error: Be sure that all fields are filled in.')
         } else {
             setError('')
-            console.log("Word to translate: ", wordToTranslate)
             let specialWordReply = checkForSpecialWord(wordToTranslate.toLowerCase())
             if (specialWordReply !== "") {
                 setTranslatedWord(specialWordReply)
@@ -94,12 +92,8 @@ export default function Dictionary() {
     const determineRefetch = data => {
         let compareWord = pluralize.singular(wordToTranslate)
         let lastLetter = compareWord.charAt(compareWord.length - 1)
-        console.log("in determine refetch")
-        console.log("data: ", data)
         if (data && data.length > 0 && !data[0].fl && language === "es") {
-            console.log("in line 99")
             if (lastLetter === "a" || lastLetter === "e") {
-                console.log("last letter is e or a")
                 let masculineForm = compareWord.substr(0, wordToTranslate.length - 1) + "o"
                 let newUrl = urlBase + masculineForm + urlKey
                 getJSON(newUrl, function(err, data) {
@@ -113,14 +107,11 @@ export default function Dictionary() {
                 setError("Error: There was no matching word for the entered data.")
             }
         } else {
-            console.log("in else of detemine refetch")
             parseData(data)
         }
     }
 
     const checkForSpecialWord = word => {
-        console.log("Checking for special word", specialWordEnglish, word)
-        console.log("Is the word included? ", specialWordEnglish.includes(word))
         if (nonBinarySpanishPronouns.includes(word) && language === "es") {
             if (word === "elles") {
                 return "they"
@@ -201,14 +192,12 @@ export default function Dictionary() {
     const parseEnglishData = data => {
         let thisWordData
         let compareWord = pluralize.singular(wordToTranslate.toLowerCase())
-        console.log(data)
         if (data && partOfSpeech === "noun" && data.length > 0 && data[0].fl) {
             thisWordData = data.find(word => word.fl.includes(partOfSpeech) && word.meta.lang === language && word.hwi.hw === compareWord)
         }
         else if (data && data.length > 0 && data[0].fl) {
             thisWordData = data.find(word => word.fl.includes(partOfSpeech) && word.meta.lang === language && word.hwi.hw === wordToTranslate.toLowerCase())
         }
-        console.log(thisWordData)
         if (!thisWordData) {
             setError("Error: There was no matching word for the entered data.")
         } else {
@@ -224,11 +213,8 @@ export default function Dictionary() {
             let typicalMasculineEndings = ["o", "r"]
             let theseWords = translatedWordData.split(",")
             if (translatedWordData.includes(",")) {
-                console.log("There is more than one word here...")
                 theseWords[1] = theseWords[1].split(';')[0]
-                console.log("Here are these words: ", theseWords)
                 if (theseWords[1].charAt(theseWords[1].length - 1) === "a" && typicalMasculineEndings.includes(theseWords[0].charAt(theseWords[0].length - 1))) {
-                    console.log("In line 225")
                     masculine = theseWords[0]
                     translatedWordData = theseWords[0]
                     feminine = theseWords[1]
@@ -236,45 +222,34 @@ export default function Dictionary() {
                 } else if (translatedWordData.includes("(")) {
                     let thisWord = theseWords[0].split(" (")[0]
                     translatedWordData = thisWord
-                    console.log("in line 232")
                     if (partOfSpeech === "noun" || partOfSpeech === "adjective") {
-                        console.log("in line 234")
                         if (typicalMasculineEndings.includes(thisWord.charAt(thisWord.length - 1))) {
-                            console.log("In line 236")
                             masculine = thisWord
                             if (masculine[masculine.length - 1] === "o") {
-                                console.log("In line 239")
                                 feminine = thisWord.substr(0, thisWord.length - 1) + "a"
                                 genderNeutral = thisWord.substr(0, thisWord.length - 1) + "e"
                             } else {
-                                console.log("In line 243")
                                 feminine = thisWord + "a"
                                 genderNeutral = thisWord + "e"
                             }
                         } else {
-                            console.log("In line 248")
                             masculine = thisWord
                             feminine = thisWord
                             genderNeutral = thisWord
                         } 
                     } else {
-                        console.log("in line 254")
                     masculine = thisWord
                     feminine = thisWord
                     genderNeutral = thisWord
                     translatedWordData = thisWord
                     }
                 } else {
-                    console.log("in line 261")
                     masculine = theseWords[0]
                     feminine = theseWords[0]
                     genderNeutral = theseWords[0]
                     translatedWordData = theseWords[0]
                 }
             }
-            console.log(theseWords)
-            console.log(partOfSpeech === "adjective")
-            console.log(theseWords[0].charAt(theseWords[0].length - 1) === "o")
             if (partOfSpeech === "adjective" && theseWords[0].charAt(theseWords[0].length - 1) === "o") {
                 masculine = theseWords[0]
                 feminine = theseWords[0].substr(0, theseWords[0].length - 1) + "a"
@@ -297,27 +272,19 @@ export default function Dictionary() {
     }
 
     const parseSpanishData = data => {
-        console.log("got to Spanish data")
-        console.log(data)
         let thisWordData
         let compareWord = pluralize.singular(wordToTranslate.toLowerCase())
-        console.log("compare word: ", compareWord)
         if (data && partOfSpeech === "noun") {
             thisWordData = data.find(word => word.fl && word.fl.includes(partOfSpeech) && word.meta.lang === language)
-            console.log("compare word: ", compareWord, "this word data: ", thisWordData)
             if (!thisWordData) {
-                console.log("got to here", compareWord.charAt(compareWord.length - 1))
                 if (compareWord.charAt(compareWord.length - 1) === "a") {
-                    console.log("got to here as well")
                     compareWord = compareWord.substr(0, compareWord.length - 1) + "o"
-                    console.log("new compare word: ", compareWord)
                     thisWordData = data.find(word => word.fl.includes(partOfSpeech) && word.meta.lang === language && word.hwi.hw === compareWord)
                 } 
             }
         } else if (data) {
             thisWordData = data.find(word => word.fl && word.fl.includes(partOfSpeech) && word.meta.lang === language && word.hwi.hw === wordToTranslate.toLowerCase())
         }
-        console.log(thisWordData)
         if (!thisWordData) {
             setError("Error: There was no matching word for the entered data.")
         } else {
@@ -371,7 +338,6 @@ export default function Dictionary() {
     const focused = true
     const endResult = pluralize.isPlural(wordToTranslate) ? nonBinaryPossessivePronouns.includes(wordToTranslate) ? translatedWord : partOfSpeech !== "noun" ? translatedWord : language === "es" ? pluralize.plural(translatedWord) : pluralizeSpanishWord(translatedWord) : translatedWord
     const result = wordToTranslate + " = " + endResult
-    console.log("Is the word to translate plural? ", wordToTranslate, pluralize.isPlural(wordToTranslate), pluralize.plural(translatedWord))
     return (
         <Container component="main" maxWidth="md">
             <CssBaseline />

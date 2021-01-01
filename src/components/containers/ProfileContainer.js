@@ -6,7 +6,6 @@ class ProfileContainer extends Component {
     
     
     render() {
-        console.log("at the profile container")
         return (
                 <DrawerMenu />
 
