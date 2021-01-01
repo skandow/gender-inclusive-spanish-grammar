@@ -51,7 +51,7 @@ export default function Login() {
         body: JSON.stringify(payload)
     }
 
-    fetch("https://git.heroku.com/inclusive-spanish-grammar-serv.git/api/v1/login", reqObj)
+    fetch("https://musi-cal-back-end.herokuapp.com/api/v1/login", reqObj)
     .then(resp => {
       if(resp.status === 401) {
           throw Error("The username or password is incorrect")
